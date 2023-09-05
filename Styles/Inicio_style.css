@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+}
+
+.menu {
+	background: white;
+	position: relative;
+	min-height: 100px;
+	max-height: 100px;
+	height: 100%;
+	display: flex;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.menu > ul > li {
+	list-style: none;
+	display: inline-block;
+	line-height: 100px;
+	font-family: 'Edu SA Beginner', cursive;
+    font-size: 20px;
+}
+.menu > ul li a, .xs-menu li a {
+	text-decoration: none;
+	color: black;
+	display:block;
+	padding: 0px 24px;
+}
+.menu > ul li a:hover {
+	background:#444;
+	color: white;
+	transition-duration: 0.3s;
+}
+.menu img {
+	width: 100px
+}
+.active{
+	background:#444;
+}
+
+h1 {
+	font-family: 'Edu SA Beginner', cursive;
+	font-size: 50px;
+	text-align: center;
+}
