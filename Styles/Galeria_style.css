@@ -64,11 +64,11 @@
 
 .details {
     position: absolute;
-    bottom: -100%;
+    bottom: -150%;
     left: 0;
     width: 100%;
     height: auto;
-    padding: 1.5em 1.5em 2em;
+    padding: 1.5em 1.5em 1.5em;
     background: #000a;
     backdrop-filter: blur(16px) saturate(120%);
     transition: .3s;
