@@ -8,13 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/Styles/Index_style.css">
     <link rel="stylesheet" href="/Styles/Login_style.css">
-    <title>Anthesis</title>
+    <title>Antheon</title>
 </head>
 <body>
         <nav class="menu">
             <div>
                 <a href="/Index.html">
-                    <img src="/img/Blanco Ícono Flor Floral Logo.png" alt="">
+                    <img src="/img/floral-logo-a-02-412-2048x1366.png" alt="">
                 </a>
             </div>
             <ul>
@@ -34,26 +34,43 @@
         </nav>
     </div>
     <main>
-        <div class="login-box">
-            <h2>Iniciar Sesion</h2>
-            <form>
-            <div class="user-box">
-                <input type="text" name="" required="">
-                <label>Usuario</label>
+
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para entrar en la página</p>
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <h3>¿Aún no tienes una cuenta?</h3>
+                        <p>Regístrate para que puedas iniciar sesión</p>
+                        <button id="btn__registrarse">Regístrarse</button>
+                    </div>
+                </div>
+
+                <!--Formulario de Login y registro-->
+                <div class="contenedor__login-register">
+                    <!--Login-->
+                    <form action="" class="formulario__login">
+                        <h2>Iniciar Sesión</h2>
+                        <input type="text" placeholder="Correo Electronico">
+                        <input type="password" placeholder="Contraseña">
+                        <button>Entrar</button>
+                    </form>
+
+                    <!--Register-->
+                    <form action="" class="formulario__register">
+                        <h2>Regístrarse</h2>
+                        <input type="text" placeholder="Nombre completo">
+                        <input type="text" placeholder="Correo Electronico">
+                        <input type="text" placeholder="Usuario">
+                        <input type="password" placeholder="Contraseña">
+                        <button>Regístrarse</button>
+                    </form>
+                </div>
             </div>
-            <div class="user-box">
-                <input type="password" name="" required="">
-                <label>Comtraseña</label>
-            </div>
-            <a href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Iniciar
-            </a>
-            </form>
-        </div>
-    </main>
+        </main>
+        <script src="/Java/login.js"></script>
 </body>
 </html>

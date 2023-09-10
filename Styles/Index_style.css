@@ -3,14 +3,14 @@
 }
 
 .menu {
-	background: white;
+	background: #34495E;
 	position: relative;
 	min-height: 100px;
 	max-height: 100px;
 	height: 100%;
 	display: flex;
-	margin-left: 20px;
-	margin-right: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
 }
 
 .menu > ul > li {
@@ -22,15 +22,16 @@
 }
 .menu > ul li a, .xs-menu li a {
 	text-decoration: none;
-	color: black;
+	color: white;
 	display:block;
 	padding: 0px 24px;
 }
 .menu > ul li a:hover {
-	background:#444;
-	color: white;
+	background:#ffffff;
+	color: black;
 	transition-duration: 0.3s;
 }
 .menu img {
 	width: 100px
+	
 }

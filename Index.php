@@ -9,20 +9,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Styles/Index_style.css">
-    <link rel="stylesheet" href="/Styles/Index_Index_style.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" type="text" href="Antesis\Styles\Index_Index_style.css">
     <title>Anthesis</title>
 </head>
 <body>
         <nav class="menu">
             <div>
-                <a href="/Index.html">
+                <a href="\xampp\htdocs\Antesis\Index.php">
                     <img src="/img/Blanco Ícono Flor Floral Logo.png" alt="">
                 </a>
             </div>
             <ul>
                 <li>
-                    <a href="/Index.html">Inicio</a>
+                    <a href="../Index.html">Inicio</a>
                 </li>
                 <li>
                     <a href="/Galeria.html">Galeria</a>

@@ -1,16 +1,19 @@
-
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
-
 :root {
-	--body-color: #2c2d2a;
-	--savanna-bg: #e9bf8b;
-	--beach-bg: #e7dfcf;
-	--glacier-bg: #b6d6c8;
-	--coral-bg: #e86357;
-	--arrow-fill: #333231;
-	--body-font: "Montserrat", sans-serif;
-	--italic-font: "EB Garamond", serif;
+  --body-color: #2c2d2a;
+  --savanna-bg: #e9bf8b;
+  --beach-bg: #e7dfcf;
+  --glacier-bg: #b6d6c8;
+  --coral-bg: #e86357;
+  --arrow-fill: #333231;
+  --body-font: "Montserrat", sans-serif;
+  --italic-font: "EB Garamond", serif;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
 }
 
 img {
