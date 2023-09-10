@@ -1,6 +1,11 @@
 <?php
 
-$conexion = new mysqli("localhost","root","","login","3306");
-$conexion->set_charset("utf8");
+$conexion = mysqli_connect("localhost","root","","registro");
+
+if($conexion){
+    echo 'Se conecto manito';
+}else{
+    echo 'No se conecto :(';
+};
 
 ?>

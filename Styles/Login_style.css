@@ -5,14 +5,14 @@ body {
 
 main{
   width: 100%;
-  padding-top: 20px;
+  padding-top: 25px;
   margin: auto;
   margin-top: 100px;
 }
 
 .contenedor__todo{
   width: 100%;
-  max-width: 800px;
+  max-width: 850px;
   margin: auto;
   position: relative;
 }
@@ -84,7 +84,7 @@ main{
 
 .contenedor__login-register form{
   width: 100%;
-  padding: 80px 20px;
+  padding: 40px 20px;
   background: white;
   position: absolute;
   border-radius: 20px;
@@ -98,7 +98,7 @@ main{
 }
 
 .contenedor__login-register form input{
-  width: 100%;
+  width: 95%;
   margin-top: 20px;
   padding: 10px;
   border: none;

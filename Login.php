@@ -11,30 +11,28 @@
     <title>Antheon</title>
 </head>
 <body>
-        <nav class="menu">
-            <div>
-                <a href="/Index.html">
-                    <img src="/img/floral-logo-a-02-412-2048x1366.png" alt="">
-                </a>
-            </div>
-            <ul>
-                <li>
-                    <a href="/Index.html">Inicio</a>
-                </li>
-                <li>
-                    <a href="/Galeria.html">Galeria</a>
-                </li>
-                <li>
-                    <a href="/Flor del Dia.html">Flor del Dia</a>
-                </li>
-                <li>
-                    <a href="/Flores Peligrosas.html">Flores Peligrosas</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <nav class="menu">
+        <div>
+            <a href="/Index.html">
+                <img src="/img/floral-logo-a-02-412-2048x1366.png" alt="">
+            </a>
+        </div>
+        <ul>
+            <li>
+                <a href="/Index.html">Inicio</a>
+            </li>
+            <li>
+                <a href="/Galeria.html">Galeria</a>
+            </li>
+            <li>
+                <a href="/Flor del Dia.html">Flor del Dia</a>
+            </li>
+            <li>
+                <a href="/Flores Peligrosas.html">Flores Peligrosas</a>
+            </li>
+        </ul>
+    </nav>
     <main>
-
             <div class="contenedor__todo">
                 <div class="caja__trasera">
                     <div class="caja__trasera-login">
@@ -62,10 +60,11 @@
                     <!--Register-->
                     <form action="" class="formulario__register">
                         <h2>Regístrarse</h2>
-                        <input type="text" placeholder="Nombre completo">
-                        <input type="text" placeholder="Correo Electronico">
-                        <input type="text" placeholder="Usuario">
-                        <input type="password" placeholder="Contraseña">
+                        <input type="text" placeholder="Nombre" name="Nombre">
+                        <input type="text" placeholder="Apellido" name="Apellido">
+                        <input type="text" placeholder="Correo Electronico" name="Correo">
+                        <input type="text" placeholder="Usuario" name="Usuario">
+                        <input type="password" placeholder="Contraseña" name="Contrasena">
                         <button>Regístrarse</button>
                     </form>
                 </div>
