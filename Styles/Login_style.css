@@ -12,10 +12,9 @@ main{
 
 .contenedor__todo{
   width: 100%;
-  max-width: 90px;
+  max-width: 900px;
   margin: auto;
   position: relative;
-  padding-left: 10px;
 }
 
 .caja__trasera{
@@ -89,6 +88,7 @@ main{
   background: white;
   position: absolute;
   border-radius: 20px;
+  margin-right: 20px;
 }
 
 .contenedor__login-register form h2{
