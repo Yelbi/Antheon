@@ -12,9 +12,10 @@ main{
 
 .contenedor__todo{
   width: 100%;
-  max-width: 850px;
+  max-width: 90px;
   margin: auto;
   position: relative;
+  padding-left: 10px;
 }
 
 .caja__trasera{
