@@ -6,29 +6,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Styles/Index_style.css">
-    <link rel="stylesheet" href="/Styles/Login_style.css">
+    <link rel="stylesheet" href="http://localhost/Antheon/Styles/Index_style.css">
+    <link rel="stylesheet" href="http://localhost/Antheon/Styles/Login_style.css">
     <title>Antheon</title>
 </head>
 <body>
     <nav class="menu">
         <div>
             <a href="/Index.html">
-                <img src="/img/floral-logo-a-02-412-2048x1366.png" alt="">
+                <img src="http://localhost/Antheon/img/floral-logo-a-02-412-2048x1366.png" alt="">
             </a>
         </div>
         <ul>
             <li>
-                <a href="/Index.html">Inicio</a>
+                <a href="/Antheon/Index.html">Inicio</a>
             </li>
             <li>
-                <a href="/Galeria.html">Galeria</a>
+                <a href="/Antheon/Galeria.html">Galeria</a>
             </li>
             <li>
-                <a href="/Flor del Dia.html">Flor del Dia</a>
+                <a href="../Flor del Dia.html">Flor del Dia</a>
             </li>
             <li>
-                <a href="/Flores Peligrosas.html">Flores Peligrosas</a>
+                <a href="/Antheon/Flores Peligrosas.html">Flores Peligrosas</a>
             </li>
         </ul>
     </nav>
@@ -58,11 +58,11 @@
                     </form>
 
                     <!--Register-->
-                    <form action="" class="formulario__register">
+                    <form action="http://localhost/Antheon/Registro.php" method="POST" class="formulario__register">
                         <h2>Regístrarse</h2>
                         <input type="text" placeholder="Nombre" name="Nombre">
                         <input type="text" placeholder="Apellido" name="Apellido">
-                        <input type="text" placeholder="Correo Electronico" name="Correo">
+                        <input type="text" placeholder="Correo Electronico" name="Correo_Electrónico">
                         <input type="text" placeholder="Usuario" name="Usuario">
                         <input type="password" placeholder="Contraseña" name="Contrasena">
                         <button>Regístrarse</button>
@@ -70,6 +70,6 @@
                 </div>
             </div>
         </main>
-        <script src="/Java/login.js"></script>
+        <script src="http://localhost/Antheon/Java/login.js"></script>
 </body>
 </html>

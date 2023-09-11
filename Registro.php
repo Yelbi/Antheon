@@ -2,15 +2,23 @@
 
 include 'conexion.php';
 
-$nombre = $_POST('Nombre')
-$Apellido = $_POST('Apellido')
-$Correo = $_POST('Correo')
-$Usuario = $_POST('Usuario')
-$Contraena = $_POST('Contraena')
+$Nombre = $_POST['Nombre'];
+$Apellido = $_POST['Apellido'];
+$Correo = $_POST['Correo_Electrónico'];
+$Usuario = $_POST['Usuario'];
+$Contrasena = $_POST['Contrasena'];
 
-$query = "INSERT INTO Usuario(Nombre, Apellido, Correo, Usuario, Contrasena)
-            values ('$nombre', '$Apellido', '$Correo', '$Usuario', '$Contraena')";
+$query = "INSERT INTO usuarios(Nombre, Apellido, Correo_Electrónico, Usuario, Contrasena)
+            values ('$Nombre', '$Apellido', '$Correo', '$Usuario', '$Contrasena')";
 
 $Ejecutar = mysqli_query($conexion, $query);
+
+if ($Ejecutar){
+    echo '
+    <script>
+    alert("Nice");
+    window.location = "http://localhost/Antheon/Index.php";
+    </script>';
+}
 
 ?>
