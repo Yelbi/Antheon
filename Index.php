@@ -6,37 +6,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/x-icon" href="/img/Simple Black Letter K Logo - Logotipo - Opera 11_11_2023 21_46_53.png" />
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/Styles/Index_style.css">
-    <link rel="stylesheet" href="/Styles/Index_Index_style.css">
+    <link rel="stylesheet" href="Styles/Index_style.css">
+    <link rel="stylesheet" href="Styles/Index_Index_style.css">
     <title>Anthesis</title>
 </head>
 <body>
-<nav class="menu">
-        <div>
-            <a href="/Antheon/Index.html">
-                <img src="/img/floral-logo-a-02-412-2048x1366.png" alt="">
-            </a>
-        </div>
+    <nav class="menu">
+    <div class="alpha">
         <ul>
             <li>
-                <a href="/Antheon/Index.html">Inicio</a>
+                <a href="/Index.html">Inicio</a>
             </li>
             <li>
-                <a href="/Antheon/Galeria.html">Galeria</a>
-            </li>
-            <li>
-                <a href="/Antheon/Flor del Dia.html">Flor del Dia</a>
-            </li>
-            <li>
-                <a href="/Antheon/Flores Peligrosas.html">Flores Peligrosas</a>
+                <a href="/Galeria.html">Galeria</a>
             </li>
         </ul>
-    <img src="/img/plantilla-elemento-interfaz-usuario-imagen-perfil-predeterminada_106317-36159.jpg" alt="">
-</nav>
-    <main>
+    </div>
+            <div class="logo">
+                <a href="/Index.html">
+                    <img src="/img/Logo.png" alt="">
+                </a>
+            </div>
+        <div class="omega">
+        <ul>
+            <li>
+                <a href="/Flor del Dia.html">Flor del Dia</a>
+            </li>
+            <li>
+                <a href="/Flores Peligrosas.html">Flores Peligrosas</a>
+            </li>
+        </ul>
+    </div>
+    </nav>
+    <main class="backmain">
         <div class="flex-container">
             <div class="flex-slide home">
                 <div class="flex-title flex-title-home">Primavera</div>

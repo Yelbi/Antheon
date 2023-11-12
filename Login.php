@@ -6,33 +6,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="http://localhost/Antheon/Styles/Index_style.css">
-    <link rel="stylesheet" href="http://localhost/Antheon/Styles/Login_style.css">
-    <title>Antheon</title>
+    <link rel="icon" type="image/x-icon" href="/img/Simple Black Letter K Logo - Logotipo - Opera 11_11_2023 21_46_53.png" />
+    <link rel="stylesheet" href="Styles/Index_style.css">
+    <link rel="stylesheet" href="Styles/Login_style.css">
+    <title>Anthesis</title>
 </head>
 <body>
     <nav class="menu">
-        <div>
-            <a href="/Index.html">
-                <img src="http://localhost/Antheon/img/floral-logo-a-02-412-2048x1366.png" alt="">
-            </a>
-        </div>
+    <div class="alpha">
         <ul>
             <li>
-                <a href="/Antheon/Index.html">Inicio</a>
+                <a href="/Index.html">Inicio</a>
             </li>
             <li>
-                <a href="/Antheon/Galeria.html">Galeria</a>
-            </li>
-            <li>
-                <a href="../Flor del Dia.html">Flor del Dia</a>
-            </li>
-            <li>
-                <a href="/Antheon/Flores Peligrosas.html">Flores Peligrosas</a>
+                <a href="/Galeria.html">Galeria</a>
             </li>
         </ul>
+    </div>
+            <div class="logo">
+                <a href="/Index.html">
+                    <img src="/img/Logo.png" alt="">
+                </a>
+            </div>
+        <div class="omega">
+        <ul>
+            <li>
+                <a href="/Flor del Dia.html">Flor del Dia</a>
+            </li>
+            <li>
+                <a href="/Flores Peligrosas.html">Flores Peligrosas</a>
+            </li>
+        </ul>
+    </div>
     </nav>
-    <main>
+    <main class="backmain">
             <div class="contenedor__todo">
                 <div class="caja__trasera">
                     <div class="caja__trasera-login">
@@ -47,18 +54,17 @@
                     </div>
                 </div>
 
-                <!--Formulario de Login y registro-->
                 <div class="contenedor__login-register">
-                    <!--Login-->
-                    <form action="http://localhost/Antheon/Entrar.php" method="POST" class="formulario__login">
+                
+                    <form action="/Entrar.php" method="POST" class="formulario__login">
                         <h2>Iniciar Sesión</h2>
                         <input type="text" placeholder="Correo Electronico" name="Correo_Electrónico">
                         <input type="password" placeholder="Contraseña" name="Contrasena">
                         <button>Entrar</button>
                     </form>
 
-                    <!--Register-->
-                    <form action="http://localhost/Antheon/Registro.php" method="POST" class="formulario__register">
+                
+                    <form action="/Registro.php" method="POST" class="formulario__register">
                         <h2>Regístrarse</h2>
                         <input type="text" placeholder="Nombre" name="Nombre">
                         <input type="text" placeholder="Apellido" name="Apellido">
@@ -70,6 +76,6 @@
                 </div>
             </div>
         </main>
-        <script src="http://localhost/Antheon/Java/login.js"></script>
+        <script src="Java/login.js"></script>
 </body>
 </html>

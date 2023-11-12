@@ -2,8 +2,26 @@
     margin: 0;
 }
 
+.backmain{
+	background-color: #1c1c1c;
+}
+
+.backfooter{
+	background-color: #23714d;
+	height: 100px;
+}
+
+.backfooter h2{
+	color: #f1ccba;
+	text-align: center;
+	font-size: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	font-family: 'Edu SA Beginner', cursive;
+}
+
 .menu {
-	background: #34495E;
+	background: #23714d;
 	position: relative;
 	min-height: 100px;
 	max-height: 100px;
@@ -12,30 +30,60 @@
 	padding-left: 20px;
 	padding-right: 20px;
 	align-items: center;
+	justify-content: space-evenly;
 }
 
-.menu ul {
+.menu .alpha ul {
+	padding: 0px;
+}
+.menu .omega ul {
 	padding: 0px;
 }
 
-.menu > ul > li {
+.menu > .alpha > ul > li {
 	list-style: none;
 	display: inline-block;
 	line-height: 100px;
 	font-family: 'Edu SA Beginner', cursive;
     font-size: 20px;
+	width: 185px;
+	text-align: center;
 }
-.menu > ul li a, .xs-menu li a {
+.menu > .omega > ul > li {
+	list-style: none;
+	display: inline-block;
+	line-height: 100px;
+	font-family: 'Edu SA Beginner', cursive;
+    font-size: 20px;
+	width: 185px;
+	text-align: center;
+}
+.menu > .alpha ul li a, .xs-menu li a {
 	text-decoration: none;
-	color: white;
+	color: #f1ccba;
 	display:block;
 	padding: 0px 24px;
 }
-.menu > ul li a:hover {
-	background:#ffffff;
-	color: black;
+.menu > .omega ul li a, .xs-menu li a {
+	text-decoration: none;
+	color: #f1ccba;
+	display:block;
+	padding: 0px 24px;
+}
+.menu > .alpha ul li a:hover {
+	background: #1c1c1c;
+	color: white;
+	transition-duration: 0.3s;
+}
+.menu > .omega ul li a:hover {
+	background: #1c1c1c;
+	color: white;
 	transition-duration: 0.3s;
 }
 .menu img {
 	width: 100px
+}
+
+.user {
+	text-align: end;
 }
