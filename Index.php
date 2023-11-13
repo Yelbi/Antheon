@@ -17,7 +17,7 @@
     <div class="alpha">
         <ul>
             <li>
-                <a href="/Index.html">Inicio</a>
+                <a href="/index.php">Inicio</a>
             </li>
             <li>
                 <a href="/Galeria.html">Galeria</a>
@@ -26,7 +26,7 @@
     </div>
             <div class="logo">
                 <a href="/Index.html">
-                    <img src="/img/Logo.png" alt="">
+                    <img src="img/Logo.png" alt="">
                 </a>
             </div>
         <div class="omega">
@@ -57,6 +57,5 @@
             </div>
         </div>
     </main>
-    <script src="/Java/Index_Index.js"></script>
 </body>
 </html>

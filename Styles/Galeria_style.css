@@ -9,6 +9,10 @@ h1 {
     color: #f1ccba;
 }
 
+.backmain{
+    background-color: #1c1c1c;
+}
+
 .wrapper {
     position: relative;
     width: 100%;
