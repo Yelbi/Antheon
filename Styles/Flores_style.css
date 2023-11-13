@@ -1,6 +1,6 @@
 .backmain{
     font-family: "Open Sans", sans-serif;
-    background-color: #282828;
+    background-color: #1c1c1c;
   }
   
   .slider-pages {
@@ -14,7 +14,7 @@
     top: 0;
     width: 50%;
     height: 100vh;
-    transition: transform 1350ms;
+    transition: 350ms;
   }
   
   .slider-page--skew {
@@ -23,7 +23,7 @@
     top: 0;
     width: 140%;
     height: 100%;
-    background: #282828;
+    background: #1c1c1c;
     transform: skewX(-18deg);
   }
   
@@ -35,7 +35,6 @@
     left: -40%;
   }
   .slider-page--left .slider-page__content {
-    padding: auto 30% auto 30%;
     transform-origin: 100% 0;
   }
   
@@ -47,7 +46,6 @@
     right: -40%;
   }
   .slider-page--right .slider-page__content {
-    padding: auto 30% auto 30%;
     transform-origin: 0 100%;
   }
   
@@ -61,8 +59,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 0 30% 0 30%;
-    color: #e2e2e2;
+    color: #f1ccba;
     background-size: cover;
     transform: skewX(18deg);
     transition: transform 1350ms;
@@ -85,11 +82,8 @@
   }
   
   .slider-page__link {
-    color: #80a1c1;
-  }
-  .slider-page__link:hover, .slider-page__link:focus {
-    color: #6386a9;
     text-decoration: none;
+    color: #f1ccba;
   }
   
   /***********************
@@ -114,23 +108,23 @@
     background-image: url("https://s-media-cache-ak0.pinimg.com/originals/a6/6a/a3/a66aa3134eb9f439838e676297a75bd6.jpg");
   }
   .js-scrolling__page-1 .slider-page--right .slider-page__content {
-    background-color: #282828;
+    background-color: #1c1c1c;
   }
   
   .js-scrolling__page-2 .slider-page--left .slider-page__content {
-    background-color: #e2e2e2;
+    background-color: #23714d;
   }
   .js-scrolling__page-2 .slider-page--left .slider-page__title,
   .js-scrolling__page-2 .slider-page--left .slider-page__description {
-    color: #282828;
+    color: #1c1c1c;
   }
   .js-scrolling__page-2 .slider-page--right .slider-page__content {
-    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/7a/8d/51/7a8d51f4968960334274ac7959d31a7d.jpg");
+    background-image: url("/img/Generales/Rosas/MapChart_Map.png");
   }
   
   .js-scrolling__page-3 .slider-page--left .slider-page__content {
     background-image: url("https://s-media-cache-ak0.pinimg.com/originals/4c/d8/7b/4cd87bc93cca92f76285c061cef16585.jpg");
   }
   .js-scrolling__page-3 .slider-page--right .slider-page__content {
-    background-color: #282828;
+    background-color: #1c1c1c;
   }
