@@ -1,130 +1,169 @@
-.backmain{
-    font-family: "Open Sans", sans-serif;
-    background-color: #1c1c1c;
-  }
-  
-  .slider-pages {
-    overflow: hidden;
-    position: relative;
-    height: 100vh;
-  }
-  
-  .slider-page {
-    position: absolute;
-    top: 0;
-    width: 50%;
-    height: 100vh;
-    transition: 350ms;
-  }
-  
-  .slider-page--skew {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    width: 140%;
-    height: 100%;
-    background: #1c1c1c;
-    transform: skewX(-18deg);
-  }
-  
-  .slider-page--left {
-    left: 0;
-    transform: translateX(-32.5vh) translateY(100%) translateZ(0);
-  }
-  .slider-page--left .slider-page--skew {
-    left: -40%;
-  }
-  .slider-page--left .slider-page__content {
-    transform-origin: 100% 0;
-  }
-  
-  .slider-page--right {
-    left: 50%;
-    transform: translateX(32.5vh) translateY(-100%) translateZ(0);
-  }
-  .slider-page--right .slider-page--skew {
-    right: -40%;
-  }
-  .slider-page--right .slider-page__content {
-    transform-origin: 0 100%;
-  }
-  
-  .slider-page__content {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column wrap;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    color: #f1ccba;
-    background-size: cover;
-    transform: skewX(18deg);
-    transition: transform 1350ms;
-  }
-  
-  .slider-page__title {
-    margin-bottom: 1em;
-    font-size: 1em;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  
-  .slider-page__title--big {
-    font-size: 1.2em;
-  }
-  
-  .slider-page__description {
-    font-size: 1em;
-    text-align: center;
-  }
-  
-  .slider-page__link {
-    text-decoration: none;
-    color: #f1ccba;
-  }
-  
-  /***********************
-   *	Project JS Styles
-   **********************/
-  .js-scrolling__page {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-  
-  .js-scrolling--active .slider-page {
-    transform: translateX(0) translateY(0) translateZ(0);
-  }
-  
-  .js-scrolling--inactive .slider-page__content {
-    transform: skewX(18deg) scale(0.9);
-  }
-  
-  .js-scrolling__page-1 .slider-page--left .slider-page__content {
-    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/a6/6a/a3/a66aa3134eb9f439838e676297a75bd6.jpg");
-  }
-  .js-scrolling__page-1 .slider-page--right .slider-page__content {
-    background-color: #1c1c1c;
-  }
-  
-  .js-scrolling__page-2 .slider-page--left .slider-page__content {
-    background-color: #23714d;
-  }
-  .js-scrolling__page-2 .slider-page--left .slider-page__title,
-  .js-scrolling__page-2 .slider-page--left .slider-page__description {
-    color: #1c1c1c;
-  }
-  .js-scrolling__page-2 .slider-page--right .slider-page__content {
-    background-image: url("/img/Generales/Rosas/MapChart_Map.png");
-  }
-  
-  .js-scrolling__page-3 .slider-page--left .slider-page__content {
-    background-image: url("https://s-media-cache-ak0.pinimg.com/originals/4c/d8/7b/4cd87bc93cca92f76285c061cef16585.jpg");
-  }
-  .js-scrolling__page-3 .slider-page--right .slider-page__content {
-    background-color: #1c1c1c;
-  }
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:700);
+*, *::before, *::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+html {
+	font-size: 10px;
+	font-size: calc(5px + 0.4vw);
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+	font-size: 1rem;
+	color: #fff;
+}
+a {
+  text-decoration: none;
+  color: rgba(225, 255, 255, .8);
+}
+/* Slider style */
+.cd-slider {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+.cd-slider.ie9 nav div span {
+	display: none;
+}
+.cd-slider ul li {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	transition: visibility 0s .6s;
+  background-color: #23714d;
+}
+.content-flex{
+  display: flex;
+  flex-direction: column-reverse;
+}
+.content {
+	display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  padding-left: 7%;
+  padding-right: 7%;
+  color: #fff;
+  transform: skewX(18deg);
+  transition: transform 1s, opacity 1s;
+  background-size: cover;
+}
+.content h1{
+  font-size: 5.2em;
+  font-family: 'Titillium Web', sans-serif;
+  padding-bottom: 10px;
+}
+.content p{
+  font-size: 2em;
+  font-family: 'Titillium Web', sans-serif;
+}
+.content-image{
+  background-image: url(/img/Generales/Rosas/pexels-david-bartus-714918.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column wrap;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+	transform: scale(1.2);
+	transition: opacity .4s .6s, transform .4s .6s;
+}
+/* current slide
+---------------------------------*/
+.cd-slider li.current_slide {
+	visibility: visible;
+}
+.cd-slider li.current_slide::before {
+	border-width: 16rem;
+}
+.cd-slider li.current_slide .content {
+	opacity: 1;
+	transform: scale(1);
+}
+/* nav
+---------------------------------*/
+nav div {
+	position: absolute;
+	top: 50%;
+	left: 4%;
+	width: 5rem;
+	height: 5rem;
+	margin-top: -2.5rem;
+	list-style: none;
+}
+nav div:last-of-type {
+	left: auto;
+	right: 4%;
+}
+.prev, .next {
+	position: relative;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 100%;
+	transition: box-shadow .3s;
+}
+.prev::before, .prev::after, .next::before, .next::after {
+	content: '';
+	position: absolute;
+	left: 43%;
+	background: #fff;
+	width: .4rem;
+	min-width: 3px;
+	border-radius: 3px;
+	height: 34%;
+}
+.prev::before {
+	transform: rotate(45deg);
+	top: 24%;
+}
+.prev::after {
+	transform: rotate(-45deg);
+	bottom: 24%;
+}
+.next::before, .next::after {
+	left: auto;
+	right: 43%;
+}
+.next::before {
+	transform: rotate(-45deg);
+	top: 24%;
+}
+.next::after {
+	transform: rotate(45deg);
+	bottom: 24%;
+}
+.prev:hover, .next:hover {
+	box-shadow: 0 0 0 1rem rgba(0, 0, 0, 0.15);
+}
+nav > div > span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-radius: 100%;
+	z-index: 5;
+	pointer-events: none;
+	will-change: width, height;
+	transform: translate(-50%, -50%);
+	transition: width .6s, height .6s;
+}
