@@ -72,7 +72,7 @@ body {
 
 .home {
 	height: 100vh;
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://w.wallhaven.cc/full/76/wallhaven-7611we.jpg);
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/Index/Primavera.jpg);
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
@@ -113,7 +113,7 @@ body {
 
 
 .about {
-	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://w.wallhaven.cc/full/q2/wallhaven-q2vkxd.jpg);
+	background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/Index/Verano.jpg);
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;	
@@ -128,13 +128,13 @@ textarea {
 	width: 100%;	
 }
 .contact {
-		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://w.wallhaven.cc/full/4l/wallhaven-4lw2ql.jpg);
+		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/Index/Invierno.jpg);
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
 }
 .work {
-		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://w.wallhaven.cc/full/73/wallhaven-73l89y.jpg);
+		background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/img/Index/Otoño.jpg);
 	background-size: cover;
 	background-position: center center;
 	background-attachment: fixed;
