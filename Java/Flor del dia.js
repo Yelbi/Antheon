@@ -1,68 +1,341 @@
-class Post {
-    constructor(title, link, img) {
-        this.title = title;
-        this.link = link;
-        this.img = img;
-    }
-}
+document.addEventListener("DOMContentLoaded", function () {
+  var DIO = document.getElementById("DIO");
+  var fecha = new Date();
+  var dia = fecha.getDate();
 
-const app = new Vue({
-    el: "#app",
-    data: {
-      search: "",
-      postList: [
-        new Post(
-          "Vue.js",
-          "https://vuejs.org/",
-          "https://vuejs.org//images/logo.png"
-        ),
-        new Post(
-          "React.js",
-          "https://facebook.github.io/react/",
-          "https://daynin.github.io/clojurescript-presentation/img/react-logo.png"
-        ),
-        new Post(
-          "Angular.js",
-          "https://angularjs.org/",
-          "https://angularjs.org/img/ng-logo.png"
-        ),
-        new Post(
-          "Ember.js",
-          "http://emberjs.com/",
-          "http://www.gravatar.com/avatar/0cf15665a9146ba852bf042b0652780a?s=200"
-        ),
-        new Post(
-          "Meteor.js",
-          "https://www.meteor.com/",
-          "http://hacktivist.in/introduction-to-nodejs-mongodb-meteor/img/meteor.png"
-        ),
-        new Post(
-          "Aurelia",
-          "http://aurelia.io/",
-          "https://cdn.auth0.com/blog/aurelia-logo.png"
-        ),
-        new Post(
-          "Node.js",
-          "https://nodejs.org/en/",
-          "https://code-maven.com/img/node.png"
-        ),
-        new Post(
-          "Pusher",
-          "https://pusher.com/",
-          "https://avatars1.githubusercontent.com/u/739550?v=3&s=400"
-        ),
-        new Post(
-          "Feathers.js",
-          "http://feathersjs.com/",
-          "https://cdn.worldvectorlogo.com/logos/feathersjs.svg"
-        )
-      ]
-    },
-    computed: {
-      filteredList() {
-        return this.postList.filter((post) => {
-          return post.title.toLowerCase().includes(this.search.toLowerCase());
-        });
-      }
-    }
-  });
+  // Puedes ajustar estos valores según tus necesidades
+  var datos;
+
+  switch (dia % 31) {
+      case 0:
+          datos = {
+              fondo: "url('img/Generales/Amapolas.jpg')",
+              titulo: "Título para caso 0",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 0",
+              link: "href('')"
+            };
+          break;
+
+      case 1:
+          datos = {
+              fondo: "url('img/Generales/Rosas.jpg')",
+              titulo: "Rosa",
+              ciencia: "fafafa",
+              descripcion: "Las rosas pertenecen al género botánico Rosa y se caracterizan por sus pétalos suaves, delicados y a menudo fragantes. Vienen en una amplia gama de colores, incluyendo rojo, rosa, blanco, amarillo, naranja y más. Las flores de rosa generalmente tienen capullos rodeados por capas de pétalos que se abren gradualmente a medida que la flor florece.",
+              link: "href('')"
+            };
+          break;
+
+      case 2:
+          datos = {
+              fondo: "url('img/Generales/jacintos.jpg')",
+              titulo: "Título para caso 2",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 2",
+              link: "href('')"
+            };
+          break;
+
+      case 3:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 4:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 5:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 6:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 7:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 8:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 9:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 10:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 11:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 12:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 13:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 14:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 15:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 16:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 17:
+          datos = {
+              fondo: "url('img/Flor del dia/pexels-neosiam-679997.jpg')",
+              titulo: "Flor de Loto",
+              ciencia: "Nelumbo nucifera",
+              descripcion: "Las flores de loto, conocidas científicamente como Nelumbo nucifera, son flores acuáticas magníficas y profundamente simbólicas. Son originarias de partes de Asia y Australia y se encuentran en estanques y lagos de aguas tranquilas. Las flores de loto emergen de la superficie del agua en tallos largos y robustos.",
+              link: "href('Galeria.html')"
+            };
+          break;
+
+          case 18:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 19:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 20:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 21:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 22:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 23:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 24:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 25:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 26:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 27:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 28:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 29:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+          case 30:
+          datos = {
+              fondo: "url('imagen4.jpg')",
+              titulo: "Título para caso 3",
+              ciencia: "fafafa",
+              descripcion: "Descripción para caso 3",
+              link: "href('')"
+            };
+          break;
+
+      default:
+          datos = {
+              fondo: "url('imagenDefault.jpg')",
+              titulo: "Título predeterminado",
+              ciencia: "fafafa",
+              descripcion: "Descripción predeterminada",
+              link: "('')"
+            };
+          break;
+  }
+
+  aplicarDatos(DIO, datos);
+});
+
+// Función para aplicar los datos al div
+function aplicarDatos(div, datos) {
+  div.style.backgroundImage = datos.fondo;
+  div.querySelector("h1").textContent = datos.titulo;
+  div.querySelector("span").textContent = datos.ciencia;
+  div.querySelector("p").textContent = datos.descripcion;
+  a.href = datos.link;
+}

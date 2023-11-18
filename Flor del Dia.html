@@ -6,6 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/img/Logo mini.png" />
     <link rel="stylesheet" href="/Styles/Index_style.css">
     <link rel="stylesheet" href="/Styles/Flor del dia_style.css">
@@ -40,24 +41,16 @@
     </div>
     </nav>
     <main class="backmain">
-        <div id="app">
-            <div class="search-wrapper">
-                <input type="text" v-model="search" placeholder="Search title.."/>
-                    <label>Search title:</label>
+        <div id="DIO" class="movie-card">          
+            <div class="content">
+                <h1></h1>
+                <div class="infos">
+                <span></span>
+                </div>
+                <p class="synopsis"></p>
+                <a href=""></a>
             </div>
-            <div class="wrapper">
-                <div class="card" v-for="post in filteredList">
-                    <a href="https://vuejs.org/" target="_blank">
-                    <img src="https://vuejs.org//images/logo.png">
-                    gaga.js
-                </a></div>
-                <div class="card" v-for="post in filteredList">
-                    <a href="https://facebook.github.io/react/" target="_blank">
-                    <img src="https://daynin.github.io/clojurescript-presentation/img/react-logo.png"> 
-                    React.js
-                </a></div>
-            </div>
-        </div>
+          </div>
     </main>
     <script src="/Java/Flor del dia.js"></script>
 </body>
