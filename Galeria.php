@@ -72,16 +72,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Tulipanes.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Tulipanes.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Tulipanes.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Tulipanes.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Tulipanes.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Tulipanes.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Claveles.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Claveles.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Claveles.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Claveles.jpg"></div>
                     <div class="details">
                         <h2>Claveles</h2>
                         <p class="desc">
@@ -90,16 +90,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Claveles.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Claveles.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Claveles.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Claveles.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Claveles.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Claveles.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Girasoles.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Girasoles.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Girasoles.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Girasoles.jpg"></div>
                     <div class="details">
                         <h2>Girasoles</h2>
                         <p class="desc">
@@ -108,16 +108,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Girasoles.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Girasoles.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Girasoles.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Girasoles.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Girasoles.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Girasoles.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Margaritas.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Margaritas.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Margaritas.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Margaritas.jpg"></div>
                     <div class="details">
                         <h2>Margaritas</h2>
                         <p class="desc">
@@ -126,16 +126,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Margaritas.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Margaritas.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Margaritas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Margaritas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Margaritas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Margaritas.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Camelias.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Camelias.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Camelias.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Camelias.jpg"></div>
                     <div class="details">
                         <h2>Camelias</h2>
                         <p class="desc">
@@ -144,34 +144,34 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Camelias.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Camelias.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Camelias.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Camelias.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Camelias.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Camelias.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Loto.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Loto.webp"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Loto.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Loto.webp"></div>
                     <div class="details">
-                        <h2>Loto</h2>
+                        <h2>Flor de Loto</h2>
                         <p class="desc">
                             Las flores de loto, conocidas científicamente como Nelumbo nucifera, son flores acuáticas magníficas y profundamente simbólicas. Son originarias de partes de Asia y Australia y se encuentran en estanques y lagos de aguas tranquilas. Las flores de loto emergen de la superficie del agua en tallos largos y robustos.
                         </p>
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Loto.webp"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Loto.webp"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Loto.webp"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Loto.webp"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Loto.webp"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Loto.webp"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Peonias.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Peonias.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Peonias.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Peonias.jpg"></div>
                     <div class="details">
                         <h2>Peonias</h2>
                         <p class="desc">
@@ -180,16 +180,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Peonias.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Peonias.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Peonias.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Peonias.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Peonias.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Peonias.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Violetas.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Violetas.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Violetas.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Violetas.jpg"></div>
                     <div class="details">
                         <h2>Violetas</h2>
                         <p class="desc">
@@ -198,16 +198,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Violetas.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Violetas.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Violetas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Violetas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Violetas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Violetas.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Lirios.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Lirios.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Lirios.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Lirios.jpg"></div>
                     <div class="details">
                         <h2>Lirios</h2>
                         <p class="desc">
@@ -216,16 +216,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Lirios.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Lirios.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Lirios.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Lirios.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Lirios.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Lirios.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Calendulas.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Calendulas.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Calendulas.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Calendulas.jpg"></div>
                     <div class="details">
                         <h2>Calendulas</h2>
                         <p class="desc">
@@ -234,16 +234,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Calendulas.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Calendulas.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Calendulas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Calendulas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Calendulas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Calendulas.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Crisantemos.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Crisantemos.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Crisantemos.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Crisantemos.jpg"></div>
                     <div class="details">
                         <h2>Crisantemos</h2>
                         <p class="desc">
@@ -252,16 +252,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Crisantemos.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Crisantemos.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Crisantemos.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Crisantemos.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Crisantemos.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Crisantemos.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Gladiolos.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Gladiolos.webp"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Gladiolos.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Gladiolos.webp"></div>
                     <div class="details">
                         <h2>Gladiolos</h2>
                         <p class="desc">
@@ -270,16 +270,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Gladiolos.webp"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Gladiolos.webp"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Gladiolos.webp"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Gladiolos.webp"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Gladiolos.webp"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Gladiolos.webp"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Narcisos.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Narcisos.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Narcisos.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Narcisos.jpg"></div>
                     <div class="details">
                         <h2>Narcisos</h2>
                         <p class="desc">
@@ -288,16 +288,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Narcisos.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Narcisos.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Narcisos.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Narcisos.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Narcisos.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Narcisos.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Flor de Pascua.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Flor de Pascua.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Flor de Pascua.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Flor de Pascua.jpg"></div>
                     <div class="details">
                         <h2>Flor de Pascua</h2>
                         <p class="desc">
@@ -306,16 +306,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Flor de Pascua.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Flor de Pascua.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Flor de Pascua.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Flor de Pascua.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Flor de Pascua.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Flor de Pascua.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Begonias.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Begonias.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Begonias.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Begonias.jpg"></div>
                     <div class="details">
                         <h2>Begonias</h2>
                         <p class="desc">
@@ -324,16 +324,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Begonias.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Begonias.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Begonias.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Begonias.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Begonias.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Begonias.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Amapolas.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Amapolas.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Amapolas.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Amapolas.jpg"></div>
                     <div class="details">
                         <h2>Amapolas</h2>
                         <p class="desc">
@@ -342,16 +342,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Amapolas.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Amapolas.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Amapolas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Amapolas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Amapolas.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Amapolas.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Lycoris.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Lycoris.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Lycoris.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Lycoris.jpg"></div>
                     <div class="details">
                         <h2>Lycoris</h2>
                         <p class="desc">
@@ -360,16 +360,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Lycoris.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Lycoris.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Lycoris.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Lycoris.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Lycoris.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Lycoris.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Orquideas.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Orquideas.webp"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Orquideas.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Orquideas.webp"></div>
                     <div class="details">
                         <h2>Orquideas</h2>
                         <p class="desc">
@@ -378,16 +378,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Orquideas.webp"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Orquideas.webp"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Orquideas.webp"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Orquideas.webp"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Orquideas.webp"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Orquideas.webp"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Jacintos.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Jacintos.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Jacintos.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Jacintos.jpg"></div>
                     <div class="details">
                         <h2>Jacintos</h2>
                         <p class="desc">
@@ -396,16 +396,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Jacintos.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Jacintos.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Jacintos.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Jacintos.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Jacintos.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Jacintos.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Hortensia.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Hortensia.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Hortensia.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Hortensia.jpg"></div>
                     <div class="details">
                         <h2>Hortensia</h2>
                         <p class="desc">
@@ -414,16 +414,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Hortensia.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Hortensia.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Hortensia.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Hortensia.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Hortensia.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Hortensia.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Pensamiento.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Pensamiento.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Pensamiento.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Pensamiento.jpg"></div>
                     <div class="details">
                         <h2>Pensamiento</h2>
                         <p class="desc">
@@ -432,16 +432,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Pensamiento.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Pensamiento.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Pensamiento.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Pensamiento.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Pensamiento.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Pensamiento.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Dalia.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Dalia.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Dalia.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Dalia.jpg"></div>
                     <div class="details">
                         <h2>Dalia</h2>
                         <p class="desc">
@@ -450,16 +450,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Dalia.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Dalia.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Dalia.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Dalia.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Dalia.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Dalia.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Petunia.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Petunia.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Petunia.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Petunia.jpg"></div>
                     <div class="details">
                         <h2>Petunia</h2>
                         <p class="desc">
@@ -468,16 +468,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Petunia.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Petunia.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Petunia.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Petunia.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Petunia.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Petunia.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Jazmín.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Jazmín.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Jazmín.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Jazmín.jpg"></div>
                     <div class="details">
                         <h2>Jazmín</h2>
                         <p class="desc">
@@ -486,16 +486,16 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Jazmín.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Jazmín.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Jazmín.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Jazmín.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Jazmín.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Jazmín.jpg"></li>
                             </ul>
                         </div>
                     </div>
                 </a>
                 </div>
-                <div class="card"><a href="/Antheon/Flores/Generales/Iris.php">
-                    <div class="poster"><img src="/Antheon/img/Generales/Galeria/Iris.jpg"></div>
+                <div class="card"><a href="../Antheon/Flores/Generales/Iris.php">
+                    <div class="poster"><img src="../Antheon/img/Generales/Galeria/Iris.jpg"></div>
                     <div class="details">
                         <h2>Iris</h2>
                         <p class="desc">
@@ -504,8 +504,8 @@
                         <div class="cast">
                             <h3>Relacionadas</h3>
                             <ul>
-                                <li><img src="/Antheon/img/Generales/Galeria/Iris.jpg"></li>
-                                <li><img src="/Antheon/img/Generales/Galeria/Iris.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Iris.jpg"></li>
+                                <li><img src="../Antheon/img/Generales/Galeria/Iris.jpg"></li>
                                 <li><img src="/Antheon/img/Generales/Galeria/Iris.jpg"></li>
                             </ul>
                         </div>

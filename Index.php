@@ -17,25 +17,25 @@
     <div class="alpha">
         <ul>
             <li>
-                <a href="/index.php">Inicio</a>
+                <a href="/Antheon/index.php">Inicio</a>
             </li>
             <li>
-                <a href="/Galeria.html">Galeria</a>
+                <a href="/Antheon/Galeria.php">Galeria</a>
             </li>
         </ul>
     </div>
             <div class="logo">
-                <a href="/Index.html">
+                <a href="/Antheon/Index.php">
                     <img src="img/Logo.png" alt="">
                 </a>
             </div>
         <div class="omega">
         <ul>
             <li>
-                <a href="/Flor del Dia.html">Flor del Dia</a>
+                <a href="/Antheon/Flor del Dia.php">Flor del Dia</a>
             </li>
             <li>
-                <a href="/Flores Peligrosas.html">Flores Peligrosas</a>
+                <a href="/Antheon/Flores Peligrosas.php">Flores Peligrosas</a>
             </li>
         </ul>
     </div>
