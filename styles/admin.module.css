@@ -1,0 +1,264 @@
+/* ── Layout base ────────────────────────────────────────────── */
+.adminLayout {
+  min-height: 100vh;
+  background: #111;
+  color: #f1ccba;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ── Topbar ─────────────────────────────────────────────────── */
+.topbar {
+  background: #23714d;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topbarTitle {
+  font-family: 'Edu SA Beginner', cursive;
+  font-size: 22px;
+  color: #f1ccba;
+  text-decoration: none;
+}
+
+.topbarActions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.topbarLink {
+  color: #f1ccbacc;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.topbarLink:hover { color: #fff; }
+
+/* ── Página interior ─────────────────────────────────────────── */
+.page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pageTitle {
+  font-family: 'Edu SA Beginner', cursive;
+  font-size: 32px;
+  color: #f1ccba;
+  margin: 0;
+}
+
+/* ── Botones ─────────────────────────────────────────────────── */
+.btn {
+  padding: 10px 22px;
+  border-radius: 20px;
+  font-family: 'Edu SA Beginner', cursive;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  transition: opacity 0.2s, transform 0.15s;
+}
+
+.btn:active { transform: scale(0.97); }
+.btn:hover { opacity: 0.88; }
+
+.btnPrimary { background: #23714d; color: #fff; }
+.btnDanger  { background: #7f1d1d; color: #fff; }
+.btnGhost   { background: transparent; color: #f1ccba; border: 1.5px solid #f1ccba44; }
+
+/* ── Tabla ───────────────────────────────────────────────────── */
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #ffffff0f;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th {
+  background: #1e1e1e;
+  color: #f1ccba88;
+  text-align: left;
+  padding: 12px 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+}
+
+.table td {
+  padding: 14px 16px;
+  border-top: 1px solid #ffffff08;
+  vertical-align: middle;
+}
+
+.table tr:hover td {
+  background: #ffffff05;
+}
+
+.thumb {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #ffffff18;
+}
+
+.nombreCell {
+  font-weight: 600;
+  color: #f1ccba;
+  max-width: 180px;
+}
+
+.descCell {
+  color: #f1ccba88;
+  font-size: 13px;
+  max-width: 260px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actionsCell {
+  display: flex;
+  gap: 8px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: #f1ccba44;
+  font-size: 18px;
+}
+
+/* ── Formulario ──────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 620px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 13px;
+  color: #f1ccba88;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.input,
+.textarea {
+  background: #1e1e1e;
+  border: 1.5px solid #ffffff14;
+  border-radius: 10px;
+  color: #f1ccba;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  padding: 11px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: #23714d;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.errorMsg {
+  color: #f87171;
+  font-size: 14px;
+  margin-top: -8px;
+}
+
+/* ── Login ───────────────────────────────────────────────────── */
+.loginWrap {
+  min-height: 100vh;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.loginBox {
+  background: #1c1c1c;
+  border: 1px solid #ffffff0f;
+  border-radius: 20px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loginTitle {
+  font-family: 'Edu SA Beginner', cursive;
+  font-size: 28px;
+  color: #f1ccba;
+  text-align: center;
+  margin: 0;
+}
+
+.loginSub {
+  text-align: center;
+  color: #f1ccba66;
+  font-size: 14px;
+  margin-top: -12px;
+}
+
+/* ── Logout ──────────────────────────────────────────────────── */
+.logoutBtn {
+  background: none;
+  border: none;
+  color: #f1ccbacc;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Nunito', sans-serif;
+  padding: 0;
+  transition: color 0.2s;
+}
+
+.logoutBtn:hover { color: #fff; }

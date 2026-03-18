@@ -1,0 +1,163 @@
+/* ── Shared header wrapper ─────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ── Desktop navbar ────────────────────────────────────────── */
+.menu {
+  background: #23714d;
+  min-height: 100px;
+  max-height: 100px;
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.alpha ul,
+.omega ul {
+  padding: 0;
+  margin: 0;
+}
+
+.alpha ul li,
+.omega ul li {
+  list-style: none;
+  display: inline-block;
+  line-height: 100px;
+  font-family: 'Edu SA Beginner', cursive;
+  font-size: 20px;
+  width: 185px;
+  text-align: center;
+}
+
+.alpha ul li a,
+.omega ul li a {
+  text-decoration: none;
+  color: #f1ccba;
+  display: block;
+  padding: 0 24px;
+  transition: background 0.3s;
+}
+
+.alpha ul li a:hover,
+.omega ul li a:hover {
+  background: #1c1c1c;
+  color: white;
+}
+
+.logo img {
+  width: 100px;
+  display: block;
+}
+
+/* ── Mobile header (hidden on desktop) ─────────────────────── */
+.mobileHeader {
+  display: none;
+  background: #23714d;
+  height: 64px;
+  padding: 0 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ── Hamburger button ───────────────────────────────────────── */
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 200;
+}
+
+.bar {
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: #f1ccba;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+  transform-origin: center;
+}
+
+.barOpen1 { transform: translateY(7px) rotate(45deg); }
+.barOpen2 { opacity: 0; transform: scaleX(0); }
+.barOpen3 { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Overlay ────────────────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 150;
+}
+
+/* ── Drawer ─────────────────────────────────────────────────── */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  max-width: 280px;
+  height: 100dvh;
+  background: #1c1c1c;
+  z-index: 200;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-top: 80px;
+}
+
+.drawerOpen {
+  right: 0;
+}
+
+.drawerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.drawerLink {
+  display: block;
+  padding: 18px 28px;
+  color: #f1ccba;
+  text-decoration: none;
+  font-family: 'Edu SA Beginner', cursive;
+  font-size: 22px;
+  border-bottom: 1px solid #ffffff11;
+  transition: background 0.2s;
+}
+
+.drawerLink:hover {
+  background: #23714d44;
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.footer {
+  background-color: #23714d;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer h2 {
+  color: #f1ccba;
+  font-size: 30px;
+  font-family: 'Edu SA Beginner', cursive;
+}
+
+/* ── Responsive breakpoint ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .mobileHeader {
+    display: flex;
+  }
+}

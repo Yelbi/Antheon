@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-green: #23714d;
+  --color-cream: #f1ccba;
+  --color-dark: #1c1c1c;
+  --font-brand: 'Edu SA Beginner', cursive;
+  --font-body: 'Nunito', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+}

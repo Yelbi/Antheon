@@ -1,0 +1,131 @@
+.controles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 20px 8px;
+}
+
+/* Barra de búsqueda */
+.searchWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 44px 12px 44px;
+  border: 2px solid #23714d55;
+  border-radius: 30px;
+  background: #2a2a2a;
+  color: #f1ccba;
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.25s, background 0.25s;
+}
+
+.searchInput::placeholder {
+  color: #f1ccba66;
+}
+
+.searchInput:focus {
+  border-color: #23714d;
+  background: #333;
+}
+
+.clearBtn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #f1ccba99;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.clearBtn:hover {
+  color: #f1ccba;
+}
+
+/* Botones de filtro */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.filtroBtn {
+  padding: 7px 20px;
+  border: 1.5px solid #23714d88;
+  border-radius: 20px;
+  background: transparent;
+  color: #f1ccba;
+  font-family: 'Edu SA Beginner', cursive;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.filtroBtn:hover {
+  background: #23714d44;
+  border-color: #23714d;
+}
+
+.filtroBtn.activo {
+  background: #23714d;
+  border-color: #23714d;
+  color: #fff;
+}
+
+/* Contador */
+.contador {
+  text-align: center;
+  color: #f1ccba88;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  margin: 4px 0 12px;
+}
+
+/* Sin resultados */
+.sinResultados {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 60px 20px;
+  color: #f1ccba88;
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .filtroBtn {
+    font-size: 13px;
+    padding: 6px 14px;
+  }
+
+  .searchInput {
+    font-size: 15px;
+  }
+}
