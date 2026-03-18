@@ -12,8 +12,11 @@ export const metadata: Metadata = {
     "Antheon es una enciclopedia visual de flores: descubre su origen, características y curiosidades.",
   icons: { icon: "/img/Logo mini.png" },
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000")
+    process.env.NEXT_PUBLIC_SITE_URL?.startsWith("http")
+      ? process.env.NEXT_PUBLIC_SITE_URL
+      : process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : "http://localhost:3000"
   ),
   openGraph: {
     type: "website",
