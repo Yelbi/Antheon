@@ -1,11 +1,13 @@
 .flexContainer {
-  position: fixed;
-  top: 100px;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
+  height: calc(100vh - 100px);
   overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .flexContainer {
+    height: calc(100vh - 64px);
+  }
 }
 
 .flexSlide {
@@ -41,7 +43,7 @@
     url(/img/Index/Primavera.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .about {
@@ -49,7 +51,7 @@
     url(/img/Index/Verano.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .work {
@@ -57,7 +59,7 @@
     url(/img/Index/Otoño.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .contact {
@@ -65,5 +67,5 @@
     url(/img/Index/Invierno.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }

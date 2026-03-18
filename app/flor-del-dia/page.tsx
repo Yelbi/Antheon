@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { flores } from "@/data/flores";
 import styles from "@/styles/galeria.module.css";
 
+export const dynamic = "force-dynamic";
+
 export const metadata: Metadata = {
   title: "Flor del Día",
   description: "Descubre la flor del día en Antheon. Cada día una flor diferente.",

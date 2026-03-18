@@ -33,9 +33,9 @@ export const flores: Flor[] = [
       "Las rosas pertenecen al género botánico Rosa y se caracterizan por sus pétalos suaves, delicados y a menudo fragantes. Vienen en una amplia gama de colores, incluyendo rojo, rosa, blanco, amarillo, naranja y más. Las flores de rosa generalmente tienen capullos rodeados por capas de pétalos que se abren gradualmente a medida que la flor florece.",
     poster: "/img/Generales/Galeria/Rosas.jpg",
     relaciones: [
-      "/img/Generales/Galeria/Rosas.jpg",
-      "/img/Generales/Galeria/Rosas.jpg",
-      "/img/Generales/Galeria/Rosas.jpg",
+      "/img/Generales/Rosas/rosas 1.jpg",
+      "/img/Generales/Rosas/rosas 2.jpg",
+      "/img/Generales/Rosas/rosas 3.jpg",
     ],
   },
   {
@@ -46,9 +46,9 @@ export const flores: Flor[] = [
       "Los tulipanes son flores bulbosas notables por su forma única y colores vibrantes. Están relacionados con el género botánico Tulipa y son originarios principalmente de regiones de Europa y Asia. Los tulipanes crecen en tallos erectos y presentan una flor grande con seis pétalos.",
     poster: "/img/Generales/Galeria/Tulipanes.jpg",
     relaciones: [
-      "/img/Generales/Galeria/Tulipanes.jpg",
-      "/img/Generales/Galeria/Tulipanes.jpg",
-      "/img/Generales/Galeria/Tulipanes.jpg",
+      "/img/Generales/Tulipanes/Tulipanes 1.jpg",
+      "/img/Generales/Tulipanes/Tulipanes 2.jpg",
+      "/img/Generales/Tulipanes/Tulipanes 3.jpg",
     ],
   },
   {
@@ -59,9 +59,9 @@ export const flores: Flor[] = [
       "Los claveles, conocidos científicamente como Dianthus caryophyllus, son flores populares y reconocidas por su fragancia y apariencia distintiva. Son originarios de la región mediterránea, pero se cultivan en muchas partes del mundo. Los claveles crecen en tallos erectos y tienen flores con pétalos dentados y bordeados.",
     poster: "/img/Generales/Galeria/Claveles.jpg",
     relaciones: [
-      "/img/Generales/Galeria/Claveles.jpg",
-      "/img/Generales/Galeria/Claveles.jpg",
-      "/img/Generales/Galeria/Claveles.jpg",
+      "/img/Generales/Claveles/clavel 1.jpg",
+      "/img/Generales/Claveles/clavel 2.jpg",
+      "/img/Generales/Claveles/clavel 3.jpg",
     ],
   },
   {
@@ -72,9 +72,9 @@ export const flores: Flor[] = [
       "Los girasoles, científicamente conocidos como Helianthus annuus, son flores grandes y llamativas que se caracterizan por sus pétalos de color amarillo brillante y su centro de semillas distintivo. Estas flores pertenecen a la familia de las asteráceas y son originarias de América del Norte.",
     poster: "/img/Generales/Galeria/Girasoles.jpg",
     relaciones: [
-      "/img/Generales/Galeria/Girasoles.jpg",
-      "/img/Generales/Galeria/Girasoles.jpg",
-      "/img/Generales/Galeria/Girasoles.jpg",
+      "/img/Generales/Girasoles/girasoles 1.jpg",
+      "/img/Generales/Girasoles/girasoles 2.jpg",
+      "/img/Generales/Girasoles/girasoles 3.jpg",
     ],
   },
   {
@@ -85,9 +85,9 @@ export const flores: Flor[] = [
       "Las margaritas, pertenecientes al género botánico Bellis, son flores encantadoras y reconocibles que se caracterizan por sus pétalos blancos y centros amarillos rodeados de pétalos blancos. Son originarias de Europa y Asia, pero se han extendido a muchas partes del mundo debido a su popularidad.",
     poster: "/img/Generales/Galeria/Margaritas.jpg",
     relaciones: [
-      "/img/Generales/Galeria/Margaritas.jpg",
-      "/img/Generales/Galeria/Margaritas.jpg",
-      "/img/Generales/Galeria/Margaritas.jpg",
+      "/img/Generales/Margaritas/Margaritas 1.jpg",
+      "/img/Generales/Margaritas/Margaritas 2.jpg",
+      "/img/Generales/Margaritas/Margaritas 3.jpg",
     ],
   },
   {
@@ -98,9 +98,9 @@ export const flores: Flor[] = [
       "Las camelias, científicamente conocidas como Camellia, son arbustos o pequeños árboles que se destacan por sus hermosas flores y hojas brillantes. Originarias de Asia, especialmente de China y Japón, las camelias se han convertido en plantas populares en jardinería debido a su belleza y versatilidad.",
     poster: "/img/Generales/Galeria/Camelias.jpg",
     relaciones: [
-      "/img/Generales/Galeria/Camelias.jpg",
-      "/img/Generales/Galeria/Camelias.jpg",
-      "/img/Generales/Galeria/Camelias.jpg",
+      "/img/Generales/Camelias/Camelias 1.jpg",
+      "/img/Generales/Camelias/Camelias 2.jpg",
+      "/img/Generales/Camelias/Camelias 3.jpg",
     ],
   },
   {
@@ -111,9 +111,9 @@ export const flores: Flor[] = [
       "Las flores de loto, conocidas científicamente como Nelumbo nucifera, son flores acuáticas magníficas y profundamente simbólicas. Son originarias de partes de Asia y Australia y se encuentran en estanques y lagos de aguas tranquilas. Las flores de loto emergen de la superficie del agua en tallos largos y robustos.",
     poster: "/img/Generales/Galeria/Loto.webp",
     relaciones: [
-      "/img/Generales/Galeria/Loto.webp",
-      "/img/Generales/Galeria/Loto.webp",
-      "/img/Generales/Galeria/Loto.webp",
+      "/img/Generales/Loto/Loto 1.jpg",
+      "/img/Generales/Loto/Loto 2.jpg",
+      "/img/Generales/Loto/Loto 3.jpg",
     ],
   },
   {
