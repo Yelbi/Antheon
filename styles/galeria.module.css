@@ -5,7 +5,7 @@
 
 .backmain h1 {
   text-align: center;
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 60px;
   color: #f1ccba;
   padding: 20px 0;
@@ -31,7 +31,7 @@
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   text-decoration: none;
   display: block;
 }

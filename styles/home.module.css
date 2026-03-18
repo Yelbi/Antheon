@@ -30,7 +30,7 @@
   transform: rotate(90deg);
   top: 15%;
   transition: all 500ms ease;
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
 }
 
 .flexSlide:hover .flexTitle {

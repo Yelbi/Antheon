@@ -33,7 +33,7 @@
 }
 
 .titulo {
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: clamp(40px, 7vw, 80px);
   color: #fff;
   text-align: center;
@@ -46,7 +46,7 @@
   padding: 6px 20px;
   border: 1.5px solid #f1ccba88;
   border-radius: 30px;
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 16px;
   color: #f1ccba;
   backdrop-filter: blur(6px);
@@ -61,7 +61,7 @@
 }
 
 .descripcionTitulo {
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 26px;
   color: #23714d;
   margin-bottom: 16px;
@@ -78,7 +78,7 @@
 
 /* ── Relacionadas ───────────────────────────────────────────── */
 .relacionadasTitulo {
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 26px;
   color: #23714d;
   margin: 40px 0 20px;
@@ -126,7 +126,7 @@
   border-radius: 30px;
   background: transparent;
   color: #f1ccba;
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 17px;
   text-decoration: none;
   transition: background 0.25s, border-color 0.25s;
@@ -165,7 +165,7 @@
   border: 1.5px solid #23714d88;
   border-radius: 30px;
   color: #f1ccba;
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 16px;
   text-decoration: none;
   transition: background 0.25s;

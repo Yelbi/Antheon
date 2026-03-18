@@ -27,7 +27,7 @@
   list-style: none;
   display: inline-block;
   line-height: 100px;
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 20px;
   width: 185px;
   text-align: center;
@@ -126,7 +126,7 @@
   padding: 18px 28px;
   color: #f1ccba;
   text-decoration: none;
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
   font-size: 22px;
   border-bottom: 1px solid #ffffff11;
   transition: background 0.2s;
@@ -148,7 +148,7 @@
 .footer h2 {
   color: #f1ccba;
   font-size: 30px;
-  font-family: 'Edu SA Beginner', cursive;
+  font-family: 'Playfair Display', serif;
 }
 
 /* ── Responsive breakpoint ──────────────────────────────────── */
