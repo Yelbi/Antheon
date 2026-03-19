@@ -1,48 +1,41 @@
-.controles {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  padding: 24px 20px 8px;
-}
-
-/* Barra de búsqueda */
+/* ── Barra de búsqueda ────────────────────────────────────────── */
 .searchWrapper {
   position: relative;
   width: 100%;
-  max-width: 480px;
+  max-width: 360px;
 }
 
 .searchIcon {
   position: absolute;
-  left: 16px;
+  left: 15px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 16px;
   pointer-events: none;
-  opacity: 0.6;
+  color: rgba(241, 204, 186, 0.6);
+  display: flex;
+  align-items: center;
 }
 
 .searchInput {
   width: 100%;
-  padding: 12px 44px 12px 44px;
-  border: 2px solid #23714d55;
+  padding: 11px 42px 11px 42px;
+  border: 1.5px solid rgba(241, 204, 186, 0.3);
   border-radius: 30px;
-  background: #2a2a2a;
+  background: rgba(0, 0, 0, 0.25);
   color: #f1ccba;
   font-family: 'Nunito', sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   outline: none;
   transition: border-color 0.25s, background 0.25s;
 }
 
 .searchInput::placeholder {
-  color: #f1ccba66;
+  color: rgba(241, 204, 186, 0.45);
 }
 
 .searchInput:focus {
-  border-color: #23714d;
-  background: #333;
+  border-color: rgba(241, 204, 186, 0.75);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .clearBtn {
@@ -52,8 +45,8 @@
   transform: translateY(-50%);
   background: none;
   border: none;
-  color: #f1ccba99;
-  font-size: 14px;
+  color: rgba(241, 204, 186, 0.5);
+  font-size: 13px;
   cursor: pointer;
   padding: 4px;
   line-height: 1;
@@ -64,29 +57,31 @@
   color: #f1ccba;
 }
 
-/* Botones de filtro */
+/* ── Filtros de categoría ─────────────────────────────────────── */
 .filtros {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .filtroBtn {
-  padding: 7px 20px;
-  border: 1.5px solid #23714d88;
+  padding: 6px 16px;
+  border: 1px solid rgba(35, 113, 77, 0.4);
   border-radius: 20px;
   background: transparent;
-  color: #f1ccba;
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
+  color: rgba(241, 204, 186, 0.75);
+  font-family: 'Nunito', sans-serif;
+  font-size: 12.5px;
+  letter-spacing: 0.5px;
   cursor: pointer;
-  transition: background 0.25s, border-color 0.25s, color 0.25s;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  white-space: nowrap;
 }
 
 .filtroBtn:hover {
-  background: #23714d44;
-  border-color: #23714d;
+  background: rgba(35, 113, 77, 0.2);
+  border-color: rgba(35, 113, 77, 0.7);
+  color: #f1ccba;
 }
 
 .filtroBtn.activo {
@@ -95,37 +90,53 @@
   color: #fff;
 }
 
-/* Contador */
-.contador {
-  text-align: center;
-  color: #f1ccba88;
-  font-family: 'Nunito', sans-serif;
-  font-size: 14px;
-  margin: 4px 0 12px;
+.filtroBtnPeligrosa {
+  border-color: rgba(180, 30, 30, 0.45);
+  color: rgba(241, 150, 150, 0.8);
 }
 
-/* Sin resultados */
+.filtroBtnPeligrosa:hover {
+  background: rgba(180, 30, 30, 0.2);
+  border-color: rgba(180, 30, 30, 0.7);
+  color: #f87171;
+}
+
+.filtroBtnPeligrosa.activo {
+  background: #b41e1e;
+  border-color: #b41e1e;
+  color: #fff;
+}
+
+/* ── Contador ─────────────────────────────────────────────────── */
+.contador {
+  color: rgba(241, 204, 186, 0.5);
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+/* ── Sin resultados ───────────────────────────────────────────── */
 .sinResultados {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
   padding: 60px 20px;
-  color: #f1ccba88;
+  color: rgba(241, 204, 186, 0.45);
   font-family: 'Nunito', sans-serif;
   font-size: 18px;
   width: 100%;
   text-align: center;
 }
 
-/* ── Responsive ─────────────────────────────────────────────── */
+/* ── Mobile ───────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .filtroBtn {
-    font-size: 13px;
-    padding: 6px 14px;
+  .searchWrapper {
+    max-width: 100%;
   }
 
-  .searchInput {
-    font-size: 15px;
+  .filtroBtn {
+    font-size: 13px;
+    padding: 5px 14px;
   }
 }

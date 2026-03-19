@@ -1,0 +1,263 @@
+/* ── Layout split-screen full viewport ──────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 58fr 42fr;
+  height: calc(100vh - 100px);
+  min-height: 580px;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+
+/* ── Panel izquierdo: slideshow ─────────────────────────────── */
+.slideshow {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.slideActive {
+  opacity: 1;
+}
+
+/* Gradient fade hacia el panel derecho */
+.slideOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent 55%,
+    rgba(13, 13, 13, 0.85) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Indicadores de imagen */
+.slideDots {
+  position: absolute;
+  bottom: 28px;
+  left: 32px;
+  display: flex;
+  gap: 10px;
+  z-index: 2;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.2s, border-color 0.3s;
+}
+
+.dotActive {
+  background: #fff;
+  border-color: #fff;
+  transform: scale(1.25);
+}
+
+/* ── Panel derecho: información ─────────────────────────────── */
+.info {
+  background: #111;
+  display: flex;
+  align-items: center;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Decoración ambiental */
+.info::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  background: radial-gradient(circle, rgba(35, 113, 77, 0.1) 0%, transparent 68%);
+  pointer-events: none;
+}
+
+.info::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(241, 204, 186, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.infoInner {
+  position: relative;
+  z-index: 1;
+  padding: 52px 56px;
+  width: 100%;
+}
+
+/* ── Badge "Flor del Día" ───────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 15px;
+  border: 1px solid rgba(35, 113, 77, 0.45);
+  border-radius: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(241, 204, 186, 0.75);
+  background: rgba(35, 113, 77, 0.12);
+  margin-bottom: 20px;
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #23714d;
+  animation: pulse 2.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.65); }
+}
+
+/* ── Fecha ──────────────────────────────────────────────────── */
+.fecha {
+  font-family: 'Nunito', sans-serif;
+  font-size: 11.5px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(241, 204, 186, 0.38);
+  margin: 0 0 22px;
+}
+
+/* ── Divisor verde ──────────────────────────────────────────── */
+.divider {
+  width: 38px;
+  height: 2px;
+  background: #23714d;
+  border-radius: 2px;
+  margin-bottom: 28px;
+}
+
+/* ── Nombre de la flor ──────────────────────────────────────── */
+.nombre {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.2vw, 3.6rem);
+  font-weight: 700;
+  color: #f1ccba;
+  margin: 0 0 8px;
+  line-height: 1.08;
+}
+
+/* ── Nombre científico ──────────────────────────────────────── */
+.nombreCientifico {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(241, 204, 186, 0.4);
+  margin: 0 0 16px;
+}
+
+/* ── Categoría ──────────────────────────────────────────────── */
+.categoria {
+  display: inline-block;
+  padding: 4px 14px;
+  border: 1px solid rgba(35, 113, 77, 0.45);
+  border-radius: 20px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(241, 204, 186, 0.6);
+  margin-bottom: 26px;
+}
+
+/* ── Descripción ────────────────────────────────────────────── */
+.descripcion {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  line-height: 1.85;
+  color: rgba(241, 204, 186, 0.5);
+  margin-bottom: 36px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Botón CTA ──────────────────────────────────────────────── */
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 30px;
+  border: 1.5px solid rgba(35, 113, 77, 0.7);
+  border-radius: 10px;
+  color: #f1ccba;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  text-decoration: none;
+  background: rgba(35, 113, 77, 0.1);
+  transition: background 0.25s, transform 0.2s, border-color 0.25s;
+}
+
+.ctaBtn:hover {
+  background: rgba(35, 113, 77, 0.28);
+  border-color: #23714d;
+  transform: translateX(5px);
+}
+
+/* ── Mobile ─────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: 52vh 1fr;
+    height: auto;
+    min-height: 0;
+  }
+
+  .slideOverlay {
+    background: linear-gradient(
+      to bottom,
+      transparent 50%,
+      rgba(17, 17, 17, 0.9) 100%
+    );
+  }
+
+  .infoInner {
+    padding: 36px 24px 44px;
+  }
+
+  .nombre {
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .layout {
+    grid-template-rows: 45vh 1fr;
+  }
+
+  .infoInner {
+    padding: 28px 20px 36px;
+  }
+}

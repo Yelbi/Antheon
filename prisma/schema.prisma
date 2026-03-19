@@ -19,3 +19,37 @@ model Articulo {
 
   @@map("articulos")
 }
+
+model Flor {
+  id               Int    @id @default(autoincrement())
+  slug             String @unique
+  nombre           String
+  nombreCientifico String @default("")
+  description      String
+  poster           String
+  categoria        String
+  origen           String @default("")
+  estacion         String @default("")
+  cuidados         String @default("")
+  genero           String @default("")
+  familia          String @default("")
+  simbolismo       String @default("")
+  usos             String @default("")
+  relacion1        String  @default("")
+  relacion2        String  @default("")
+  relacion3        String  @default("")
+  peligrosa        Boolean @default(false)
+
+  @@map("flores")
+}
+
+model FlorDelDia {
+  id       Int    @id @default(autoincrement())
+  florSlug String @default("")
+  img1     String @default("")
+  img2     String @default("")
+  img3     String @default("")
+  img4     String @default("")
+
+  @@map("flor_del_dia")
+}

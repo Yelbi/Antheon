@@ -1,71 +1,122 @@
+/* ── Contenedor principal ───────────────────────────────────── */
 .flexContainer {
   display: flex;
   height: calc(100vh - 100px);
   overflow: hidden;
 }
 
-@media (max-width: 768px) {
-  .flexContainer {
-    height: calc(100vh - 64px);
-  }
-}
-
+/* ── Cada panel estacional ──────────────────────────────────── */
 .flexSlide {
   flex: 1;
   cursor: pointer;
-  transition: all 500ms ease;
+  transition: flex 500ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .flexSlide:hover {
   flex-grow: 3;
 }
 
+/* ── Contenido interior del panel ───────────────────────────── */
+.flexContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ── Título de cada estación ────────────────────────────────── */
 .flexTitle {
   color: #f1f1f1;
-  position: relative;
   font-size: 6vw;
-  margin: auto;
-  margin-top: 200px;
   text-align: center;
   transform: rotate(90deg);
-  top: 15%;
-  transition: all 500ms ease;
+  transition: transform 500ms ease;
   font-family: 'Playfair Display', serif;
+  white-space: nowrap;
+  pointer-events: none;
 }
 
 .flexSlide:hover .flexTitle {
-  transform: rotate(-0.1deg);
-  transition: all 0.5s;
+  transform: rotate(0deg);
 }
 
-.home {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+/* ── Descripción (aparece en hover) ─────────────────────────── */
+.flexDescription {
+  color: #f1f1f1;
+  font-size: 1rem;
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 400ms ease 100ms, transform 400ms ease 100ms;
+  border: 1px solid rgba(241, 241, 241, 0.45);
+  border-radius: 8px;
+  padding: 10px 22px;
+  pointer-events: none;
+}
+
+.flexSlide:hover .flexDescription {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Fondos por estación ─────────────────────────────────────── */
+.primavera {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
     url(/img/Index/Primavera.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
 }
 
-.about {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+.verano {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
     url(/img/Index/Verano.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
 }
 
-.work {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+.otono {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
     url(/img/Index/Otoño.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
 }
 
-.contact {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+.invierno {
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
     url(/img/Index/Invierno.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: scroll;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .flexContainer {
+    flex-direction: column;
+    height: calc(100vh - 64px);
+  }
+
+  .flexTitle {
+    transform: rotate(0deg);
+    font-size: 9vw;
+  }
+
+  .flexSlide:hover .flexTitle {
+    transform: rotate(0deg);
+  }
+
+  .flexDescription {
+    opacity: 1;
+    transform: translateY(0);
+    font-size: 0.85rem;
+    white-space: normal;
+    max-width: 80%;
+    text-align: center;
+  }
 }

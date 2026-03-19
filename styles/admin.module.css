@@ -1,12 +1,567 @@
-/* ── Layout base ────────────────────────────────────────────── */
+/* ── Shell: sidebar + content ────────────────────────────────── */
+.shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  background: #0f0f0f;
+  color: #f1ccba;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* ── Sidebar ─────────────────────────────────────────────────── */
+.sidebar {
+  background: #0a0a0a;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebarHeader {
+  padding: 28px 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebarLogo {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #f1ccba;
+  text-decoration: none;
+  display: block;
+  line-height: 1.1;
+}
+
+.sidebarSubtitle {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(241, 204, 186, 0.35);
+  margin-top: 4px;
+}
+
+.sidebarNav {
+  flex: 1;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebarSection {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(241, 204, 186, 0.25);
+  padding: 12px 8px 6px;
+  margin-top: 4px;
+}
+
+.sidebarLink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: rgba(241, 204, 186, 0.6);
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+}
+
+.sidebarLink:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1ccba;
+}
+
+.sidebarLinkActive {
+  background: rgba(35, 113, 77, 0.2);
+  color: #f1ccba;
+  font-weight: 600;
+}
+
+.sidebarLinkActive .sidebarIcon {
+  color: #23714d;
+}
+
+.sidebarIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.sidebarLinkActive .sidebarIcon {
+  opacity: 1;
+}
+
+.sidebarDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.05);
+  margin: 8px 0;
+}
+
+.sidebarBottom {
+  padding: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebarLogoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: rgba(241, 204, 186, 0.45);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  width: 100%;
+  text-align: left;
+  transition: background 0.18s, color 0.18s;
+}
+
+.sidebarLogoutBtn:hover {
+  background: rgba(127, 29, 29, 0.25);
+  color: #f87171;
+}
+
+/* ── Área de contenido ───────────────────────────────────────── */
+.content {
+  background: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Página interior ─────────────────────────────────────────── */
+.page {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 40px 32px 60px;
+  width: 100%;
+}
+
+.pageHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.pageTitleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pageBack {
+  font-size: 13px;
+  color: rgba(241, 204, 186, 0.4);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.pageBack:hover { color: #f1ccba; }
+
+.pageTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #f1ccba;
+  margin: 0;
+}
+
+.pageSubtitle {
+  font-size: 13px;
+  color: rgba(241, 204, 186, 0.4);
+}
+
+/* ── Stats cards ─────────────────────────────────────────────── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.statCard {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.statCardAccent {
+  border-top: 2px solid #23714d;
+}
+
+.statCardAccentRed {
+  border-top: 2px solid #9b2335;
+}
+
+.statNum {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #f1ccba;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(241, 204, 186, 0.45);
+}
+
+/* ── Botones ─────────────────────────────────────────────────── */
+.btn {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: opacity 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+
+.btn:active { transform: scale(0.97); }
+
+.btnPrimary { background: #23714d; color: #fff; }
+.btnPrimary:hover { background: #1d5f40; opacity: 1; }
+
+.btnDanger  { background: #7f1d1d; color: #fff; }
+.btnDanger:hover { background: #6b1818; opacity: 1; }
+
+.btnGhost   {
+  background: transparent;
+  color: rgba(241, 204, 186, 0.7);
+  border: 1.5px solid rgba(241, 204, 186, 0.15);
+}
+.btnGhost:hover { border-color: rgba(241, 204, 186, 0.35); color: #f1ccba; opacity: 1; }
+
+/* ── Tabla ───────────────────────────────────────────────────── */
+.tableWrapper {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: #151515;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.table th {
+  background: #1a1a1a;
+  color: rgba(241, 204, 186, 0.45);
+  text-align: left;
+  padding: 13px 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.table td {
+  padding: 14px 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  vertical-align: middle;
+}
+
+.table tr:hover td {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.thumb {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nombreCell {
+  font-weight: 600;
+  color: #f1ccba;
+}
+
+.cientificoCell {
+  color: rgba(241, 204, 186, 0.5);
+  font-size: 12px;
+  font-style: italic;
+}
+
+.descCell {
+  color: rgba(241, 204, 186, 0.5);
+  font-size: 13px;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  background: rgba(35, 113, 77, 0.2);
+  color: #5ec99a;
+  border: 1px solid rgba(35, 113, 77, 0.3);
+}
+
+.actionsCell {
+  display: flex;
+  gap: 8px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(241, 204, 186, 0.25);
+  font-size: 16px;
+}
+
+/* ── Formulario ──────────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 820px;
+}
+
+.formCard {
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+}
+
+.formCardTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  color: rgba(241, 204, 186, 0.7);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formRow3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.formRow2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 680px) {
+  .formRow, .formRow2, .formRow3 { grid-template-columns: 1fr; }
+}
+
+.formInner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.label {
+  font-size: 12px;
+  color: rgba(241, 204, 186, 0.55);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.labelHint {
+  font-weight: 400;
+  color: rgba(241, 204, 186, 0.3);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 11px;
+}
+
+.input,
+.textarea,
+.select {
+  background: #1c1c1c;
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #f1ccba;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  padding: 10px 13px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+}
+
+.input:focus,
+.textarea:focus,
+.select:focus {
+  border-color: #23714d;
+  background: #1f1f1f;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: rgba(241, 204, 186, 0.2);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+.select option {
+  background: #1c1c1c;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #e2d9d0;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  accent-color: #23714d;
+  cursor: pointer;
+}
+
+.errorMsg {
+  color: #f87171;
+  font-size: 13px;
+  background: rgba(248, 113, 113, 0.08);
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(248, 113, 113, 0.2);
+}
+
+/* ── Login ───────────────────────────────────────────────────── */
+.loginWrap {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.loginBox {
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 20px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loginLogo {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  color: #f1ccba;
+  text-align: center;
+  margin: 0;
+}
+
+.loginTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: rgba(241, 204, 186, 0.6);
+  text-align: center;
+  margin: -12px 0 0;
+  font-weight: 400;
+}
+
+.loginSub {
+  text-align: center;
+  color: rgba(241, 204, 186, 0.4);
+  font-size: 14px;
+  margin-top: -8px;
+}
+
+/* ── Logout (legacy, kept for compatibility) ─────────────────── */
+.logoutBtn {
+  background: none;
+  border: none;
+  color: rgba(241, 204, 186, 0.6);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Nunito', sans-serif;
+  padding: 0;
+  transition: color 0.2s;
+}
+.logoutBtn:hover { color: #fff; }
+
+/* ── Legacy (mantener compatibilidad) ────────────────────────── */
 .adminLayout {
   min-height: 100vh;
   background: #111;
   color: #f1ccba;
   font-family: 'Nunito', sans-serif;
 }
-
-/* ── Topbar ─────────────────────────────────────────────────── */
 .topbar {
   background: #23714d;
   display: flex;
@@ -18,247 +573,12 @@
   top: 0;
   z-index: 50;
 }
-
-.topbarTitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  color: #f1ccba;
-  text-decoration: none;
-}
-
-.topbarActions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
-
-.topbarLink {
-  color: #f1ccbacc;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s;
-}
-
+.topbarTitle { font-family: 'Playfair Display', serif; font-size: 22px; color: #f1ccba; text-decoration: none; }
+.topbarActions { display: flex; gap: 12px; align-items: center; }
+.topbarLink { color: rgba(241,204,186,0.8); text-decoration: none; font-size: 14px; }
 .topbarLink:hover { color: #fff; }
-
-/* ── Página interior ─────────────────────────────────────────── */
-.page {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 40px 24px;
-}
-
-.pageHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 32px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.pageTitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  color: #f1ccba;
-  margin: 0;
-}
-
-/* ── Botones ─────────────────────────────────────────────────── */
-.btn {
-  padding: 10px 22px;
-  border-radius: 20px;
-  font-family: 'Playfair Display', serif;
-  font-size: 15px;
-  cursor: pointer;
-  border: none;
-  text-decoration: none;
-  display: inline-block;
-  transition: opacity 0.2s, transform 0.15s;
-}
-
-.btn:active { transform: scale(0.97); }
-.btn:hover { opacity: 0.88; }
-
-.btnPrimary { background: #23714d; color: #fff; }
-.btnDanger  { background: #7f1d1d; color: #fff; }
-.btnGhost   { background: transparent; color: #f1ccba; border: 1.5px solid #f1ccba44; }
-
-/* ── Tabla ───────────────────────────────────────────────────── */
-.tableWrapper {
-  overflow-x: auto;
-  border-radius: 12px;
-  border: 1px solid #ffffff0f;
-}
-
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
-}
-
-.table th {
-  background: #1e1e1e;
-  color: #f1ccba88;
-  text-align: left;
-  padding: 12px 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 12px;
-  letter-spacing: 0.05em;
-}
-
-.table td {
-  padding: 14px 16px;
-  border-top: 1px solid #ffffff08;
-  vertical-align: middle;
-}
-
-.table tr:hover td {
-  background: #ffffff05;
-}
-
-.thumb {
-  width: 52px;
-  height: 52px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #ffffff18;
-}
-
-.nombreCell {
-  font-weight: 600;
-  color: #f1ccba;
-  max-width: 180px;
-}
-
-.descCell {
-  color: #f1ccba88;
-  font-size: 13px;
-  max-width: 260px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.actionsCell {
-  display: flex;
-  gap: 8px;
-}
-
-.emptyState {
-  text-align: center;
-  padding: 60px 20px;
-  color: #f1ccba44;
-  font-size: 18px;
-}
-
-/* ── Formulario ──────────────────────────────────────────────── */
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  max-width: 620px;
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.label {
-  font-size: 13px;
-  color: #f1ccba88;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.input,
-.textarea {
-  background: #1e1e1e;
-  border: 1.5px solid #ffffff14;
-  border-radius: 10px;
-  color: #f1ccba;
-  font-family: 'Nunito', sans-serif;
-  font-size: 15px;
-  padding: 11px 14px;
-  outline: none;
-  transition: border-color 0.2s;
-  width: 100%;
-}
-
-.input:focus,
-.textarea:focus {
-  border-color: #23714d;
-}
-
-.textarea {
-  resize: vertical;
-  min-height: 110px;
-}
-
-.formActions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 8px;
-}
-
-.errorMsg {
-  color: #f87171;
-  font-size: 14px;
-  margin-top: -8px;
-}
-
-/* ── Login ───────────────────────────────────────────────────── */
-.loginWrap {
-  min-height: 100vh;
-  background: #111;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-
-.loginBox {
-  background: #1c1c1c;
-  border: 1px solid #ffffff0f;
-  border-radius: 20px;
-  padding: 48px 40px;
-  width: 100%;
-  max-width: 380px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.loginTitle {
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  color: #f1ccba;
-  text-align: center;
-  margin: 0;
-}
-
-.loginSub {
-  text-align: center;
-  color: #f1ccba66;
-  font-size: 14px;
-  margin-top: -12px;
-}
-
-/* ── Logout ──────────────────────────────────────────────────── */
-.logoutBtn {
-  background: none;
-  border: none;
-  color: #f1ccbacc;
-  cursor: pointer;
-  font-size: 14px;
-  font-family: 'Nunito', sans-serif;
-  padding: 0;
-  transition: color 0.2s;
-}
-
-.logoutBtn:hover { color: #fff; }
+.adminNav { display: flex; gap: 4px; padding: 0 32px; background: #181818; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.adminNavLink { padding: 12px 18px; font-family: 'Nunito', sans-serif; font-size: 14px; color: rgba(241,204,186,0.5); text-decoration: none; border-bottom: 2px solid transparent; }
+.adminNavLink:hover { color: #f1ccba; }
+.adminNavLinkActive { color: #f1ccba; border-bottom-color: #23714d; }
+.formSection { display: flex; flex-direction: column; gap: 12px; padding: 16px; border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; background: #181818; }

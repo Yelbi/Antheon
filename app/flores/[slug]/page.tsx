@@ -1,20 +1,18 @@
-import { flores, getFlor } from "@/data/flores";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import styles from "@/styles/detalle.module.css";
 import type { Metadata } from "next";
+import { getFlorBySlugDB, getAllSlugsDB, getFloresDB } from "@/lib/flores-db";
+
+export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  return flores.map((f) => ({ slug: f.slug }));
-}
-
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const flor = getFlor(slug);
+  const flor = await getFlorBySlugDB(slug);
   if (!flor) return { title: "Flor no encontrada" };
   return {
     title: flor.nombre,
@@ -34,13 +32,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function FlorDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const flor = getFlor(slug);
+  const [flor, todas] = await Promise.all([getFlorBySlugDB(slug), getFloresDB()]);
   if (!flor) notFound();
 
-  // Navegación anterior / siguiente
-  const idx = flores.findIndex((f) => f.slug === slug);
-  const anterior = idx > 0 ? flores[idx - 1] : null;
-  const siguiente = idx < flores.length - 1 ? flores[idx + 1] : null;
+  const relacionadas = flor.relaciones
+    .filter(Boolean)
+    .map((s) => todas.find((f) => f.slug === s))
+    .filter((f): f is NonNullable<typeof f> => f !== undefined);
+
+  const idx = todas.findIndex((f) => f.slug === slug);
+  const anterior = idx > 0 ? todas[idx - 1] : null;
+  const siguiente = idx < todas.length - 1 ? todas[idx + 1] : null;
 
   return (
     <div className={styles.page}>
@@ -56,49 +58,120 @@ export default async function FlorDetailPage({ params }: PageProps) {
 
       {/* ── Descripción ── */}
       <div className={styles.contenido}>
+        {/* Ficha rápida */}
+        {(flor.nombreCientifico || flor.genero || flor.familia || flor.origen || flor.estacion) && (
+          <div className={styles.ficha}>
+            {flor.nombreCientifico && (
+              <div className={styles.fichaItem}>
+                <span className={styles.fichaLabel}>Nombre científico</span>
+                <span className={styles.fichaValor}>{flor.nombreCientifico}</span>
+              </div>
+            )}
+            {flor.genero && (
+              <div className={styles.fichaItem}>
+                <span className={styles.fichaLabel}>Género</span>
+                <span className={styles.fichaValor}>{flor.genero}</span>
+              </div>
+            )}
+            {flor.familia && (
+              <div className={styles.fichaItem}>
+                <span className={styles.fichaLabel}>Familia</span>
+                <span className={styles.fichaValor}>{flor.familia}</span>
+              </div>
+            )}
+            {flor.origen && (
+              <div className={styles.fichaItem}>
+                <span className={styles.fichaLabel}>Origen</span>
+                <span className={styles.fichaValor}>{flor.origen}</span>
+              </div>
+            )}
+            {flor.estacion && (
+              <div className={styles.fichaItem}>
+                <span className={styles.fichaLabel}>Floración</span>
+                <span className={styles.fichaValor}>{flor.estacion}</span>
+              </div>
+            )}
+            <div className={styles.fichaItem}>
+              <span className={styles.fichaLabel}>Categoría</span>
+              <span className={styles.fichaValor}>{flor.categoria}</span>
+            </div>
+          </div>
+        )}
+
         <h2 className={styles.descripcionTitulo}>¿Qué es?</h2>
         <p className={styles.descripcion}>{flor.description}</p>
 
-        {/* ── Imágenes relacionadas ── */}
-        <h2 className={styles.relacionadasTitulo}>Relacionadas</h2>
-        <div className={styles.relacionadasGrid}>
-          {flor.relaciones.map((src, i) => (
-            <div key={i} className={styles.relacionadaItem}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt={`${flor.nombre} imagen ${i + 1}`} />
+        {flor.simbolismo && (
+          <>
+            <h2 className={styles.descripcionTitulo}>Simbolismo</h2>
+            <p className={styles.descripcion}>{flor.simbolismo}</p>
+          </>
+        )}
+
+        {flor.usos && (
+          <>
+            <h2 className={styles.descripcionTitulo}>Usos</h2>
+            <p className={styles.descripcion}>{flor.usos}</p>
+          </>
+        )}
+
+        {flor.cuidados && (
+          <>
+            <h2 className={styles.descripcionTitulo}>Cuidados</h2>
+            <p className={styles.descripcion}>{flor.cuidados}</p>
+          </>
+        )}
+
+        {/* ── Flores relacionadas ── */}
+        {relacionadas.length > 0 && (
+          <>
+            <h2 className={styles.relacionadasTitulo}>Flores relacionadas</h2>
+            <div className={styles.relacionadasGrid}>
+              {relacionadas.map((rel) => (
+                <Link key={rel.slug} href={`/flores/${rel.slug}`} className={styles.relacionadaCard}>
+                  <div className={styles.relacionadaImgWrap}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={rel.poster} alt={rel.nombre} />
+                  </div>
+                  <span className={styles.relacionadaNombre}>{rel.nombre}</span>
+                </Link>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        )}
       </div>
 
-      {/* ── Volver a galería ── */}
-      <Link href="/galeria" className={styles.volver}>
-        ← Volver a la Galería
-      </Link>
+      {/* ── Footer de navegación ── */}
+      <div className={styles.florFooter}>
+        {/* Anterior / Siguiente */}
+        <nav className={styles.navegacion}>
+          {anterior ? (
+            <Link href={`/flores/${anterior.slug}`} className={`${styles.navBtn} ${styles.navBtnPrev}`}>
+              <span>
+                <span className={styles.navBtnLabel}>← Anterior</span>
+                <span className={styles.navBtnNombre}>{anterior.nombre}</span>
+              </span>
+            </Link>
+          ) : (
+            <div />
+          )}
+          {siguiente ? (
+            <Link href={`/flores/${siguiente.slug}`} className={`${styles.navBtn} ${styles.navBtnNext}`}>
+              <span>
+                <span className={styles.navBtnLabel}>Siguiente →</span>
+                <span className={styles.navBtnNombre}>{siguiente.nombre}</span>
+              </span>
+            </Link>
+          ) : (
+            <div />
+          )}
+        </nav>
 
-      {/* ── Anterior / Siguiente ── */}
-      <nav className={styles.navegacion}>
-        {anterior ? (
-          <Link href={`/flores/${anterior.slug}`} className={`${styles.navBtn} ${styles.navBtnPrev}`}>
-            <span>
-              <span className={styles.navBtnLabel}>← Anterior</span>
-              <span className={styles.navBtnNombre}>{anterior.nombre}</span>
-            </span>
-          </Link>
-        ) : (
-          <div />
-        )}
-        {siguiente ? (
-          <Link href={`/flores/${siguiente.slug}`} className={`${styles.navBtn} ${styles.navBtnNext}`}>
-            <span>
-              <span className={styles.navBtnLabel}>Siguiente →</span>
-              <span className={styles.navBtnNombre}>{siguiente.nombre}</span>
-            </span>
-          </Link>
-        ) : (
-          <div />
-        )}
-      </nav>
+        {/* Volver a galería */}
+        <Link href="/galeria" className={styles.volver}>
+          ← Volver a la Galería
+        </Link>
+      </div>
     </div>
   );
 }

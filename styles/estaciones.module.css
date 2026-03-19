@@ -1,0 +1,113 @@
+/* ── Hero de pantalla completa ───────────────────────────────── */
+.hero {
+  height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* ── Fondos por estación ─────────────────────────────────────── */
+.primavera {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url(/img/Index/Primavera.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.verano {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url(/img/Index/Verano.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.otono {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url(/img/Index/Otoño.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.invierno {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url(/img/Index/Invierno.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* ── Contenido central ───────────────────────────────────────── */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 40px 48px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(241, 204, 186, 0.3);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  max-width: 520px;
+  width: 90%;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  color: #f1ccba;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+.subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  color: #f1f1f1;
+  margin: 0;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.badge {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.8rem;
+  color: #f1ccba;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: 1px solid rgba(241, 204, 186, 0.5);
+  border-radius: 20px;
+  padding: 6px 18px;
+  opacity: 0.85;
+}
+
+.backLink {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #f1ccba;
+  text-decoration: none;
+  margin-top: 8px;
+  padding: 10px 28px;
+  border: 1px solid #f1ccba;
+  border-radius: 8px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.backLink:hover {
+  background: #f1ccba;
+  color: #1c1c1c;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero {
+    height: calc(100vh - 64px);
+  }
+
+  .content {
+    padding: 32px 28px;
+  }
+}

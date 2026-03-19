@@ -18,10 +18,20 @@ export const CATEGORIAS: Categoria[] = [
 export interface Flor {
   slug: string;
   nombre: string;
+  nombreCientifico?: string;
   description: string;
   poster: string;
+  /** Slugs de 3 flores relacionadas (misma familia o categoría) */
   relaciones: [string, string, string];
   categoria: Categoria;
+  origen?: string;
+  estacion?: string;
+  cuidados?: string;
+  genero?: string;
+  familia?: string;
+  simbolismo?: string;
+  usos?: string;
+  peligrosa?: boolean;
 }
 
 export const flores: Flor[] = [
@@ -32,11 +42,8 @@ export const flores: Flor[] = [
     description:
       "Las rosas pertenecen al género botánico Rosa y se caracterizan por sus pétalos suaves, delicados y a menudo fragantes. Vienen en una amplia gama de colores, incluyendo rojo, rosa, blanco, amarillo, naranja y más. Las flores de rosa generalmente tienen capullos rodeados por capas de pétalos que se abren gradualmente a medida que la flor florece.",
     poster: "/img/Generales/Galeria/Rosas.jpg",
-    relaciones: [
-      "/img/Generales/Rosas/rosas 1.jpg",
-      "/img/Generales/Rosas/rosas 2.jpg",
-      "/img/Generales/Rosas/rosas 3.jpg",
-    ],
+    // Arbustos: camelias, hortensia, flor-de-pascua
+    relaciones: ["camelias", "hortensia", "flor-de-pascua"],
   },
   {
     slug: "tulipanes",
@@ -45,11 +52,8 @@ export const flores: Flor[] = [
     description:
       "Los tulipanes son flores bulbosas notables por su forma única y colores vibrantes. Están relacionados con el género botánico Tulipa y son originarios principalmente de regiones de Europa y Asia. Los tulipanes crecen en tallos erectos y presentan una flor grande con seis pétalos.",
     poster: "/img/Generales/Galeria/Tulipanes.jpg",
-    relaciones: [
-      "/img/Generales/Tulipanes/Tulipanes 1.jpg",
-      "/img/Generales/Tulipanes/Tulipanes 2.jpg",
-      "/img/Generales/Tulipanes/Tulipanes 3.jpg",
-    ],
+    // Bulbosas: narcisos, jacintos, lirios
+    relaciones: ["narcisos", "jacintos", "lirios"],
   },
   {
     slug: "claveles",
@@ -58,11 +62,8 @@ export const flores: Flor[] = [
     description:
       "Los claveles, conocidos científicamente como Dianthus caryophyllus, son flores populares y reconocidas por su fragancia y apariencia distintiva. Son originarios de la región mediterránea, pero se cultivan en muchas partes del mundo. Los claveles crecen en tallos erectos y tienen flores con pétalos dentados y bordeados.",
     poster: "/img/Generales/Galeria/Claveles.jpg",
-    relaciones: [
-      "/img/Generales/Claveles/clavel 1.jpg",
-      "/img/Generales/Claveles/clavel 2.jpg",
-      "/img/Generales/Claveles/clavel 3.jpg",
-    ],
+    // Perennes: peonias, margaritas, crisantemos
+    relaciones: ["peonias", "margaritas", "crisantemos"],
   },
   {
     slug: "girasoles",
@@ -71,11 +72,8 @@ export const flores: Flor[] = [
     description:
       "Los girasoles, científicamente conocidos como Helianthus annuus, son flores grandes y llamativas que se caracterizan por sus pétalos de color amarillo brillante y su centro de semillas distintivo. Estas flores pertenecen a la familia de las asteráceas y son originarias de América del Norte.",
     poster: "/img/Generales/Galeria/Girasoles.jpg",
-    relaciones: [
-      "/img/Generales/Girasoles/girasoles 1.jpg",
-      "/img/Generales/Girasoles/girasoles 2.jpg",
-      "/img/Generales/Girasoles/girasoles 3.jpg",
-    ],
+    // Anuales, familia Asteraceae: calendulas, amapolas, dalia
+    relaciones: ["calendulas", "amapolas", "dalia"],
   },
   {
     slug: "margaritas",
@@ -84,11 +82,8 @@ export const flores: Flor[] = [
     description:
       "Las margaritas, pertenecientes al género botánico Bellis, son flores encantadoras y reconocibles que se caracterizan por sus pétalos blancos y centros amarillos rodeados de pétalos blancos. Son originarias de Europa y Asia, pero se han extendido a muchas partes del mundo debido a su popularidad.",
     poster: "/img/Generales/Galeria/Margaritas.jpg",
-    relaciones: [
-      "/img/Generales/Margaritas/Margaritas 1.jpg",
-      "/img/Generales/Margaritas/Margaritas 2.jpg",
-      "/img/Generales/Margaritas/Margaritas 3.jpg",
-    ],
+    // Perennes, familia Asteraceae: crisantemos, dalia, peonias
+    relaciones: ["crisantemos", "dalia", "peonias"],
   },
   {
     slug: "camelias",
@@ -97,11 +92,8 @@ export const flores: Flor[] = [
     description:
       "Las camelias, científicamente conocidas como Camellia, son arbustos o pequeños árboles que se destacan por sus hermosas flores y hojas brillantes. Originarias de Asia, especialmente de China y Japón, las camelias se han convertido en plantas populares en jardinería debido a su belleza y versatilidad.",
     poster: "/img/Generales/Galeria/Camelias.jpg",
-    relaciones: [
-      "/img/Generales/Camelias/Camelias 1.jpg",
-      "/img/Generales/Camelias/Camelias 2.jpg",
-      "/img/Generales/Camelias/Camelias 3.jpg",
-    ],
+    // Arbustos: rosas, hortensia, flor-de-pascua
+    relaciones: ["rosas", "hortensia", "flor-de-pascua"],
   },
   {
     slug: "loto",
@@ -110,11 +102,8 @@ export const flores: Flor[] = [
     description:
       "Las flores de loto, conocidas científicamente como Nelumbo nucifera, son flores acuáticas magníficas y profundamente simbólicas. Son originarias de partes de Asia y Australia y se encuentran en estanques y lagos de aguas tranquilas. Las flores de loto emergen de la superficie del agua en tallos largos y robustos.",
     poster: "/img/Generales/Galeria/Loto.webp",
-    relaciones: [
-      "/img/Generales/Loto/Loto 1.jpg",
-      "/img/Generales/Loto/Loto 2.jpg",
-      "/img/Generales/Loto/Loto 3.jpg",
-    ],
+    // Similares exóticas/acuáticas: orquideas, peonias, lirios
+    relaciones: ["orquideas", "peonias", "lirios"],
   },
   {
     slug: "peonias",
@@ -123,11 +112,8 @@ export const flores: Flor[] = [
     description:
       "Las peonías, científicamente conocidas como Paeonia, son flores exquisitas y muy valoradas por su belleza y diversidad. Son originarias de Asia y Europa y se han convertido en flores populares en jardinería y arreglos florales.",
     poster: "/img/Generales/Galeria/Peonias.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Peonias.jpg",
-      "/img/Generales/Galeria/Peonias.jpg",
-      "/img/Generales/Galeria/Peonias.jpg",
-    ],
+    // Perennes: margaritas, crisantemos, dalia
+    relaciones: ["margaritas", "crisantemos", "dalia"],
   },
   {
     slug: "violetas",
@@ -136,11 +122,8 @@ export const flores: Flor[] = [
     description:
       "Las violetas, pertenecientes al género botánico Viola, son flores pequeñas y encantadoras conocidas por sus formas delicadas y variados colores. Hay muchas especies y variedades de violetas que se encuentran en diferentes partes del mundo.",
     poster: "/img/Generales/Galeria/Violetas.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Violetas.jpg",
-      "/img/Generales/Galeria/Violetas.jpg",
-      "/img/Generales/Galeria/Violetas.jpg",
-    ],
+    // Perennes, género Viola: pensamiento (Viola tricolor), claveles, margaritas
+    relaciones: ["pensamiento", "claveles", "margaritas"],
   },
   {
     slug: "lirios",
@@ -149,24 +132,18 @@ export const flores: Flor[] = [
     description:
       "Los lirios, científicamente conocidos como Lilium, son flores elegantes y majestuosas que se caracterizan por sus grandes y llamativas flores con pétalos en forma de trompeta. Hay muchas especies y variedades de lirios que se encuentran en todo el mundo. Los lirios tienen tallos altos y erectos que pueden variar en altura según la especie.",
     poster: "/img/Generales/Galeria/Lirios.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Lirios.jpg",
-      "/img/Generales/Galeria/Lirios.jpg",
-      "/img/Generales/Galeria/Lirios.jpg",
-    ],
+    // Bulbosas: tulipanes, narcisos, jacintos
+    relaciones: ["tulipanes", "narcisos", "jacintos"],
   },
   {
     slug: "calendulas",
-    nombre: "Calendulas",
+    nombre: "Caléndulas",
     categoria: "Anuales",
     description:
       "Las caléndulas, también conocidas como \"caléndulas oficinales\" o \"caléndulas comunes\", son flores coloridas y llamativas que pertenecen al género botánico Calendula. Son originarias de regiones del sur de Europa y el Mediterráneo, pero se cultivan en muchas partes del mundo por su belleza y propiedades medicinales.",
     poster: "/img/Generales/Galeria/Calendulas.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Calendulas.jpg",
-      "/img/Generales/Galeria/Calendulas.jpg",
-      "/img/Generales/Galeria/Calendulas.jpg",
-    ],
+    // Anuales, familia Asteraceae: girasoles, amapolas, pensamiento
+    relaciones: ["girasoles", "amapolas", "pensamiento"],
   },
   {
     slug: "crisantemos",
@@ -175,11 +152,8 @@ export const flores: Flor[] = [
     description:
       "Los crisantemos, científicamente conocidos como Chrysanthemum, son flores ornamentales populares que se destacan por su amplia variedad de colores, formas y tamaños. Originarios de Asia y Europa, los crisantemos se han convertido en flores muy apreciadas en todo el mundo.",
     poster: "/img/Generales/Galeria/Crisantemos.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Crisantemos.jpg",
-      "/img/Generales/Galeria/Crisantemos.jpg",
-      "/img/Generales/Galeria/Crisantemos.jpg",
-    ],
+    // Perennes, familia Asteraceae: margaritas, dalia, peonias
+    relaciones: ["margaritas", "dalia", "peonias"],
   },
   {
     slug: "gladiolos",
@@ -188,11 +162,8 @@ export const flores: Flor[] = [
     description:
       "Los gladiolos, conocidos científicamente como Gladiolus, son flores altas y esbeltas que se caracterizan por sus espigas verticales de flores llamativas. Originarios de África, Asia y el Mediterráneo, los gladiolos son populares tanto en jardinería como en la industria de las flores cortadas.",
     poster: "/img/Generales/Galeria/Gladiolos.webp",
-    relaciones: [
-      "/img/Generales/Galeria/Gladiolos.webp",
-      "/img/Generales/Galeria/Gladiolos.webp",
-      "/img/Generales/Galeria/Gladiolos.webp",
-    ],
+    // Bulbosas: narcisos, lycoris, tulipanes
+    relaciones: ["narcisos", "lycoris", "tulipanes"],
   },
   {
     slug: "narcisos",
@@ -201,11 +172,8 @@ export const flores: Flor[] = [
     description:
       "Los narcisos, también conocidos como jonquillas o narcisos amarillos, son flores bulbosas pertenecientes al género Narcissus. Originarios de Europa y África del Norte, los narcisos son apreciados por sus flores hermosas y fragantes que anuncian la llegada de la primavera.",
     poster: "/img/Generales/Galeria/Narcisos.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Narcisos.jpg",
-      "/img/Generales/Galeria/Narcisos.jpg",
-      "/img/Generales/Galeria/Narcisos.jpg",
-    ],
+    // Bulbosas: tulipanes, jacintos, gladiolos
+    relaciones: ["tulipanes", "jacintos", "gladiolos"],
   },
   {
     slug: "flor-de-pascua",
@@ -214,11 +182,8 @@ export const flores: Flor[] = [
     description:
       "Las flores de Pascua, conocidas también como poinsettias, son plantas populares durante la temporada navideña debido a sus llamativas hojas de colores brillantes. Las flores de Pascua son nativas de México y América Central y se han convertido en símbolos emblemáticos de la Navidad en muchas partes del mundo.",
     poster: "/img/Generales/Galeria/Flor de Pascua.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Flor de Pascua.jpg",
-      "/img/Generales/Galeria/Flor de Pascua.jpg",
-      "/img/Generales/Galeria/Flor de Pascua.jpg",
-    ],
+    // Arbustos: camelias, rosas, hortensia
+    relaciones: ["camelias", "rosas", "hortensia"],
   },
   {
     slug: "begonias",
@@ -227,11 +192,8 @@ export const flores: Flor[] = [
     description:
       "Las begonias, pertenecientes al género botánico Begonia, son plantas ornamentales populares apreciadas por sus hojas coloridas y sus atractivas flores. Hay una gran variedad de especies y cultivares de begonias, lo que resulta en una amplia gama de formas, tamaños y colores.",
     poster: "/img/Generales/Galeria/Begonias.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Begonias.jpg",
-      "/img/Generales/Galeria/Begonias.jpg",
-      "/img/Generales/Galeria/Begonias.jpg",
-    ],
+    // Anuales: pensamiento, petunia, amapolas
+    relaciones: ["pensamiento", "petunia", "amapolas"],
   },
   {
     slug: "amapolas",
@@ -240,11 +202,8 @@ export const flores: Flor[] = [
     description:
       "Las amapolas son flores icónicas conocidas por sus brillantes y vibrantes pétalos rojos que contrastan con su centro oscuro. Pertenecientes al género Papaver, las amapolas se encuentran en diversas especies y variedades en todo el mundo.",
     poster: "/img/Generales/Galeria/Amapolas.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Amapolas.jpg",
-      "/img/Generales/Galeria/Amapolas.jpg",
-      "/img/Generales/Galeria/Amapolas.jpg",
-    ],
+    // Anuales: calendulas, girasoles, begonias
+    relaciones: ["calendulas", "girasoles", "begonias"],
   },
   {
     slug: "lycoris",
@@ -253,11 +212,8 @@ export const flores: Flor[] = [
     description:
       "Las Lycoris, también conocidas como \"lirios de otoño\" o \"lirios mágicos\", son un género de plantas bulbosas que se caracterizan por sus llamativas flores en forma de trompeta y su hábito de florecer después de que las hojas han caído. Las Lycoris son nativas de Asia y se cultivan en muchas partes del mundo por su belleza única.",
     poster: "/img/Generales/Galeria/Lycoris.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Lycoris.jpg",
-      "/img/Generales/Galeria/Lycoris.jpg",
-      "/img/Generales/Galeria/Lycoris.jpg",
-    ],
+    // Bulbosas: narcisos, jacintos, gladiolos
+    relaciones: ["narcisos", "jacintos", "gladiolos"],
   },
   {
     slug: "orquideas",
@@ -266,11 +222,8 @@ export const flores: Flor[] = [
     description:
       "Las orquídeas son una familia diversa de plantas florales que se caracterizan por su sorprendente belleza y variedad de formas, colores y tamaños. Con más de 25,000 especies conocidas, las orquídeas son algunas de las flores más exquisitas y apreciadas en todo el mundo.",
     poster: "/img/Generales/Galeria/Orquideas.webp",
-    relaciones: [
-      "/img/Generales/Galeria/Orquideas.webp",
-      "/img/Generales/Galeria/Orquideas.webp",
-      "/img/Generales/Galeria/Orquideas.webp",
-    ],
+    // Epífitas/exóticas: loto, camelias, lirios
+    relaciones: ["loto", "camelias", "lirios"],
   },
   {
     slug: "jacintos",
@@ -279,11 +232,8 @@ export const flores: Flor[] = [
     description:
       "Los jacintos, científicamente conocidos como Hyacinthus, son flores bulbosas que se caracterizan por sus llamativas flores en forma de racimo y su fragancia dulce y distintiva. Originarios del Mediterráneo y Asia Occidental, los jacintos son apreciados por su belleza y aroma.",
     poster: "/img/Generales/Galeria/Jacintos.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Jacintos.jpg",
-      "/img/Generales/Galeria/Jacintos.jpg",
-      "/img/Generales/Galeria/Jacintos.jpg",
-    ],
+    // Bulbosas: tulipanes, narcisos, lirios
+    relaciones: ["tulipanes", "narcisos", "lirios"],
   },
   {
     slug: "hortensia",
@@ -292,11 +242,8 @@ export const flores: Flor[] = [
     description:
       "Las hortensias, científicamente conocidas como Hydrangea, son arbustos florales que se caracterizan por sus grandes cabezas de flores pomposas y su capacidad para cambiar de color según el pH del suelo. Originarias de Asia y América, las hortensias son apreciadas por su belleza y versatilidad.",
     poster: "/img/Generales/Galeria/Hortensia.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Hortensia.jpg",
-      "/img/Generales/Galeria/Hortensia.jpg",
-      "/img/Generales/Galeria/Hortensia.jpg",
-    ],
+    // Arbustos: camelias, rosas, flor-de-pascua
+    relaciones: ["camelias", "rosas", "flor-de-pascua"],
   },
   {
     slug: "pensamiento",
@@ -305,11 +252,8 @@ export const flores: Flor[] = [
     description:
       "Los pensamientos, científicamente conocidos como Viola tricolor, son flores anuales o bienales que se caracterizan por sus pequeñas y delicadas flores de colores vibrantes. Originarios de Europa, los pensamientos son populares en jardinería y se cultivan en todo el mundo.",
     poster: "/img/Generales/Galeria/Pensamiento.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Pensamiento.jpg",
-      "/img/Generales/Galeria/Pensamiento.jpg",
-      "/img/Generales/Galeria/Pensamiento.jpg",
-    ],
+    // Anuales, género Viola: violetas, begonias, petunia
+    relaciones: ["violetas", "begonias", "petunia"],
   },
   {
     slug: "dalia",
@@ -318,11 +262,8 @@ export const flores: Flor[] = [
     description:
       "Las dalias, científicamente conocidas como Dahlia, son flores pertenecientes a la familia Asteraceae. Estas plantas herbáceas perennes se caracterizan por sus flores grandes y variadas, con una amplia gama de formas, tamaños y colores.",
     poster: "/img/Generales/Galeria/Dalia.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Dalia.jpg",
-      "/img/Generales/Galeria/Dalia.jpg",
-      "/img/Generales/Galeria/Dalia.jpg",
-    ],
+    // Perennes, familia Asteraceae: crisantemos, margaritas, girasoles
+    relaciones: ["crisantemos", "margaritas", "girasoles"],
   },
   {
     slug: "petunia",
@@ -331,14 +272,21 @@ export const flores: Flor[] = [
     description:
       "Las petunias, científicamente conocidas como Petunia, son flores anuales o perennes que pertenecen a la familia Solanaceae. Estas plantas herbáceas son populares en jardinería y paisajismo debido a su fácil cultivo y a la abundancia de flores vistosas.",
     poster: "/img/Generales/Galeria/Petunia.jpg",
-    relaciones: [
-      "/img/Generales/Galeria/Petunia.jpg",
-      "/img/Generales/Galeria/Petunia.jpg",
-      "/img/Generales/Galeria/Petunia.jpg",
-    ],
+    // Anuales: pensamiento, begonias, amapolas
+    relaciones: ["pensamiento", "begonias", "amapolas"],
   },
 ];
 
 export function getFlor(slug: string): Flor | undefined {
   return flores.find((f) => f.slug === slug);
+}
+
+/** Devuelve las flores relacionadas resueltas a partir de sus slugs */
+export function getRelacionadas(
+  slugs: [string, string, string]
+): { slug: string; nombre: string; poster: string }[] {
+  return slugs
+    .map((s) => flores.find((f) => f.slug === s))
+    .filter((f): f is Flor => f !== undefined)
+    .map((f) => ({ slug: f.slug, nombre: f.nombre, poster: f.poster }));
 }
