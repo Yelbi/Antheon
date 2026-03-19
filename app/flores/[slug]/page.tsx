@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "@/styles/detalle.module.css";
 import type { Metadata } from "next";
-import { getFlorBySlugDB, getAllSlugsDB, getFloresDB } from "@/lib/flores-db";
+import { getFlorBySlugDB, getFloresDB } from "@/lib/flores-db";
 
 export const dynamic = "force-dynamic";
 
@@ -35,11 +36,6 @@ export default async function FlorDetailPage({ params }: PageProps) {
   const [flor, todas] = await Promise.all([getFlorBySlugDB(slug), getFloresDB()]);
   if (!flor) notFound();
 
-  const relacionadas = flor.relaciones
-    .filter(Boolean)
-    .map((s) => todas.find((f) => f.slug === s))
-    .filter((f): f is NonNullable<typeof f> => f !== undefined);
-
   const idx = todas.findIndex((f) => f.slug === slug);
   const anterior = idx > 0 ? todas[idx - 1] : null;
   const siguiente = idx < todas.length - 1 ? todas[idx + 1] : null;
@@ -48,8 +44,15 @@ export default async function FlorDetailPage({ params }: PageProps) {
     <div className={styles.page}>
       {/* ── Hero con imagen ── */}
       <section className={styles.hero}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img className={styles.heroImg} src={flor.poster} alt={flor.nombre} />
+        <Image
+          className={styles.heroImg}
+          src={flor.poster}
+          alt={flor.nombre}
+          fill
+          priority
+          sizes="100vw"
+          quality={90}
+        />
         <div className={styles.heroOverlay}>
           <h1 className={styles.titulo}>{flor.nombre}</h1>
           <span className={styles.categoriaBadge}>{flor.categoria}</span>
@@ -122,23 +125,6 @@ export default async function FlorDetailPage({ params }: PageProps) {
           </>
         )}
 
-        {/* ── Flores relacionadas ── */}
-        {relacionadas.length > 0 && (
-          <>
-            <h2 className={styles.relacionadasTitulo}>Flores relacionadas</h2>
-            <div className={styles.relacionadasGrid}>
-              {relacionadas.map((rel) => (
-                <Link key={rel.slug} href={`/flores/${rel.slug}`} className={styles.relacionadaCard}>
-                  <div className={styles.relacionadaImgWrap}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={rel.poster} alt={rel.nombre} />
-                  </div>
-                  <span className={styles.relacionadaNombre}>{rel.nombre}</span>
-                </Link>
-              ))}
-            </div>
-          </>
-        )}
       </div>
 
       {/* ── Footer de navegación ── */}

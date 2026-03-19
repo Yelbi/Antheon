@@ -85,8 +85,6 @@
   position: absolute;
   top: -80px;
   right: -80px;
-  width: 360px;
-  height: 360px;
   background: radial-gradient(circle, rgba(35, 113, 77, 0.1) 0%, transparent 68%);
   pointer-events: none;
 }
@@ -96,8 +94,6 @@
   position: absolute;
   bottom: -60px;
   left: -60px;
-  width: 240px;
-  height: 240px;
   background: radial-gradient(circle, rgba(241, 204, 186, 0.04) 0%, transparent 70%);
   pointer-events: none;
 }

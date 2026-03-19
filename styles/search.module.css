@@ -107,6 +107,24 @@
   color: #fff;
 }
 
+/* ── Filtros de región geográfica ─────────────────────────────── */
+.filtroBtnZona {
+  border-color: rgba(70, 130, 180, 0.4);
+  color: rgba(180, 215, 241, 0.75);
+}
+
+.filtroBtnZona:hover {
+  background: rgba(70, 130, 180, 0.18);
+  border-color: rgba(70, 130, 180, 0.7);
+  color: #b4d7f1;
+}
+
+.activoZona {
+  background: #2a6496;
+  border-color: #2a6496;
+  color: #fff;
+}
+
 /* ── Contador ─────────────────────────────────────────────────── */
 .contador {
   color: rgba(241, 204, 186, 0.5);

@@ -1,9 +1,9 @@
 import { MetadataRoute } from "next";
-import { flores } from "@/data/flores";
+import { getAllSlugsDB } from "@/lib/flores-db";
 
 const BASE_URL = process.env.NEXTAUTH_URL ?? "http://localhost:3000";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: BASE_URL, priority: 1, changeFrequency: "monthly" },
     { url: `${BASE_URL}/galeria`, priority: 0.9, changeFrequency: "weekly" },
@@ -11,8 +11,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE_URL}/flores-peligrosas`, priority: 0.8, changeFrequency: "weekly" },
   ];
 
-  const florRoutes: MetadataRoute.Sitemap = flores.map((f) => ({
-    url: `${BASE_URL}/flores/${f.slug}`,
+  const slugs = await getAllSlugsDB();
+  const florRoutes: MetadataRoute.Sitemap = slugs.map((slug) => ({
+    url: `${BASE_URL}/flores/${slug}`,
     priority: 0.7,
     changeFrequency: "monthly" as const,
   }));

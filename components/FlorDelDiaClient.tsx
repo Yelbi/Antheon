@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/flor-del-dia.module.css";
 
@@ -34,12 +35,14 @@ export default function FlorDelDiaClient({ imagenes, flor, fecha }: Props) {
       {/* ── Panel izquierdo: slideshow ── */}
       <div className={styles.slideshow}>
         {imagenes.map((src, i) => (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
+          <Image
             key={i}
+            fill
+            unoptimized
             src={src}
             alt={`${flor.nombre} — imagen ${i + 1}`}
             className={`${styles.slide} ${i === current ? styles.slideActive : ""}`}
+            style={{ objectFit: "cover", objectPosition: "center" }}
           />
         ))}
         <div className={styles.slideOverlay} />

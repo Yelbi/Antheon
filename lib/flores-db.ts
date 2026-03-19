@@ -1,4 +1,5 @@
 import { prisma } from "@/lib/db";
+import { origenToZona } from "@/data/flores";
 import type { Flor, Categoria } from "@/data/flores";
 
 type FlorRow = {
@@ -30,6 +31,7 @@ function rowToFlor(f: FlorRow): Flor {
     description: f.description,
     poster: f.poster,
     categoria: f.categoria as Categoria,
+    zona: origenToZona(f.origen),
     origen: f.origen || undefined,
     estacion: f.estacion || undefined,
     cuidados: f.cuidados || undefined,

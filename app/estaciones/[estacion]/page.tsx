@@ -5,11 +5,11 @@ import styles from "@/styles/estaciones.module.css";
 
 type Estacion = "primavera" | "verano" | "otono" | "invierno";
 
-const seasonData: Record<Estacion, { label: string; className: string }> = {
-  primavera: { label: "Primavera", className: styles.primavera },
-  verano:    { label: "Verano",    className: styles.verano },
-  otono:     { label: "Otoño",     className: styles.otono },
-  invierno:  { label: "Invierno",  className: styles.invierno },
+const seasonData: Record<Estacion, { label: string; className: string; description: string }> = {
+  primavera: { label: "Primavera", className: styles.primavera, description: "Descubre las flores que florecen en primavera en Antheon." },
+  verano:    { label: "Verano",    className: styles.verano,    description: "Descubre las flores que florecen en verano en Antheon." },
+  otono:     { label: "Otoño",     className: styles.otono,     description: "Descubre las flores que florecen en otoño en Antheon." },
+  invierno:  { label: "Invierno",  className: styles.invierno,  description: "Descubre las flores que florecen en invierno en Antheon." },
 };
 
 export async function generateStaticParams() {
@@ -24,7 +24,14 @@ export async function generateMetadata({
   const { estacion } = await params;
   const data = seasonData[estacion as Estacion];
   if (!data) return {};
-  return { title: `Flores de ${data.label}` };
+  return {
+    title: `Flores de ${data.label}`,
+    description: data.description,
+    openGraph: {
+      title: `Flores de ${data.label} — Antheon`,
+      description: data.description,
+    },
+  };
 }
 
 export default async function EstacionPage({

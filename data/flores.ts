@@ -15,6 +15,23 @@ export const CATEGORIAS: Categoria[] = [
   "Epífitas",
 ];
 
+export type Zona = "Europa" | "Asia" | "América" | "África" | "Mediterráneo";
+
+export const ZONAS: Zona[] = ["Europa", "Asia", "América", "África", "Mediterráneo"];
+
+/** Deriva la zona geográfica a partir del texto libre del campo origen */
+export function origenToZona(origen?: string): Zona | undefined {
+  if (!origen) return undefined;
+  const o = origen.toLowerCase();
+  if (o.includes("mediterr")) return "Mediterráneo";
+  if (o.includes("sudáfrica") || o.includes("sudafrica")) return "África";
+  if (o.includes("africa") && !o.includes("norte")) return "África";
+  if (o.includes("asia") || o.includes("china") || o.includes("japón") || o.includes("anatolia") || o.includes("india")) return "Asia";
+  if (o.includes("améric") || o.includes("mexico") || o.includes("méxico")) return "América";
+  if (o.includes("europ") || o.includes("países bajos")) return "Europa";
+  return undefined;
+}
+
 export interface Flor {
   slug: string;
   nombre: string;
@@ -24,6 +41,7 @@ export interface Flor {
   /** Slugs de 3 flores relacionadas (misma familia o categoría) */
   relaciones: [string, string, string];
   categoria: Categoria;
+  zona?: Zona;
   origen?: string;
   estacion?: string;
   cuidados?: string;
@@ -101,7 +119,7 @@ export const flores: Flor[] = [
     categoria: "Acuáticas",
     description:
       "Las flores de loto, conocidas científicamente como Nelumbo nucifera, son flores acuáticas magníficas y profundamente simbólicas. Son originarias de partes de Asia y Australia y se encuentran en estanques y lagos de aguas tranquilas. Las flores de loto emergen de la superficie del agua en tallos largos y robustos.",
-    poster: "/img/Generales/Galeria/Loto.webp",
+    poster: "/img/Generales/Galeria/Flor de loto.webp",
     // Similares exóticas/acuáticas: orquideas, peonias, lirios
     relaciones: ["orquideas", "peonias", "lirios"],
   },
@@ -188,7 +206,7 @@ export const flores: Flor[] = [
   {
     slug: "begonias",
     nombre: "Begonias",
-    categoria: "Anuales",
+    categoria: "Perennes",
     description:
       "Las begonias, pertenecientes al género botánico Begonia, son plantas ornamentales populares apreciadas por sus hojas coloridas y sus atractivas flores. Hay una gran variedad de especies y cultivares de begonias, lo que resulta en una amplia gama de formas, tamaños y colores.",
     poster: "/img/Generales/Galeria/Begonias.jpg",
@@ -229,6 +247,7 @@ export const flores: Flor[] = [
     slug: "jacintos",
     nombre: "Jacintos",
     categoria: "Bulbosas",
+    peligrosa: true,
     description:
       "Los jacintos, científicamente conocidos como Hyacinthus, son flores bulbosas que se caracterizan por sus llamativas flores en forma de racimo y su fragancia dulce y distintiva. Originarios del Mediterráneo y Asia Occidental, los jacintos son apreciados por su belleza y aroma.",
     poster: "/img/Generales/Galeria/Jacintos.jpg",
@@ -272,8 +291,72 @@ export const flores: Flor[] = [
     description:
       "Las petunias, científicamente conocidas como Petunia, son flores anuales o perennes que pertenecen a la familia Solanaceae. Estas plantas herbáceas son populares en jardinería y paisajismo debido a su fácil cultivo y a la abundancia de flores vistosas.",
     poster: "/img/Generales/Galeria/Petunia.jpg",
-    // Anuales: pensamiento, begonias, amapolas
     relaciones: ["pensamiento", "begonias", "amapolas"],
+  },
+  // ── Nuevas flores ──────────────────────────────────────────────
+  {
+    slug: "azafran",
+    nombre: "Azafrán",
+    categoria: "Bulbosas",
+    description: "El azafrán es una planta bulbosa de flores lila-violáceas cuyo valor reside en sus tres estigmas rojos, la especia más cara del mundo por peso.",
+    poster: "/img/Generales/Galeria/Azafran.jpg",
+    relaciones: ["jacintos", "narcisos", "tulipanes"],
+  },
+  {
+    slug: "azucena",
+    nombre: "Azucena",
+    categoria: "Bulbosas",
+    description: "La azucena o lirio blanco es una de las flores más antiguas cultivadas, con flores acampanadas de un blanco inmaculado y fragancia intensa.",
+    poster: "/img/Generales/Galeria/Azucena.jpg",
+    relaciones: ["lirios", "jacintos", "narcisos"],
+  },
+  {
+    slug: "gazania",
+    nombre: "Gazania",
+    categoria: "Perennes",
+    description: "La gazania es una planta sudafricana con flores espectaculares en forma de margarita grande que solo se abren bajo la luz solar directa.",
+    poster: "/img/Generales/Galeria/Gazania.jpg",
+    relaciones: ["gerbera", "margaritas", "calendulas"],
+  },
+  {
+    slug: "gerbera",
+    nombre: "Gerbera",
+    categoria: "Perennes",
+    description: "La gerbera es una de las flores cortadas más vendidas del mundo, famosa por sus enormes cabezas florales en una paleta cromática extraordinaria.",
+    poster: "/img/Generales/Galeria/Gerbera.jpg",
+    relaciones: ["margaritas", "crisantemos", "gazania"],
+  },
+  {
+    slug: "iris",
+    nombre: "Iris",
+    categoria: "Perennes",
+    description: "El iris es una de las flores más elegantes del jardín, con más de 300 especies en una amplia gama de colores y una silueta arquitectónica inconfundible.",
+    poster: "/img/Generales/Galeria/Iris.jpg",
+    relaciones: ["lavanda", "violetas", "claveles"],
+  },
+  {
+    slug: "lavanda",
+    nombre: "Lavanda",
+    categoria: "Arbustos",
+    description: "La lavanda es un subarbusto aromático mediterráneo cuyas espigas violáceo-azuladas y fragancia inconfundible la han convertido en una de las plantas más amadas del mundo.",
+    poster: "/img/Generales/Galeria/Lavanda.jpg",
+    relaciones: ["rosas", "hortensia", "camelias"],
+  },
+  {
+    slug: "verbena",
+    nombre: "Verbena",
+    categoria: "Anuales",
+    description: "La verbena de jardín es una planta de floración exuberante con pequeñas flores agrupadas en corimbos en una amplísima paleta de colores.",
+    poster: "/img/Generales/Galeria/Verbena.jpg",
+    relaciones: ["petunia", "begonias", "pensamiento"],
+  },
+  {
+    slug: "jazmin",
+    nombre: "Jazmín",
+    categoria: "Arbustos",
+    description: "El jazmín es una enredadera trepadora originaria de Asia del Sur y Persia, famosa en todo el mundo por su fragancia dulce e intensa y sus pequeñas flores blancas.",
+    poster: "/img/Generales/Galeria/Jazmín.jpg",
+    relaciones: ["lavanda", "rosas", "hortensia"],
   },
 ];
 
@@ -281,12 +364,3 @@ export function getFlor(slug: string): Flor | undefined {
   return flores.find((f) => f.slug === slug);
 }
 
-/** Devuelve las flores relacionadas resueltas a partir de sus slugs */
-export function getRelacionadas(
-  slugs: [string, string, string]
-): { slug: string; nombre: string; poster: string }[] {
-  return slugs
-    .map((s) => flores.find((f) => f.slug === s))
-    .filter((f): f is Flor => f !== undefined)
-    .map((f) => ({ slug: f.slug, nombre: f.nombre, poster: f.poster }));
-}

@@ -7,8 +7,12 @@ function isAuthorized(req: NextRequest) {
 
 export async function GET(req: NextRequest) {
   if (!isAuthorized(req)) return NextResponse.json({ error: "No autorizado" }, { status: 401 });
-  const flores = await prisma.flor.findMany({ orderBy: { nombre: "asc" } });
-  return NextResponse.json(flores);
+  try {
+    const flores = await prisma.flor.findMany({ orderBy: { nombre: "asc" } });
+    return NextResponse.json(flores);
+  } catch {
+    return NextResponse.json({ error: "Error al obtener las flores" }, { status: 500 });
+  }
 }
 
 export async function POST(req: NextRequest) {
@@ -21,22 +25,26 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Faltan campos obligatorios" }, { status: 400 });
   }
 
-  const flor = await prisma.flor.create({
-    data: {
-      slug, nombre, description, poster, categoria,
-      nombreCientifico: nombreCientifico ?? "",
-      origen: origen ?? "",
-      estacion: estacion ?? "",
-      cuidados: cuidados ?? "",
-      genero: genero ?? "",
-      familia: familia ?? "",
-      simbolismo: simbolismo ?? "",
-      usos: usos ?? "",
-      relacion1: relacion1 ?? "",
-      relacion2: relacion2 ?? "",
-      relacion3: relacion3 ?? "",
-      peligrosa: peligrosa ?? false,
-    },
-  });
-  return NextResponse.json(flor, { status: 201 });
+  try {
+    const flor = await prisma.flor.create({
+      data: {
+        slug, nombre, description, poster, categoria,
+        nombreCientifico: nombreCientifico ?? "",
+        origen: origen ?? "",
+        estacion: estacion ?? "",
+        cuidados: cuidados ?? "",
+        genero: genero ?? "",
+        familia: familia ?? "",
+        simbolismo: simbolismo ?? "",
+        usos: usos ?? "",
+        relacion1: relacion1 ?? "",
+        relacion2: relacion2 ?? "",
+        relacion3: relacion3 ?? "",
+        peligrosa: peligrosa ?? false,
+      },
+    });
+    return NextResponse.json(flor, { status: 201 });
+  } catch {
+    return NextResponse.json({ error: "Error al crear la flor" }, { status: 500 });
+  }
 }

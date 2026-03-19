@@ -1,12 +1,12 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, useRef } from "react";
 import FlowerCard from "@/components/FlowerCard";
-import { type Flor, type Categoria, CATEGORIAS, getRelacionadas } from "@/data/flores";
+import { type Flor, type Categoria, type Zona, CATEGORIAS, ZONAS } from "@/data/flores";
 import styles from "@/styles/galeria.module.css";
 import searchStyles from "@/styles/search.module.css";
 
-const PAGE_SIZE = 12;
+const PAGE_SIZE = 24;
 
 interface Props {
   flores: Flor[];
@@ -14,23 +14,33 @@ interface Props {
 }
 
 export default function GaleriaClient({ flores, initialQuery = "" }: Props) {
-  const [query] = useState(initialQuery);
+  const [query, setQuery] = useState(initialQuery);
+  const prevInitialQuery = useRef(initialQuery);
   const [categoriaActiva, setCategoriaActiva] = useState<Categoria | "Todas">("Todas");
+  const [zonaActiva, setZonaActiva] = useState<Zona | "Todas">("Todas");
   const [soloPeligrosas, setSoloPeligrosas] = useState(false);
   const [visibles, setVisibles] = useState(PAGE_SIZE);
 
   useEffect(() => {
+    if (prevInitialQuery.current !== initialQuery) {
+      prevInitialQuery.current = initialQuery;
+      setQuery(initialQuery);
+    }
+  }, [initialQuery]);
+
+  useEffect(() => {
     setVisibles(PAGE_SIZE);
-  }, [categoriaActiva, soloPeligrosas, query]);
+  }, [categoriaActiva, zonaActiva, soloPeligrosas, query]);
 
   const floresFiltradas = useMemo(() => {
     return flores.filter((f) => {
       const coincideNombre = f.nombre.toLowerCase().includes(query.toLowerCase().trim());
       const coincideCategoria = categoriaActiva === "Todas" || f.categoria === categoriaActiva;
+      const coincideZona = zonaActiva === "Todas" || f.zona === zonaActiva;
       const coincidePeligrosa = !soloPeligrosas || f.peligrosa === true;
-      return coincideNombre && coincideCategoria && coincidePeligrosa;
+      return coincideNombre && coincideCategoria && coincideZona && coincidePeligrosa;
     });
-  }, [flores, query, categoriaActiva, soloPeligrosas]);
+  }, [flores, query, categoriaActiva, zonaActiva, soloPeligrosas]);
 
   const floresPagina = floresFiltradas.slice(0, visibles);
   const hayMas = visibles < floresFiltradas.length;
@@ -54,34 +64,64 @@ export default function GaleriaClient({ flores, initialQuery = "" }: Props) {
       {/* ── Barra de filtros sticky ── */}
       <div className={styles.filterBar}>
         <div className={styles.filterBarInner}>
-          <div className={searchStyles.filtros}>
-            <button
-              className={`${searchStyles.filtroBtn} ${categoriaActiva === "Todas" ? searchStyles.activo : ""}`}
-              onClick={() => setCategoriaActiva("Todas")}
-            >
-              Todas
-            </button>
-            {CATEGORIAS.map((cat) => (
-              <button
-                key={cat}
-                className={`${searchStyles.filtroBtn} ${categoriaActiva === cat ? searchStyles.activo : ""}`}
-                onClick={() => setCategoriaActiva(cat)}
-              >
-                {cat}
-              </button>
-            ))}
-            <button
-              className={`${searchStyles.filtroBtn} ${searchStyles.filtroBtnPeligrosa} ${soloPeligrosas ? searchStyles.activo : ""}`}
-              onClick={() => setSoloPeligrosas((v) => !v)}
-            >
-              ⚠ Peligrosas
-            </button>
+
+          {/* Fila 1: Categoría + contador */}
+          <div className={styles.filterRowSpread}>
+            <div className={styles.filterRowGroup}>
+              <span className={styles.filterLabel}>Categoría</span>
+              <div className={searchStyles.filtros}>
+                <button
+                  className={`${searchStyles.filtroBtn} ${categoriaActiva === "Todas" ? searchStyles.activo : ""}`}
+                  onClick={() => setCategoriaActiva("Todas")}
+                >
+                  Todas
+                </button>
+                {CATEGORIAS.map((cat) => (
+                  <button
+                    key={cat}
+                    className={`${searchStyles.filtroBtn} ${categoriaActiva === cat ? searchStyles.activo : ""}`}
+                    onClick={() => setCategoriaActiva(cat)}
+                  >
+                    {cat}
+                  </button>
+                ))}
+                <button
+                  className={`${searchStyles.filtroBtn} ${searchStyles.filtroBtnPeligrosa} ${soloPeligrosas ? searchStyles.activo : ""}`}
+                  onClick={() => setSoloPeligrosas((v) => !v)}
+                >
+                  ⚠ Peligrosas
+                </button>
+              </div>
+            </div>
+            <p className={searchStyles.contador}>
+              {floresFiltradas.length === flores.length
+                ? `${flores.length} flores`
+                : `${floresFiltradas.length} de ${flores.length}`}
+            </p>
           </div>
-          <p className={searchStyles.contador}>
-            {floresFiltradas.length === flores.length
-              ? `${flores.length} flores`
-              : `${floresFiltradas.length} de ${flores.length}`}
-          </p>
+
+          {/* Fila 2: Región geográfica */}
+          <div className={styles.filterRowGroup}>
+            <span className={styles.filterLabel}>Región</span>
+            <div className={searchStyles.filtros}>
+              <button
+                className={`${searchStyles.filtroBtn} ${searchStyles.filtroBtnZona} ${zonaActiva === "Todas" ? searchStyles.activoZona : ""}`}
+                onClick={() => setZonaActiva("Todas")}
+              >
+                Todas
+              </button>
+              {ZONAS.map((zona) => (
+                <button
+                  key={zona}
+                  className={`${searchStyles.filtroBtn} ${searchStyles.filtroBtnZona} ${zonaActiva === zona ? searchStyles.activoZona : ""}`}
+                  onClick={() => setZonaActiva(zona)}
+                >
+                  {zona}
+                </button>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -100,10 +140,8 @@ export default function GaleriaClient({ flores, initialQuery = "" }: Props) {
               <FlowerCard
                 key={flor.slug}
                 nombre={flor.nombre}
-                description={flor.description}
                 poster={flor.poster}
                 link={`/flores/${flor.slug}`}
-                relaciones={getRelacionadas(flor.relaciones)}
                 categoria={flor.categoria}
                 peligrosa={flor.peligrosa}
                 priority={i < 4}

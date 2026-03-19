@@ -140,7 +140,7 @@ const flores = [
     nombre: "Flor de Loto",
     nombreCientifico: "Nelumbo nucifera",
     categoria: "Acuáticas",
-    poster: "/img/Generales/Galeria/Loto.webp",
+    poster: "/img/Generales/Galeria/Flor de loto.webp",
     relacion1: "orquideas",
     relacion2: "peonias",
     relacion3: "lirios",
@@ -204,7 +204,7 @@ const flores = [
   {
     slug: "lirios",
     nombre: "Lirios",
-    nombreCientifico: "Lilium candidum",
+    nombreCientifico: "Lilium sp.",
     categoria: "Bulbosas",
     poster: "/img/Generales/Galeria/Lirios.jpg",
     relacion1: "tulipanes",
@@ -337,7 +337,7 @@ const flores = [
     slug: "begonias",
     nombre: "Begonias",
     nombreCientifico: "Begonia × hybrida",
-    categoria: "Anuales",
+    categoria: "Perennes",
     poster: "/img/Generales/Galeria/Begonias.jpg",
     relacion1: "pensamiento",
     relacion2: "petunia",
@@ -402,7 +402,7 @@ const flores = [
   {
     slug: "orquideas",
     nombre: "Orquídeas",
-    nombreCientifico: "Orchidaceae (familia)",
+    nombreCientifico: "Phalaenopsis sp.",
     categoria: "Epífitas",
     poster: "/img/Generales/Galeria/Orquideas.webp",
     relacion1: "loto",
@@ -430,6 +430,7 @@ const flores = [
     relacion1: "tulipanes",
     relacion2: "narcisos",
     relacion3: "lirios",
+    peligrosa: true,
     description:
       "Los jacintos son flores bulbosas de espiga densa y fragancia poderosa y dulce, una de las más características de la primavera. Sus flores acampanadas se agrupan en racimos compactos sobre tallos erectos en colores azul, violeta, blanco, amarillo, rosa y rojo. Son originarios de la región mediterránea oriental y Asia Menor, aunque los Países Bajos son el principal productor mundial de bulbos. La fragancia del jacinto es tan intensa que puede aromatizar toda una habitación.",
     genero: "Hyacinthus",
@@ -646,6 +647,183 @@ const flores = [
       "Principalmente ornamental en jardineras colgantes, borduras y macetas. Su facilidad de cultivo y larga floración las convierten en una de las flores más usadas en paisajismo. Algunas variedades tienen fragancia ligera por las tardes. No tienen usos medicinales o alimentarios reconocidos.",
     cuidados:
       "Sol pleno para floración abundante. Suelos bien drenados y de pH neutro a ligeramente ácido. Riego regular, especialmente en verano; no mojar las flores. Abonar cada 2 semanas con abono rico en potasio para favorecer la floración. Pellizcar los extremos para conseguir plantas más densas. En otoño se agoten; resembrar cada año.",
+  },
+  // ── Nuevas flores ──────────────────────────────────────────────
+  {
+    slug: "azafran",
+    nombre: "Azafrán",
+    nombreCientifico: "Crocus sativus",
+    categoria: "Bulbosas",
+    poster: "/img/Generales/Galeria/Azafran.jpg",
+    relacion1: "jacintos",
+    relacion2: "narcisos",
+    relacion3: "tulipanes",
+    description:
+      "El azafrán es una planta bulbosa de flores lila-violáceas de seis pétalos, cuyo valor reside en sus tres estigmas rojos: la especia más cara del mundo por peso. Originario del Mediterráneo oriental y Asia Menor, su cultivo se remonta a más de 3.500 años. Para obtener 1 kg de azafrán se necesitan cerca de 150.000 flores recolectadas a mano al amanecer, lo que explica su precio excepcional.",
+    genero: "Crocus",
+    familia: "Iridaceae",
+    origen: "Asia Menor, Mediterráneo oriental, Irán (principal productor mundial)",
+    estacion: "Otoño",
+    simbolismo:
+      "El azafrán simboliza la riqueza, la sabiduría y la iluminación espiritual. En la antigua Grecia lo asociaban con los dioses y la realeza. En Persia representaba la felicidad y la salud. Su color dorado intenso lo convirtió en símbolo de lujo y estatus a lo largo de la historia.",
+    usos:
+      "Gastronomía: colorante y aromatizante indispensable en la paella valenciana, el risotto milanés y el bouillabaisse. Cosmética: cremas anti-edad y serums de alta gama. Medicina tradicional: antidepresivo natural con estudios clínicos prometedores, antioxidante y antiinflamatorio. Tinte textil: fue el colorante amarillo más valioso de la Antigüedad.",
+    cuidados:
+      "Plantar los cormos en agosto-septiembre a 10 cm de profundidad en suelo suelto, seco y bien drenado. Sol pleno imprescindible. Casi nula necesidad de riego en verano (período de reposo). Floración en octubre-noviembre. Cosechar los estigmas a mano al alba, antes de que la flor se abra del todo. Separar los cormos cada 3-4 años.",
+  },
+  {
+    slug: "azucena",
+    nombre: "Azucena",
+    nombreCientifico: "Lilium candidum",
+    categoria: "Bulbosas",
+    poster: "/img/Generales/Galeria/Azucena.jpg",
+    relacion1: "lirios",
+    relacion2: "jacintos",
+    relacion3: "narcisos",
+    description:
+      "La azucena, o lirio blanco, es una de las flores más antiguas cultivadas por el ser humano, con registros de más de 3.000 años en el Mediterráneo oriental. Sus flores acampanadas de un blanco inmaculado y fragancia intensa la han convertido en símbolo universal de pureza. A diferencia de otros lirios, la azucena mantiene una roseta de hojas basales durante el invierno y florece en verano sobre tallos que pueden superar el metro de altura.",
+    genero: "Lilium",
+    familia: "Liliaceae",
+    origen: "Mediterráneo oriental, Oriente Próximo, Balcanes",
+    estacion: "Primavera, Verano",
+    simbolismo:
+      "La azucena es el símbolo de pureza, virginidad y divinidad por excelencia. En el cristianismo es la flor de la Virgen María y del arcángel Gabriel. En el arte renacentista aparece en miles de Anunciaciones. Los griegos la asociaban con Hera. También representa la inocencia, la nobleza y la renovación espiritual.",
+    usos:
+      "Ornamental en jardines formales y como flor cortada de alta ceremonia (bodas, funerales religiosos). En perfumería, su esencia es una de las más valoradas. En medicina tradicional mediterránea, el aceite macerado de sus bulbos se usó como cicatrizante y emoliente para la piel. Los bulbos son comestibles cocidos en algunas culturas de Oriente Próximo.",
+    cuidados:
+      "Plantar los bulbos a finales de verano, a poca profundidad (apenas cubiertos). Sol pleno o semisombra ligera. Suelo bien drenado, calcáreo o neutro; detesta los suelos ácidos o encharcados. Riego moderado. No cubrir con mantillo en invierno. Fertilizar con abono bajo en nitrógeno. Sensible al hongo Botrytis; asegurar buena ventilación.",
+  },
+  {
+    slug: "gazania",
+    nombre: "Gazania",
+    nombreCientifico: "Gazania rigens",
+    categoria: "Perennes",
+    poster: "/img/Generales/Galeria/Gazania.jpg",
+    relacion1: "gerbera",
+    relacion2: "margaritas",
+    relacion3: "calendulas",
+    description:
+      "La gazania es una planta originaria de Sudáfrica con flores espectaculares en forma de margarita grande, en colores naranja, amarillo, rojo, rosa y bicolores con dibujos geométricos únicos en la base de los pétalos. Una de sus características más curiosas es que sus flores se cierran por la noche y en los días nublados, abriéndose únicamente bajo la luz solar directa. Es una planta muy resistente a la sequía y el calor.",
+    genero: "Gazania",
+    familia: "Asteraceae",
+    origen: "Sudáfrica, Mozambique",
+    estacion: "Primavera, Verano, Otoño",
+    simbolismo:
+      "La gazania simboliza la riqueza, el brillo y la alegría solar. Su comportamiento de abrirse solo con el sol la convierte en símbolo de autenticidad y claridad: solo muestra su belleza en las condiciones adecuadas. También representa la resistencia y la adaptación a condiciones adversas.",
+    usos:
+      "Principalmente ornamental en jardines de bajo mantenimiento, taludes, rocallas y jardines xéricos. Ideal para zonas costeras por su resistencia a la sal y el viento. Excelente como tapizante. En Sudáfrica, algunas comunidades usan extractos de la planta en medicina tradicional. Muy valorada en jardinería mediterránea y californiana.",
+    cuidados:
+      "Sol pleno imprescindible (se cierra sin luz directa). Suelos bien drenados, arenosos o pobres; detesta los encharcamientos. Muy resistente a la sequía. Riego escaso una vez establecida. Aguanta el calor extremo pero no las heladas fuertes. En climas con inviernos suaves es perenne; en climas fríos se trata como anual. Eliminar flores marchitas para prolongar la floración.",
+  },
+  {
+    slug: "gerbera",
+    nombre: "Gerbera",
+    nombreCientifico: "Gerbera jamesonii",
+    categoria: "Perennes",
+    poster: "/img/Generales/Galeria/Gerbera.jpg",
+    relacion1: "margaritas",
+    relacion2: "crisantemos",
+    relacion3: "gazania",
+    description:
+      "La gerbera es una de las flores cortadas más vendidas en el mundo, famosa por sus enormes cabezas florales tipo margarita en una paleta cromática extraordinaria: rojo, naranja, amarillo, rosa, blanco, salmón y bicolores. Originaria de Sudáfrica y Asia tropical, fue descrita en el siglo XIX por el naturalista escocés Robert Jameson. Sus flores duraderas y su imagen alegre y vibrante la han convertido en protagonista de ramos, centros florales y jardines de todo el planeta.",
+    genero: "Gerbera",
+    familia: "Asteraceae",
+    origen: "Sudáfrica, Asia tropical",
+    estacion: "Primavera, Verano",
+    simbolismo:
+      "La gerbera simboliza la alegría, la inocencia y la pureza de sentimientos. Cada color tiene su matiz: el rojo expresa amor apasionado; el amarillo, alegría y amistad; el rosa, admiración; el naranja, entusiasmo; el blanco, pureza. En general representa optimismo y la belleza de lo sencillo.",
+    usos:
+      "Una de las cinco flores cortadas más comercializadas globalmente, junto a rosas, claveles, tulipanes y crisantemos. Muy usada en ramos, centros de mesa y decoración de eventos. En jardines tropicales y subtropicales como planta perenne de exterior. En maceta como planta de interior con mucha luz. Sus flores no tienen propiedades medicinales o alimentarias conocidas.",
+    cuidados:
+      "Requiere mucha luz solar directa (mínimo 6 horas). Suelo bien drenado, rico y ligeramente ácido (pH 5.5-6.5). Riego regular al pie de la planta (evitar mojar el follaje y el cogollo, sensibles a podredumbre). Abonar cada 2 semanas en floración. En invierno reducir el riego y evitar heladas. Replantear cada 2 años.",
+  },
+  {
+    slug: "iris",
+    nombre: "Iris",
+    nombreCientifico: "Iris germanica",
+    categoria: "Perennes",
+    poster: "/img/Generales/Galeria/Iris.jpg",
+    relacion1: "lavanda",
+    relacion2: "violetas",
+    relacion3: "claveles",
+    description:
+      "El iris es una de las flores más elegantes y arquitectónicas del jardín, con pétalos caídos (sépalos) y pétalos erguidos que crean una silueta inconfundible. Existen más de 300 especies en colores que van del blanco puro al negro-violáceo, pasando por amarillo, naranja, azul, rosa y multicolor. El iris barbado (I. germanica) es el más cultivado. Su rizoma produce la raíz de violeta, materia prima usada en perfumería de lujo desde la Antigüedad.",
+    genero: "Iris",
+    familia: "Iridaceae",
+    origen: "Europa central y meridional, Mediterráneo, Asia occidental",
+    estacion: "Primavera",
+    simbolismo:
+      "El iris lleva el nombre de la diosa griega del arcoíris, mensajera entre el Olimpo y la Tierra. Simboliza la sabiduría, la fe, la valentía y la realeza. La flor de lis francesa es un iris estilizado adoptado como símbolo de la monarquía. En Japón, el iris protege contra el mal en el festival Tango no Sekku. También representa la esperanza y la luz.",
+    usos:
+      "Ornamental en jardines formales, bordes y taludes. La raíz seca de iris (orris root) es el fijador más valioso en perfumería clásica: Chanel Nº5, Dior Fahrenheit y muchos grandes parfums la contienen. En medicina tradicional, la tintura de rizoma se usó como expectorante y purgante. Tinte azul-negro extraído históricamente de sus flores.",
+    cuidados:
+      "Sol pleno (mínimo 6 horas). Suelo bien drenado, neutro o ligeramente alcalino. Plantar los rizomas superficialmente, que queden semiexpuestos al sol. Riego moderado; detesta el encharcamiento. Dividir las matas cada 3-4 años en verano tras la floración. Retirar las hojas secas. No abonar en exceso (favorece hojas en detrimento de flores).",
+  },
+  {
+    slug: "lavanda",
+    nombre: "Lavanda",
+    nombreCientifico: "Lavandula angustifolia",
+    categoria: "Arbustos",
+    poster: "/img/Generales/Galeria/Lavanda.jpg",
+    relacion1: "rosas",
+    relacion2: "hortensia",
+    relacion3: "camelias",
+    description:
+      "La lavanda es un subarbusto aromático mediterráneo cuyas espigas florales violáceo-azuladas y su inconfundible fragancia la han convertido en una de las plantas más amadas del mundo. Los campos de lavanda en Provenza (Francia) y Brihuega (España) son paisajes icónicos. Sus aceites esenciales están entre los más estudiados y utilizados en aromaterapia, cosmética y medicina natural. Existen más de 45 especies del género Lavandula.",
+    genero: "Lavandula",
+    familia: "Lamiaceae",
+    origen: "Mediterráneo occidental, Islas Canarias, India",
+    estacion: "Verano",
+    simbolismo:
+      "La lavanda simboliza la pureza, la calma, la devoción y el amor eterno. En la Antigüedad romana era usada para perfumar los baños (\"lavare\", lavar, da nombre a la planta). En el lenguaje victoriano de las flores representa la desconfianza, pero modernamente se asocia con la serenidad, la elegancia discreta y el bienestar.",
+    usos:
+      "Aromaterapia: aceite esencial ansiolítico, calmante del sueño y analgésico tópico. Cosmética y perfumería: uno de los ingredientes más universales. Gastronomía provenzal: hierbas de Provenza, miel de lavanda, infusiones y repostería. Repelente natural de polillas e insectos. Ornamental en jardines mediterráneos y xéricos. Producción apícola: miel de lavanda de alta calidad.",
+    cuidados:
+      "Sol pleno imprescindible. Suelos pobres, secos, bien drenados y calcáreos; los suelos ricos o húmedos la pudren. Riego muy escaso (resistente a sequía prolongada). Podar tras la floración cortando solo la parte verde, nunca la leñosa. Excelente para jardines de bajo mantenimiento. Muy resistente a la cal y a la sequía estival mediterránea.",
+  },
+  {
+    slug: "verbena",
+    nombre: "Verbena",
+    nombreCientifico: "Verbena × hybrida",
+    categoria: "Anuales",
+    poster: "/img/Generales/Galeria/Verbena.jpg",
+    relacion1: "petunia",
+    relacion2: "begonias",
+    relacion3: "pensamiento",
+    description:
+      "La verbena de jardín es una planta de floración exuberante y continua, con pequeñas flores agrupadas en ramilletes planos (corimbos) en una paleta amplísima de colores: rojo, rosa, violeta, blanco, coral y bicolores. Originaria de América del Sur, ha sido intensamente hibridada para crear variedades rastreras y colgantes perfectas para jardineras y taludes. Sus flores atraen mariposas y abejas, convirtiéndola también en planta polinizadora valiosa.",
+    genero: "Verbena",
+    familia: "Verbenaceae",
+    origen: "América del Sur (Argentina, Brasil, Uruguay)",
+    estacion: "Primavera, Verano, Otoño",
+    simbolismo:
+      "La verbena oficial (V. officinalis) fue considerada sagrada por celtas, romanos y egipcios, usada en rituales de purificación y como amuleto de protección. Simboliza la sensibilidad, la encantación y la conexión con lo espiritual. La verbena de jardín representa la alegría de vivir y la generosidad en la floración.",
+    usos:
+      "Ornamental en jardineras, macetas colgantes, borduras y tapizantes. La verbena lemon (V. citriodora) es ampliamente usada en infusiones digestivas y calmantes, y en perfumería por su fragancia cítrica. V. officinalis tiene usos en fitoterapia como tónico nervioso y antiinflamatorio. Planta nectarífera muy valorada para jardines de polinizadores.",
+    cuidados:
+      "Sol pleno para floración abundante. Suelos bien drenados y moderadamente fértiles. Riego regular pero sin encharcamiento. Resistente al calor y a la sequía moderada. Eliminar flores marchitas para estimular nuevos botones. Abonar cada 2-3 semanas durante el verano. En climas templados puede rebrotar en primavera; en climas fríos se trata como anual.",
+  },
+  {
+    slug: "jazmin",
+    nombre: "Jazmín",
+    nombreCientifico: "Jasminum officinale",
+    categoria: "Arbustos",
+    poster: "/img/Generales/Galeria/Jazmín.jpg",
+    relacion1: "lavanda",
+    relacion2: "rosas",
+    relacion3: "hortensia",
+    description:
+      "El jazmín común es una enredadera trepadora o arbusto sarmentoso originario de Asia del Sur y Persia, famoso en todo el mundo por su fragancia dulce e intensa. Sus pequeñas flores blancas de cinco pétalos se agrupan en racimos y florecen desde finales de primavera hasta el otoño. Es una de las plantas aromáticas más cultivadas en jardines mediterráneos y del Mediterráneo. El aceite esencial que se extrae de sus flores es uno de los más valiosos y codiciados de la perfumería mundial.",
+    genero: "Jasminum",
+    familia: "Oleaceae",
+    origen: "Asia del Sur (India, Pakistán, Nepal), Persia, China occidental",
+    estacion: "Primavera, Verano",
+    simbolismo:
+      "El jazmín simboliza el amor, la belleza y la gracia. En la cultura persa e india es la flor del amor divino y la espiritualidad. En China, el jazmín representa la amabilidad y la dulzura femenina. En el sur de Asia se trenza en guirnaldas para bodas y ceremonias religiosas. Su fragancia nocturna intensificada lo asocia con el misterio, el romance y los sueños.",
+    usos:
+      "Perfumería: el absoluto de jazmín (Jasminum grandiflorum y J. sambac) es el ingrediente más caro de la alta perfumería; está en Chanel Nº5, Joy de Jean Patou y cientos de fragancias icónicas. Gastronomía: las flores de Jasminum sambac aromatiza el té de jazmín chino. Cosmética: el aceite de jazmín se usa como emoliente y tónico cutáneo. Medicina tradicional: infusiones de flores para calmar el estrés y la ansiedad.",
+    cuidados:
+      "Necesita sol pleno o semisombra y un soporte donde trepar (reja, pérgola, muro). Suelo fértil, bien drenado y ligeramente ácido. Riego moderado y constante, especialmente en verano; reducir en invierno. Podar tras la floración para mantener la forma y estimular nuevos brotes. Abonar en primavera y verano con abono rico en potasio para favorecer la floración. Resistente al frío moderado, pero proteger de heladas fuertes (-5 °C o menos).",
   },
 ];
 

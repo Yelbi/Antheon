@@ -7,8 +7,12 @@ function isAuthorized(req: NextRequest) {
 
 export async function GET(req: NextRequest) {
   if (!isAuthorized(req)) return NextResponse.json({ error: "No autorizado" }, { status: 401 });
-  const config = await prisma.florDelDia.findUnique({ where: { id: 1 } });
-  return NextResponse.json(config ?? { florSlug: "", img1: "", img2: "", img3: "", img4: "" });
+  try {
+    const config = await prisma.florDelDia.findUnique({ where: { id: 1 } });
+    return NextResponse.json(config ?? { florSlug: "", img1: "", img2: "", img3: "", img4: "" });
+  } catch {
+    return NextResponse.json({ error: "Error al obtener la flor del día" }, { status: 500 });
+  }
 }
 
 export async function PUT(req: NextRequest) {
@@ -16,24 +20,27 @@ export async function PUT(req: NextRequest) {
 
   const { florSlug, img1, img2, img3, img4 } = await req.json();
 
-  const config = await prisma.florDelDia.upsert({
-    where: { id: 1 },
-    update: {
-      florSlug: florSlug ?? "",
-      img1: img1 ?? "",
-      img2: img2 ?? "",
-      img3: img3 ?? "",
-      img4: img4 ?? "",
-    },
-    create: {
-      id: 1,
-      florSlug: florSlug ?? "",
-      img1: img1 ?? "",
-      img2: img2 ?? "",
-      img3: img3 ?? "",
-      img4: img4 ?? "",
-    },
-  });
-
-  return NextResponse.json(config);
+  try {
+    const config = await prisma.florDelDia.upsert({
+      where: { id: 1 },
+      update: {
+        florSlug: florSlug ?? "",
+        img1: img1 ?? "",
+        img2: img2 ?? "",
+        img3: img3 ?? "",
+        img4: img4 ?? "",
+      },
+      create: {
+        id: 1,
+        florSlug: florSlug ?? "",
+        img1: img1 ?? "",
+        img2: img2 ?? "",
+        img3: img3 ?? "",
+        img4: img4 ?? "",
+      },
+    });
+    return NextResponse.json(config);
+  } catch {
+    return NextResponse.json({ error: "Error al guardar la flor del día" }, { status: 500 });
+  }
 }
