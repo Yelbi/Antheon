@@ -1,6 +1,8 @@
 import { MetadataRoute } from "next";
 import { getAllSlugsDB } from "@/lib/flores-db";
 
+export const dynamic = "force-dynamic";
+
 const BASE_URL = process.env.NEXTAUTH_URL ?? "http://localhost:3000";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
