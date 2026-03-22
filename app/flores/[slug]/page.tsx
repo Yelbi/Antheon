@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
-import styles from "@/styles/detalle.module.css";
 import type { Metadata } from "next";
-import { getFlorBySlugDB, getFloresDB } from "@/lib/flores-db";
+import { prisma } from "@/lib/db";
+import { getFloresDB } from "@/lib/flores-db";
+import FlorSlider from "./FlorSlider";
 
 export const dynamic = "force-dynamic";
 
@@ -13,7 +12,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const flor = await getFlorBySlugDB(slug);
+  const flor = await prisma.flor.findUnique({ where: { slug } });
   if (!flor) return { title: "Flor no encontrada" };
   return {
     title: flor.nombre,
@@ -33,131 +32,43 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function FlorDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const [flor, todas] = await Promise.all([getFlorBySlugDB(slug), getFloresDB()]);
+  const [flor, todas] = await Promise.all([
+    prisma.flor.findUnique({ where: { slug } }),
+    getFloresDB(),
+  ]);
   if (!flor) notFound();
 
   const idx = todas.findIndex((f) => f.slug === slug);
-  const anterior = idx > 0 ? todas[idx - 1] : null;
-  const siguiente = idx < todas.length - 1 ? todas[idx + 1] : null;
+  const anterior = idx > 0 ? { slug: todas[idx - 1].slug, nombre: todas[idx - 1].nombre } : null;
+  const siguiente = idx < todas.length - 1 ? { slug: todas[idx + 1].slug, nombre: todas[idx + 1].nombre } : null;
+
+  // Usar las imágenes de la BD; si están vacías, usar el poster como fallback
+  const slideImages: [string, string, string] = [
+    flor.slide1 || flor.poster,
+    flor.slide2 || flor.poster,
+    flor.slide3 || flor.poster,
+  ];
 
   return (
-    <div className={styles.page}>
-      {/* ── Hero con imagen ── */}
-      <section className={styles.hero}>
-        <Image
-          className={styles.heroImg}
-          src={flor.poster}
-          alt={flor.nombre}
-          fill
-          priority
-          sizes="100vw"
-          quality={90}
-        />
-        <div className={styles.heroOverlay}>
-          <h1 className={styles.titulo}>{flor.nombre}</h1>
-          <span className={styles.categoriaBadge}>{flor.categoria}</span>
-        </div>
-      </section>
-
-      {/* ── Descripción ── */}
-      <div className={styles.contenido}>
-        {/* Ficha rápida */}
-        {(flor.nombreCientifico || flor.genero || flor.familia || flor.origen || flor.estacion) && (
-          <div className={styles.ficha}>
-            {flor.nombreCientifico && (
-              <div className={styles.fichaItem}>
-                <span className={styles.fichaLabel}>Nombre científico</span>
-                <span className={styles.fichaValor}>{flor.nombreCientifico}</span>
-              </div>
-            )}
-            {flor.genero && (
-              <div className={styles.fichaItem}>
-                <span className={styles.fichaLabel}>Género</span>
-                <span className={styles.fichaValor}>{flor.genero}</span>
-              </div>
-            )}
-            {flor.familia && (
-              <div className={styles.fichaItem}>
-                <span className={styles.fichaLabel}>Familia</span>
-                <span className={styles.fichaValor}>{flor.familia}</span>
-              </div>
-            )}
-            {flor.origen && (
-              <div className={styles.fichaItem}>
-                <span className={styles.fichaLabel}>Origen</span>
-                <span className={styles.fichaValor}>{flor.origen}</span>
-              </div>
-            )}
-            {flor.estacion && (
-              <div className={styles.fichaItem}>
-                <span className={styles.fichaLabel}>Floración</span>
-                <span className={styles.fichaValor}>{flor.estacion}</span>
-              </div>
-            )}
-            <div className={styles.fichaItem}>
-              <span className={styles.fichaLabel}>Categoría</span>
-              <span className={styles.fichaValor}>{flor.categoria}</span>
-            </div>
-          </div>
-        )}
-
-        <h2 className={styles.descripcionTitulo}>¿Qué es?</h2>
-        <p className={styles.descripcion}>{flor.description}</p>
-
-        {flor.simbolismo && (
-          <>
-            <h2 className={styles.descripcionTitulo}>Simbolismo</h2>
-            <p className={styles.descripcion}>{flor.simbolismo}</p>
-          </>
-        )}
-
-        {flor.usos && (
-          <>
-            <h2 className={styles.descripcionTitulo}>Usos</h2>
-            <p className={styles.descripcion}>{flor.usos}</p>
-          </>
-        )}
-
-        {flor.cuidados && (
-          <>
-            <h2 className={styles.descripcionTitulo}>Cuidados</h2>
-            <p className={styles.descripcion}>{flor.cuidados}</p>
-          </>
-        )}
-
-      </div>
-
-      {/* ── Footer de navegación ── */}
-      <div className={styles.florFooter}>
-        {/* Anterior / Siguiente */}
-        <nav className={styles.navegacion}>
-          {anterior ? (
-            <Link href={`/flores/${anterior.slug}`} className={`${styles.navBtn} ${styles.navBtnPrev}`}>
-              <span>
-                <span className={styles.navBtnLabel}>← Anterior</span>
-                <span className={styles.navBtnNombre}>{anterior.nombre}</span>
-              </span>
-            </Link>
-          ) : (
-            <div />
-          )}
-          {siguiente ? (
-            <Link href={`/flores/${siguiente.slug}`} className={`${styles.navBtn} ${styles.navBtnNext}`}>
-              <span>
-                <span className={styles.navBtnLabel}>Siguiente →</span>
-                <span className={styles.navBtnNombre}>{siguiente.nombre}</span>
-              </span>
-            </Link>
-          ) : (
-            <div />
-          )}
-        </nav>
-
-        {/* Volver a galería */}
-        <Link href="/galeria" className={styles.volver}>
-          ← Volver a la Galería
-        </Link>
-      </div>
-    </div>
+    <FlorSlider
+      flor={{
+        nombre: flor.nombre,
+        nombreCientifico: flor.nombreCientifico,
+        categoria: flor.categoria,
+        origen: flor.origen,
+        estacion: flor.estacion,
+        genero: flor.genero,
+        familia: flor.familia,
+        description: flor.description,
+        simbolismo: flor.simbolismo,
+        usos: flor.usos,
+        cuidados: flor.cuidados,
+        peligrosa: flor.peligrosa,
+        slug: flor.slug,
+      }}
+      slideImages={slideImages}
+      anterior={anterior}
+      siguiente={siguiente}
+    />
   );
 }

@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
   if (!isAuthorized(req)) return NextResponse.json({ error: "No autorizado" }, { status: 401 });
 
   const data = await req.json();
-  const { slug, nombre, nombreCientifico, description, poster, categoria, origen, estacion, cuidados, genero, familia, simbolismo, usos, relacion1, relacion2, relacion3, peligrosa } = data;
+  const { slug, nombre, nombreCientifico, description, poster, categoria, origen, estacion, cuidados, genero, familia, simbolismo, usos, peligrosa, slide1, slide2, slide3 } = data;
 
   if (!slug || !nombre || !description || !poster || !categoria) {
     return NextResponse.json({ error: "Faltan campos obligatorios" }, { status: 400 });
@@ -37,10 +37,10 @@ export async function POST(req: NextRequest) {
         familia: familia ?? "",
         simbolismo: simbolismo ?? "",
         usos: usos ?? "",
-        relacion1: relacion1 ?? "",
-        relacion2: relacion2 ?? "",
-        relacion3: relacion3 ?? "",
         peligrosa: peligrosa ?? false,
+        slide1: slide1 ?? "",
+        slide2: slide2 ?? "",
+        slide3: slide3 ?? "",
       },
     });
     return NextResponse.json(flor, { status: 201 });

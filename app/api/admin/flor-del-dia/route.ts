@@ -8,39 +8,55 @@ function isAuthorized(req: NextRequest) {
 export async function GET(req: NextRequest) {
   if (!isAuthorized(req)) return NextResponse.json({ error: "No autorizado" }, { status: 401 });
   try {
-    const config = await prisma.florDelDia.findUnique({ where: { id: 1 } });
-    return NextResponse.json(config ?? { florSlug: "", img1: "", img2: "", img3: "", img4: "" });
+    const entries = await prisma.florDelDia.findMany({
+      where: { NOT: { fecha: "" } },
+      orderBy: { fecha: "asc" },
+    });
+    return NextResponse.json(entries);
   } catch {
-    return NextResponse.json({ error: "Error al obtener la flor del día" }, { status: 500 });
+    return NextResponse.json({ error: "Error al obtener" }, { status: 500 });
   }
 }
 
-export async function PUT(req: NextRequest) {
+export async function POST(req: NextRequest) {
   if (!isAuthorized(req)) return NextResponse.json({ error: "No autorizado" }, { status: 401 });
-
-  const { florSlug, img1, img2, img3, img4 } = await req.json();
-
+  const { fecha, florSlug, descripcion, img1, img2, img3, img4 } = await req.json();
+  if (!fecha) return NextResponse.json({ error: "Fecha requerida" }, { status: 400 });
   try {
-    const config = await prisma.florDelDia.upsert({
-      where: { id: 1 },
+    const entry = await prisma.florDelDia.upsert({
+      where: { fecha },
       update: {
         florSlug: florSlug ?? "",
+        descripcion: descripcion ?? "",
         img1: img1 ?? "",
         img2: img2 ?? "",
         img3: img3 ?? "",
         img4: img4 ?? "",
       },
       create: {
-        id: 1,
+        fecha,
         florSlug: florSlug ?? "",
+        descripcion: descripcion ?? "",
         img1: img1 ?? "",
         img2: img2 ?? "",
         img3: img3 ?? "",
         img4: img4 ?? "",
       },
     });
-    return NextResponse.json(config);
+    return NextResponse.json(entry);
   } catch {
-    return NextResponse.json({ error: "Error al guardar la flor del día" }, { status: 500 });
+    return NextResponse.json({ error: "Error al guardar" }, { status: 500 });
+  }
+}
+
+export async function DELETE(req: NextRequest) {
+  if (!isAuthorized(req)) return NextResponse.json({ error: "No autorizado" }, { status: 401 });
+  const { fecha } = await req.json();
+  if (!fecha) return NextResponse.json({ error: "Fecha requerida" }, { status: 400 });
+  try {
+    await prisma.florDelDia.delete({ where: { fecha } });
+    return NextResponse.json({ ok: true });
+  } catch {
+    return NextResponse.json({ error: "Error al eliminar" }, { status: 500 });
   }
 }

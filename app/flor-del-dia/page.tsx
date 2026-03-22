@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getFloresDB } from "@/lib/flores-db";
-import { getFlorDelDiaDB } from "@/lib/flor-del-dia-db";
+import { getFlorDelDiaPorFechaDB } from "@/lib/flor-del-dia-db";
 import FlorDelDiaClient from "@/components/FlorDelDiaClient";
 
 export const dynamic = "force-dynamic";
@@ -15,7 +15,11 @@ export const metadata: Metadata = {
 };
 
 export default async function FlorDelDiaPage() {
-  const [flores, config] = await Promise.all([getFloresDB(), getFlorDelDiaDB()]);
+  const hoy = new Date();
+  // Format as MM-DD so the same config applies every year
+  const fechaStr = `${String(hoy.getMonth() + 1).padStart(2, "0")}-${String(hoy.getDate()).padStart(2, "0")}`;
+
+  const [flores, config] = await Promise.all([getFloresDB(), getFlorDelDiaPorFechaDB(fechaStr)]);
 
   if (flores.length === 0) {
     return (
@@ -25,18 +29,22 @@ export default async function FlorDelDiaPage() {
     );
   }
 
-  // Flor: configurada en admin o fallback por día del mes
+  // Flower: configured for today or fallback by day of month
   const flor =
     flores.find((f) => f.slug === config?.florSlug) ??
-    flores[new Date().getDate() % flores.length];
+    flores[hoy.getDate() % flores.length];
 
-  // Imágenes del slideshow: poster primero + extras configuradas
+  // Slideshow images: poster first + extra images from config
   const extras = [config?.img1, config?.img2, config?.img3, config?.img4].filter(
     (img): img is string => Boolean(img)
   );
   const imagenes = [flor.poster, ...extras];
 
-  const fecha = new Date().toLocaleDateString("es-ES", {
+  // Use custom description if set, otherwise flower's default
+  const description =
+    config?.descripcion?.trim() ? config.descripcion : flor.description;
+
+  const fecha = hoy.toLocaleDateString("es-ES", {
     weekday: "long",
     day: "numeric",
     month: "long",
@@ -52,7 +60,7 @@ export default async function FlorDelDiaPage() {
           slug: flor.slug,
           nombre: flor.nombre,
           categoria: flor.categoria,
-          description: flor.description,
+          description,
           nombreCientifico: flor.nombreCientifico,
         }}
         fecha={fechaCapitalizada}

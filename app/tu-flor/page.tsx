@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import styles from "@/styles/home.module.css";
+import TuFlorQuiz from "./TuFlorQuiz";
 
 export const metadata: Metadata = {
-  title: "Tu Flor",
-  description: "Tu espacio personal en Antheon.",
+  title: "Tu Flor – Descubre qué flor eres",
+  description:
+    "Responde 10 preguntas y descubre qué flor refleja mejor tu personalidad. Quiz de personalidad floral en Antheon.",
 };
 
 export default function TuFlorPage() {
   return (
-    <main style={{ minHeight: "calc(100vh - 100px)", background: "#1c1c1c" }}>
+    <main>
+      <TuFlorQuiz />
     </main>
   );
 }

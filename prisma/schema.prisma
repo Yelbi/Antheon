@@ -4,7 +4,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model Articulo {
@@ -35,21 +34,23 @@ model Flor {
   familia          String @default("")
   simbolismo       String @default("")
   usos             String @default("")
-  relacion1        String  @default("")
-  relacion2        String  @default("")
-  relacion3        String  @default("")
   peligrosa        Boolean @default(false)
+  slide1           String  @default("")
+  slide2           String  @default("")
+  slide3           String  @default("")
 
   @@map("flores")
 }
 
 model FlorDelDia {
-  id       Int    @id @default(autoincrement())
-  florSlug String @default("")
-  img1     String @default("")
-  img2     String @default("")
-  img3     String @default("")
-  img4     String @default("")
+  id          Int    @id @default(autoincrement())
+  fecha       String @unique @default("")
+  florSlug    String @default("")
+  descripcion String @default("")
+  img1        String @default("")
+  img2        String @default("")
+  img3        String @default("")
+  img4        String @default("")
 
   @@map("flor_del_dia")
 }

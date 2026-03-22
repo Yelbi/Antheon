@@ -20,10 +20,10 @@ type FlorRow = {
   familia: string;
   simbolismo: string;
   usos: string;
-  relacion1: string;
-  relacion2: string;
-  relacion3: string;
   peligrosa: boolean;
+  slide1: string;
+  slide2: string;
+  slide3: string;
 };
 
 const ESTACIONES = ["Primavera", "Verano", "Otoño", "Invierno", "Todo el año", "Primavera, Verano", "Verano, Otoño", "Otoño, Invierno"];
@@ -43,10 +43,10 @@ export default function EditarFlorClient({ flor }: { flor: FlorRow }) {
     familia: flor.familia,
     simbolismo: flor.simbolismo,
     usos: flor.usos,
-    relacion1: flor.relacion1,
-    relacion2: flor.relacion2,
-    relacion3: flor.relacion3,
     peligrosa: flor.peligrosa,
+    slide1: flor.slide1,
+    slide2: flor.slide2,
+    slide3: flor.slide3,
   });
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -186,23 +186,21 @@ export default function EditarFlorClient({ flor }: { flor: FlorRow }) {
         </div>
       </div>
 
-      {/* ── Relacionadas ── */}
+      {/* ── Imágenes del slider ── */}
       <div className={s.formCard}>
-        <p className={s.formCardTitle}>Flores relacionadas <span className={s.labelHint}>(slugs del catálogo)</span></p>
+        <p className={s.formCardTitle}>Imágenes del slider <span className={s.labelHint}>(fondo de cada diapositiva)</span></p>
         <div className={s.formInner}>
-          <div className={s.formRow3}>
-            <div className={s.formGroup}>
-              <label className={s.label} htmlFor="rel1">Relacionada 1</label>
-              <input id="rel1" className={s.input} placeholder="tulipanes" value={form.relacion1} onChange={update("relacion1")} />
-            </div>
-            <div className={s.formGroup}>
-              <label className={s.label} htmlFor="rel2">Relacionada 2</label>
-              <input id="rel2" className={s.input} placeholder="lirios" value={form.relacion2} onChange={update("relacion2")} />
-            </div>
-            <div className={s.formGroup}>
-              <label className={s.label} htmlFor="rel3">Relacionada 3</label>
-              <input id="rel3" className={s.input} placeholder="orquideas" value={form.relacion3} onChange={update("relacion3")} />
-            </div>
+          <div className={s.formGroup}>
+            <label className={s.label} htmlFor="slide1">Slide 1 — Presentación</label>
+            <input id="slide1" className={s.input} placeholder="/img/Generales/Flores/Rosas/rosas 1.jpg" value={form.slide1} onChange={update("slide1")} />
+          </div>
+          <div className={s.formGroup}>
+            <label className={s.label} htmlFor="slide2">Slide 2 — Descripción</label>
+            <input id="slide2" className={s.input} placeholder="/img/Generales/Flores/Rosas/rosas 2.jpg" value={form.slide2} onChange={update("slide2")} />
+          </div>
+          <div className={s.formGroup}>
+            <label className={s.label} htmlFor="slide3">Slide 3 — Usos & Cuidados</label>
+            <input id="slide3" className={s.input} placeholder="/img/Generales/Flores/Rosas/rosas 3.jpg" value={form.slide3} onChange={update("slide3")} />
           </div>
         </div>
       </div>

@@ -17,9 +17,6 @@ type FlorRow = {
   familia: string;
   simbolismo: string;
   usos: string;
-  relacion1: string;
-  relacion2: string;
-  relacion3: string;
   peligrosa: boolean;
 };
 
@@ -39,7 +36,6 @@ function rowToFlor(f: FlorRow): Flor {
     familia: f.familia || undefined,
     simbolismo: f.simbolismo || undefined,
     usos: f.usos || undefined,
-    relaciones: [f.relacion1, f.relacion2, f.relacion3] as [string, string, string],
     peligrosa: f.peligrosa || undefined,
   };
 }

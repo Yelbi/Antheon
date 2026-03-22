@@ -1,6 +1,11 @@
 import { PrismaClient } from "@prisma/client";
+import { PrismaPg } from "@prisma/adapter-pg";
 
-const prisma = new PrismaClient();
+const adapter = new PrismaPg({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
+});
+const prisma = new PrismaClient({ adapter });
 
 const flores = [
   {
@@ -8,10 +13,10 @@ const flores = [
     nombre: "Rosas",
     nombreCientifico: "Rosa sp.",
     categoria: "Arbustos",
-    poster: "/img/Generales/Galeria/Rosas.jpg",
-    relacion1: "camelias",
-    relacion2: "hortensia",
-    relacion3: "flor-de-pascua",
+    poster: "/img/Generales/Galeria/Rosas.jpg",
+    slide1: "/img/Generales/Flores/Rosas/Rosas 1.jpg",
+    slide2: "/img/Generales/Flores/Rosas/Rosas 2.jpg",
+    slide3: "/img/Generales/Flores/Rosas/Rosas 3.jpg",
     description:
       "Las rosas pertenecen al género botánico Rosa y se caracterizan por sus pétalos suaves, delicados y a menudo fragantes. Vienen en una amplia gama de colores, incluyendo rojo, rosa, blanco, amarillo, naranja y más. Las flores de rosa generalmente tienen capullos rodeados por capas de pétalos que se abren gradualmente a medida que la flor florece. Con más de 300 especies y miles de variedades cultivadas, la rosa es una de las flores más cultivadas y reconocidas en el mundo.",
     genero: "Rosa",
@@ -30,10 +35,10 @@ const flores = [
     nombre: "Tulipanes",
     nombreCientifico: "Tulipa gesneriana",
     categoria: "Bulbosas",
-    poster: "/img/Generales/Galeria/Tulipanes.jpg",
-    relacion1: "narcisos",
-    relacion2: "jacintos",
-    relacion3: "lirios",
+    poster: "/img/Generales/Galeria/Tulipanes.jpg",
+    slide1: "/img/Generales/Flores/Tulipanes/Tulipanes 1.jpg",
+    slide2: "/img/Generales/Flores/Tulipanes/Tulipanes 2.jpg",
+    slide3: "/img/Generales/Flores/Tulipanes/Tulipanes 3.jpg",
     description:
       "Los tulipanes son flores bulbosas notables por su forma única en copa y sus colores vibrantes. Pertenecen al género Tulipa y son originarios de Asia Central, desde donde fueron llevados a Europa en el siglo XVI, desencadenando la célebre \"tulipomanía\" en los Países Bajos. Los tulipanes crecen en tallos erectos y presentan una flor grande con seis pétalos que puede ser lisa, flecada, doble o en forma de loro.",
     genero: "Tulipa",
@@ -52,10 +57,10 @@ const flores = [
     nombre: "Claveles",
     nombreCientifico: "Dianthus caryophyllus",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Claveles.jpg",
-    relacion1: "peonias",
-    relacion2: "margaritas",
-    relacion3: "crisantemos",
+    poster: "/img/Generales/Galeria/Claveles.jpg",
+    slide1: "/img/Generales/Flores/Claveles/Claveles 1.jpg",
+    slide2: "/img/Generales/Flores/Claveles/Claveles 2.jpg",
+    slide3: "/img/Generales/Flores/Claveles/Claveles 3.jpg",
     description:
       "Los claveles son flores populares y reconocidas por su fragancia dulce y especiada y su apariencia distintiva con pétalos dentados y bordeados. Son originarios de la región mediterránea, pero se cultivan extensamente en todo el mundo. Existen en una amplísima gama de colores: rojo, rosa, blanco, amarillo, púrpura y bicolores. Son una de las flores cortadas más comercializadas a nivel global.",
     genero: "Dianthus",
@@ -74,10 +79,10 @@ const flores = [
     nombre: "Girasoles",
     nombreCientifico: "Helianthus annuus",
     categoria: "Anuales",
-    poster: "/img/Generales/Galeria/Girasoles.jpg",
-    relacion1: "calendulas",
-    relacion2: "amapolas",
-    relacion3: "dalia",
+    poster: "/img/Generales/Galeria/Girasoles.jpg",
+    slide1: "/img/Generales/Flores/Girasoles/Girasoles 1.jpg",
+    slide2: "/img/Generales/Flores/Girasoles/Girasoles 2.jpg",
+    slide3: "/img/Generales/Flores/Girasoles/Girasoles 3.jpg",
     description:
       "Los girasoles son flores grandes y llamativas originarias de América del Norte, donde eran cultivadas por pueblos indígenas hace más de 3.000 años. Se caracterizan por sus pétalos de color amarillo brillante (lígulas) dispuestos alrededor de un disco central marrón repleto de semillas. El fenómeno de heliotropismo en plantas jóvenes hace que sus tallos sigan el movimiento solar de este a oeste.",
     genero: "Helianthus",
@@ -96,10 +101,10 @@ const flores = [
     nombre: "Margaritas",
     nombreCientifico: "Bellis perennis",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Margaritas.jpg",
-    relacion1: "crisantemos",
-    relacion2: "dalia",
-    relacion3: "peonias",
+    poster: "/img/Generales/Galeria/Margaritas.jpg",
+    slide1: "/img/Generales/Flores/Margaritas/Margaritas 1.jpg",
+    slide2: "/img/Generales/Flores/Margaritas/Margaritas 2.jpg",
+    slide3: "/img/Generales/Flores/Margaritas/Margaritas 3.jpg",
     description:
       "Las margaritas son flores encantadoras y reconocibles, pertenecientes al género Bellis. Se caracterizan por sus pétalos blancos (lígulas) dispuestos en torno a un centro amarillo. Son originarias de Europa y Asia, y son de las flores más extendidas en prados naturales y jardines de todo el mundo. A pesar de su sencilla apariencia, la margarita es en realidad una inflorescencia compuesta por cientos de pequeñas flores.",
     genero: "Bellis",
@@ -118,10 +123,10 @@ const flores = [
     nombre: "Camelias",
     nombreCientifico: "Camellia japonica",
     categoria: "Arbustos",
-    poster: "/img/Generales/Galeria/Camelias.jpg",
-    relacion1: "rosas",
-    relacion2: "hortensia",
-    relacion3: "flor-de-pascua",
+    poster: "/img/Generales/Galeria/Camelias.jpg",
+    slide1: "/img/Generales/Flores/Camelias/Camelias 1.jpg",
+    slide2: "/img/Generales/Flores/Camelias/Camelias 2.jpg",
+    slide3: "/img/Generales/Flores/Camelias/Camelias 3.jpg",
     description:
       "Las camelias son arbustos o pequeños árboles de hoja perenne con flores hermosas y hojas brillantes de color verde oscuro. Originarias de Asia, especialmente de China y Japón, se han convertido en plantas icónicas de la jardinería occidental desde el siglo XVIII. Sus flores, que aparecen en los meses más fríos del año, pueden ser simples, semidobles o completamente dobles, en colores que van del blanco al rojo intenso.",
     genero: "Camellia",
@@ -140,10 +145,10 @@ const flores = [
     nombre: "Flor de Loto",
     nombreCientifico: "Nelumbo nucifera",
     categoria: "Acuáticas",
-    poster: "/img/Generales/Galeria/Flor de loto.webp",
-    relacion1: "orquideas",
-    relacion2: "peonias",
-    relacion3: "lirios",
+    poster: "/img/Generales/Galeria/Flor de loto.webp",
+    slide1: "/img/Generales/Flores/Loto/Loto 1.jpg",
+    slide2: "/img/Generales/Flores/Loto/Loto 2.jpg",
+    slide3: "/img/Generales/Flores/Loto/Loto 3.jpg",
     description:
       "La flor de loto es una planta acuática magnífica y profundamente simbólica. Emerge de aguas turbias y fangosas para florecer inmaculada en la superficie, lo que la convierte en uno de los símbolos más poderosos de las culturas asiáticas. Sus grandes flores, de color rosa o blanco, se abren al amanecer y se cierran al atardecer. La planta tiene la extraordinaria capacidad de mantener sus flores a temperatura constante para atraer a los polinizadores.",
     genero: "Nelumbo",
@@ -162,10 +167,10 @@ const flores = [
     nombre: "Peonias",
     nombreCientifico: "Paeonia lactiflora",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Peonias.jpg",
-    relacion1: "margaritas",
-    relacion2: "crisantemos",
-    relacion3: "dalia",
+    poster: "/img/Generales/Galeria/Peonias.jpg",
+    slide1: "/img/Generales/Flores/Peonias/Peonias 1.jpg",
+    slide2: "/img/Generales/Flores/Peonias/Peonias 2.jpg",
+    slide3: "/img/Generales/Flores/Peonias/Peonias 3.jpg",
     description:
       "Las peonías son flores exquisitas y muy valoradas por sus generosas flores llenas de pétalos y su fragancia sutil y elegante. Originarias de Asia y Europa, son plantas longevas que pueden vivir décadas en el jardín sin necesidad de ser trasplantadas. Sus flores, que aparecen a finales de primavera, pueden ser simples, semidobles o completamente dobles, en colores que van del blanco y el amarillo al rosa, rojo y púrpura.",
     genero: "Paeonia",
@@ -184,10 +189,7 @@ const flores = [
     nombre: "Violetas",
     nombreCientifico: "Viola odorata",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Violetas.jpg",
-    relacion1: "pensamiento",
-    relacion2: "claveles",
-    relacion3: "margaritas",
+    poster: "/img/Generales/Galeria/Violetas.jpg",
     description:
       "Las violetas son flores pequeñas y encantadoras, conocidas por su delicada fragancia y sus variados colores en tonos morados, azules, blancos y amarillos. Pertenecen al género Viola, que comprende más de 500 especies distribuidas por todo el mundo. La violeta olorosa (Viola odorata) es la especie más cultivada y apreciada por su perfume inconfundible.",
     genero: "Viola",
@@ -206,10 +208,7 @@ const flores = [
     nombre: "Lirios",
     nombreCientifico: "Lilium sp.",
     categoria: "Bulbosas",
-    poster: "/img/Generales/Galeria/Lirios.jpg",
-    relacion1: "tulipanes",
-    relacion2: "narcisos",
-    relacion3: "jacintos",
+    poster: "/img/Generales/Galeria/Lirios.jpg",
     description:
       "Los lirios son flores elegantes y majestuosas que se caracterizan por sus grandes flores con seis tépalos en forma de trompeta o turbante, muchas veces intensamente perfumadas. El género Lilium comprende unas 100 especies nativas del hemisferio norte. Sus tallos pueden alcanzar hasta 2 metros de altura, y las flores aparecen en variados colores: blanco, amarillo, naranja, rosa, rojo y bicolores con manchas.",
     genero: "Lilium",
@@ -228,10 +227,7 @@ const flores = [
     nombre: "Caléndulas",
     nombreCientifico: "Calendula officinalis",
     categoria: "Anuales",
-    poster: "/img/Generales/Galeria/Calendulas.jpg",
-    relacion1: "girasoles",
-    relacion2: "amapolas",
-    relacion3: "pensamiento",
+    poster: "/img/Generales/Galeria/Calendulas.jpg",
     description:
       "Las caléndulas son flores coloridas y vistosas de color naranja y amarillo intenso. Pertenecen al género Calendula y son originarias del Mediterráneo. Su nombre deriva del latín \"calendae\" (primer día del mes), ya que florecen prácticamente durante todo el año en climas templados. Son conocidas tanto por su belleza ornamental como por sus importantes propiedades medicinales.",
     genero: "Calendula",
@@ -250,10 +246,7 @@ const flores = [
     nombre: "Crisantemos",
     nombreCientifico: "Chrysanthemum morifolium",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Crisantemos.jpg",
-    relacion1: "margaritas",
-    relacion2: "dalia",
-    relacion3: "peonias",
+    poster: "/img/Generales/Galeria/Crisantemos.jpg",
     description:
       "Los crisantemos son flores ornamentales con una de las mayores variedades de formas y colores del reino vegetal. Originarios de China, donde se cultivan desde hace más de 2.500 años, se convirtieron en símbolo nacional de Japón. Sus flores pueden ser simples, pompón, esféricas, plumosas o araña, y aparecen en todos los colores excepto azul. Son una de las flores cortadas más vendidas en el mundo.",
     genero: "Chrysanthemum",
@@ -272,10 +265,7 @@ const flores = [
     nombre: "Gladiolos",
     nombreCientifico: "Gladiolus communis",
     categoria: "Bulbosas",
-    poster: "/img/Generales/Galeria/Gladiolos.webp",
-    relacion1: "narcisos",
-    relacion2: "lycoris",
-    relacion3: "tulipanes",
+    poster: "/img/Generales/Galeria/Gladiolos.webp",
     description:
       "Los gladiolos son plantas cormosas con espigas verticales de flores llamativas dispuestas en un solo lado del tallo. Su nombre procede del latín \"gladius\" (espada), por la forma de sus hojas. Con más de 260 especies nativas principalmente de África Subsahariana, han dado lugar a miles de cultivares en todos los colores imaginables. Son flores de gran impacto visual usadas en ramos y arreglos de flores cortadas.",
     genero: "Gladiolus",
@@ -294,10 +284,7 @@ const flores = [
     nombre: "Narcisos",
     nombreCientifico: "Narcissus pseudonarcissus",
     categoria: "Bulbosas",
-    poster: "/img/Generales/Galeria/Narcisos.jpg",
-    relacion1: "tulipanes",
-    relacion2: "jacintos",
-    relacion3: "gladiolos",
+    poster: "/img/Generales/Galeria/Narcisos.jpg",
     description:
       "Los narcisos son flores bulbosas pertenecientes al género Narcissus, con más de 50 especies silvestres. Son originarios de Europa y el norte de África, siendo la Península Ibérica el centro de su diversidad. Se distinguen por su flor con seis pétalos y una corona central (corona o trompeta) que puede ser corta o larga. Son las heraldas de la primavera, floreciendo incluso cuando aún puede nevar.",
     genero: "Narcissus",
@@ -316,10 +303,7 @@ const flores = [
     nombre: "Flor de Pascua",
     nombreCientifico: "Euphorbia pulcherrima",
     categoria: "Arbustos",
-    poster: "/img/Generales/Galeria/Flor de Pascua.jpg",
-    relacion1: "camelias",
-    relacion2: "rosas",
-    relacion3: "hortensia",
+    poster: "/img/Generales/Galeria/Flor de Pascua.jpg",
     description:
       "La flor de Pascua, también conocida como nochebuena o poinsettia, es originaria de México y América Central. Lo que popularmente se consideran sus flores son en realidad brácteas foliares de colores brillantes (rojas, rosas, blancas o bicolores) que rodean las flores verdaderas, pequeñas y amarillas. En su hábitat natural puede alcanzar los 4 metros de altura. Se convirtió en símbolo navideño gracias al embajador estadounidense Joel Poinsett, quien la introdujo en EE. UU. en el siglo XIX.",
     genero: "Euphorbia",
@@ -338,10 +322,7 @@ const flores = [
     nombre: "Begonias",
     nombreCientifico: "Begonia × hybrida",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Begonias.jpg",
-    relacion1: "pensamiento",
-    relacion2: "petunia",
-    relacion3: "amapolas",
+    poster: "/img/Generales/Galeria/Begonias.jpg",
     description:
       "Las begonias son plantas ornamentales pertenecientes al género Begonia, uno de los géneros más grandes de plantas con flor, con más de 1.800 especies. Son apreciadas tanto por sus flores coloridas como por su follaje decorativo con hojas asimétricas características. Existen begonias tuberosas, rizomatosas y fibrosas, adaptadas a muy distintas condiciones de cultivo. Son nativas principalmente de zonas tropicales y subtropicales de América, Asia y África.",
     genero: "Begonia",
@@ -360,10 +341,7 @@ const flores = [
     nombre: "Amapolas",
     nombreCientifico: "Papaver rhoeas",
     categoria: "Anuales",
-    poster: "/img/Generales/Galeria/Amapolas.jpg",
-    relacion1: "calendulas",
-    relacion2: "girasoles",
-    relacion3: "begonias",
+    poster: "/img/Generales/Galeria/Amapolas.jpg",
     description:
       "Las amapolas son flores icónicas reconocibles por sus pétalos de seda de color rojo brillante con una mancha negra en la base. Pertenecen al género Papaver y se encuentran distribuidas en Europa, Asia y el norte de África. Son plantas asociadas a los campos de cultivo de cereales, donde crecen de forma espontánea. La amapola de opio (Papaver somniferum) es una especie diferente de gran relevancia histórica y farmacológica.",
     genero: "Papaver",
@@ -382,10 +360,7 @@ const flores = [
     nombre: "Lycoris",
     nombreCientifico: "Lycoris radiata",
     categoria: "Bulbosas",
-    poster: "/img/Generales/Galeria/Lycoris.jpg",
-    relacion1: "narcisos",
-    relacion2: "jacintos",
-    relacion3: "gladiolos",
+    poster: "/img/Generales/Galeria/Lycoris.jpg",
     description:
       "Las Lycoris, también conocidas como \"lirios araña\", \"lirios mágicos\" o \"flores de la sorpresa\", son plantas bulbosas de gran belleza y misterio. Sus flores en forma de estrella con largos estambres curvados aparecen en otoño sobre tallos desnudos, semanas antes de que surja el follaje. La especie más conocida, Lycoris radiata, tiene flores de intenso color rojo carmesí. Son originarias de China, Japón y Corea, donde crecen frecuentemente en bordes de arrozales y cementerios.",
     genero: "Lycoris",
@@ -404,13 +379,10 @@ const flores = [
     nombre: "Orquídeas",
     nombreCientifico: "Phalaenopsis sp.",
     categoria: "Epífitas",
-    poster: "/img/Generales/Galeria/Orquideas.webp",
-    relacion1: "loto",
-    relacion2: "camelias",
-    relacion3: "lirios",
+    poster: "/img/Generales/Galeria/Orquideas.webp",
     description:
       "Las orquídeas constituyen una de las familias de plantas más diversas del mundo, con más de 28.000 especies conocidas y decenas de miles de híbridos. Se encuentran en casi todos los hábitats terrestres excepto los glaciares. La mayoría de las especies tropicales son epífitas (viven sobre otras plantas sin parasitarlas). Sus flores altamente especializadas han evolucionado en formas extraordinarias para atraer polinizadores específicos. El género Phalaenopsis es el más cultivado comercialmente.",
-    genero: "Orchidaceae",
+    genero: "Phalaenopsis",
     familia: "Orchidaceae",
     origen: "Distribución mundial; mayor diversidad en trópicos de América, Asia y África",
     estacion: "Todo el año",
@@ -426,10 +398,7 @@ const flores = [
     nombre: "Jacintos",
     nombreCientifico: "Hyacinthus orientalis",
     categoria: "Bulbosas",
-    poster: "/img/Generales/Galeria/Jacintos.jpg",
-    relacion1: "tulipanes",
-    relacion2: "narcisos",
-    relacion3: "lirios",
+    poster: "/img/Generales/Galeria/Jacintos.jpg",
     peligrosa: true,
     description:
       "Los jacintos son flores bulbosas de espiga densa y fragancia poderosa y dulce, una de las más características de la primavera. Sus flores acampanadas se agrupan en racimos compactos sobre tallos erectos en colores azul, violeta, blanco, amarillo, rosa y rojo. Son originarios de la región mediterránea oriental y Asia Menor, aunque los Países Bajos son el principal productor mundial de bulbos. La fragancia del jacinto es tan intensa que puede aromatizar toda una habitación.",
@@ -449,10 +418,7 @@ const flores = [
     nombre: "Hortensia",
     nombreCientifico: "Hydrangea macrophylla",
     categoria: "Arbustos",
-    poster: "/img/Generales/Galeria/Hortensia.jpg",
-    relacion1: "camelias",
-    relacion2: "rosas",
-    relacion3: "flor-de-pascua",
+    poster: "/img/Generales/Galeria/Hortensia.jpg",
     description:
       "Las hortensias son arbustos florales muy apreciados por sus grandes inflorescencias globosas o aplanadas (corimbos) compuestas por cientos de pequeñas flores. Una de sus características más fascinantes es la capacidad de cambiar de color según el pH del suelo: en suelos ácidos producen flores azules; en suelos alcalinos, flores rosas o rojas. La especie más cultivada es Hydrangea macrophylla, originaria de Japón. Existen también variedades de flores blancas independientes del pH.",
     genero: "Hydrangea",
@@ -471,10 +437,7 @@ const flores = [
     nombre: "Pensamiento",
     nombreCientifico: "Viola × wittrockiana",
     categoria: "Anuales",
-    poster: "/img/Generales/Galeria/Pensamiento.jpg",
-    relacion1: "violetas",
-    relacion2: "begonias",
-    relacion3: "petunia",
+    poster: "/img/Generales/Galeria/Pensamiento.jpg",
     description:
       "Los pensamientos son flores de temporada fría muy queridas en jardinería, obtenidas por hibridación de varias especies de Viola. Sus flores tienen cinco pétalos con característicos dibujos que recuerdan a una cara humana pensativa. Disponibles en una extraordinaria variedad de colores: amarillo, violeta, azul, blanco, naranja, rojo y bicolores. Son tolerantes al frío y pueden florecer incluso con nieve ligera, siendo ideales para jardines de otoño e invierno.",
     genero: "Viola",
@@ -493,10 +456,7 @@ const flores = [
     nombre: "Dalia",
     nombreCientifico: "Dahlia pinnata",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Dalia.jpg",
-    relacion1: "crisantemos",
-    relacion2: "margaritas",
-    relacion3: "girasoles",
+    poster: "/img/Generales/Galeria/Dalia.jpg",
     description:
       "Las dalias son flores espectaculares originarias de México y América Central, donde los aztecas las cultivaban tanto por sus tubérculos comestibles como por su uso ornamental y ceremonial. Pertenecen a la familia Asteraceae y ofrecen una diversidad extraordinaria: existen dalias pompon, cactus, decorativas, esféricas, de collar, entre otras, con flores desde 2 cm hasta más de 30 cm de diámetro. Son las flores nacionales de México.",
     genero: "Dahlia",
@@ -516,11 +476,11 @@ const flores = [
     nombre: "Adelfa",
     nombreCientifico: "Nerium oleander",
     categoria: "Arbustos",
-    poster: "/img/Generales/Galeria/Adelfa.jpg",
-    relacion1: "estramonio",
-    relacion2: "rosas",
-    relacion3: "hortensia",
+    poster: "/img/Generales/Galeria/Adelfa.jpg",
     peligrosa: true,
+    slide1: "/img/Generales/Flores/Adelfa/Adelfa 1.jpg",
+    slide2: "/img/Generales/Flores/Adelfa/Adelfa 2.jpg",
+    slide3: "/img/Generales/Flores/Adelfa/Adelfa 3.jpg",
     description:
       "La adelfa es un arbusto perenne mediterráneo de flores vistosas en tonos rosa, rojo, blanco o amarillo, muy popular en jardines y medianas de carretera. Pese a su belleza, es una de las plantas ornamentales más tóxicas conocidas: todas sus partes contienen glucósidos cardíacos (oleandrina y neriina) capaces de causar parada cardíaca. Incluso el humo de su madera al quemarla resulta peligroso.",
     genero: "Nerium",
@@ -539,11 +499,11 @@ const flores = [
     nombre: "Acónito",
     nombreCientifico: "Aconitum napellus",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Aconito.jpg",
-    relacion1: "dedalera",
-    relacion2: "peonias",
-    relacion3: "claveles",
+    poster: "/img/Generales/Galeria/Aconito.jpg",
     peligrosa: true,
+    slide1: "/img/Generales/Flores/Acónito/Acónito 1.jpg",
+    slide2: "/img/Generales/Flores/Acónito/Acónito 2.jpg",
+    slide3: "/img/Generales/Flores/Acónito/Acónito 3.jpg",
     description:
       "El acónito, también llamado matalobos o casco de Júpiter, es una planta herbácea perenne con elegantes flores azul-violetas en forma de capucha. Históricamente conocida como \"la reina de los venenos\", contiene aconitina, un alcaloide extremadamente tóxico que actúa directamente sobre el sistema nervioso y el corazón. Una sola hoja o raíz puede matar a un adulto en pocas horas. Fue utilizado en la Antigua Grecia y Roma como veneno de ejecución y envenenamiento.",
     genero: "Aconitum",
@@ -562,11 +522,11 @@ const flores = [
     nombre: "Dedalera",
     nombreCientifico: "Digitalis purpurea",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Dedalera.jpg",
-    relacion1: "aconito",
-    relacion2: "claveles",
-    relacion3: "peonias",
+    poster: "/img/Generales/Galeria/Dedalera.jpg",
     peligrosa: true,
+    slide1: "/img/Generales/Flores/Dedalera/Dedalera 1.jpg",
+    slide2: "/img/Generales/Flores/Dedalera/Dedalera 2.jpg",
+    slide3: "/img/Generales/Flores/Dedalera/Dedalera 3.jpg",
     description:
       "La dedalera es una planta bienal o perenne de porte esbelto y flores tubulares acampanadas, moteadas interiormente en tonos rosa, púrpura, blanco y crema. Es famosa por ser la fuente de la digital, el fármaco cardíaco más importante de la historia. Sin embargo, en estado natural todas sus partes son tóxicas: los glucósidos cardíacos que contiene (digitoxina, digoxina) alteran el ritmo cardíaco y pueden causar la muerte. Su ingestión por niños que confunden las hojas con espinacas o los frutos con alimentos ha causado intoxicaciones graves.",
     genero: "Digitalis",
@@ -585,10 +545,7 @@ const flores = [
     nombre: "Estramonio",
     nombreCientifico: "Datura stramonium",
     categoria: "Anuales",
-    poster: "/img/Generales/Galeria/Estramonio.jpg",
-    relacion1: "adelfa",
-    relacion2: "petunia",
-    relacion3: "amapolas",
+    poster: "/img/Generales/Galeria/Estramonio.jpg",
     peligrosa: true,
     description:
       "El estramonio, también conocido como hierba del diablo o trompeta del diablo, es una planta anual de gran porte con flores blancas o violáceas en forma de trompeta y frutos espinosos muy característicos. Contiene altos niveles de alcaloides tropánicos (atropina, escopolamina, hiosciamina) que producen delirios intensos, alucinaciones y en dosis suficientes, la muerte. Es considerada una de las plantas más peligrosas del mundo, implicada en intoxicaciones accidentales y deliberadas en todo el globo.",
@@ -608,11 +565,11 @@ const flores = [
     nombre: "Lirio del Valle",
     nombreCientifico: "Convallaria majalis",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/LirioDelValle.jpg",
-    relacion1: "dedalera",
-    relacion2: "violetas",
-    relacion3: "claveles",
+    poster: "/img/Generales/Galeria/LirioDelValle.jpg",
     peligrosa: true,
+    slide1: "/img/Generales/Flores/Lirio del Valle/Lirio del Valle 1.jpg",
+    slide2: "/img/Generales/Flores/Lirio del Valle/Lirio del Valle 2.jpg",
+    slide3: "/img/Generales/Flores/Lirio del Valle/Lirio del Valle 3.jpg",
     description:
       "El lirio del valle es una planta herbácea perenne de apariencia delicada y encantadora: sus pequeñas flores acampanadas blancas cuelgan en racimos sobre tallos arqueados, acompañadas de grandes hojas verdes brillantes. Su fragancia es una de las más apreciadas en perfumería. Sin embargo, toda la planta es altamente tóxica: contiene más de 38 glucósidos cardíacos (convallotoxina entre los más potentes) que causan náuseas, vómitos severos, bradicardia y, en casos graves, parada cardíaca. El agua en que se han conservado las flores también es venenosa.",
     genero: "Convallaria",
@@ -631,10 +588,7 @@ const flores = [
     nombre: "Petunia",
     nombreCientifico: "Petunia × hybrida",
     categoria: "Anuales",
-    poster: "/img/Generales/Galeria/Petunia.jpg",
-    relacion1: "pensamiento",
-    relacion2: "begonias",
-    relacion3: "amapolas",
+    poster: "/img/Generales/Galeria/Petunia.jpg",
     description:
       "Las petunias son plantas herbáceas de floración prolífica y continua, originarias de América del Sur (especialmente Argentina y Brasil). Pertenecen a la familia Solanaceae y ofrecen una enorme variedad de colores: violeta, rosa, rojo, blanco, amarillo y combinaciones bicolores con rayas o bordes. Sus flores acampanadas o aterciopeladas se abren profusamente desde primavera hasta las primeras heladas. Son unas de las flores de temporada más vendidas en el mundo.",
     genero: "Petunia",
@@ -654,10 +608,10 @@ const flores = [
     nombre: "Azafrán",
     nombreCientifico: "Crocus sativus",
     categoria: "Bulbosas",
-    poster: "/img/Generales/Galeria/Azafran.jpg",
-    relacion1: "jacintos",
-    relacion2: "narcisos",
-    relacion3: "tulipanes",
+    poster: "/img/Generales/Galeria/Azafran.jpg",
+    slide1: "/img/Generales/Flores/Azafran/Azafran 1.jpg",
+    slide2: "/img/Generales/Flores/Azafran/Azafran 2.jpg",
+    slide3: "/img/Generales/Flores/Azafran/Azafran 3.jpg",
     description:
       "El azafrán es una planta bulbosa de flores lila-violáceas de seis pétalos, cuyo valor reside en sus tres estigmas rojos: la especia más cara del mundo por peso. Originario del Mediterráneo oriental y Asia Menor, su cultivo se remonta a más de 3.500 años. Para obtener 1 kg de azafrán se necesitan cerca de 150.000 flores recolectadas a mano al amanecer, lo que explica su precio excepcional.",
     genero: "Crocus",
@@ -676,10 +630,7 @@ const flores = [
     nombre: "Azucena",
     nombreCientifico: "Lilium candidum",
     categoria: "Bulbosas",
-    poster: "/img/Generales/Galeria/Azucena.jpg",
-    relacion1: "lirios",
-    relacion2: "jacintos",
-    relacion3: "narcisos",
+    poster: "/img/Generales/Galeria/Azucena.jpg",
     description:
       "La azucena, o lirio blanco, es una de las flores más antiguas cultivadas por el ser humano, con registros de más de 3.000 años en el Mediterráneo oriental. Sus flores acampanadas de un blanco inmaculado y fragancia intensa la han convertido en símbolo universal de pureza. A diferencia de otros lirios, la azucena mantiene una roseta de hojas basales durante el invierno y florece en verano sobre tallos que pueden superar el metro de altura.",
     genero: "Lilium",
@@ -698,10 +649,7 @@ const flores = [
     nombre: "Gazania",
     nombreCientifico: "Gazania rigens",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Gazania.jpg",
-    relacion1: "gerbera",
-    relacion2: "margaritas",
-    relacion3: "calendulas",
+    poster: "/img/Generales/Galeria/Gazania.jpg",
     description:
       "La gazania es una planta originaria de Sudáfrica con flores espectaculares en forma de margarita grande, en colores naranja, amarillo, rojo, rosa y bicolores con dibujos geométricos únicos en la base de los pétalos. Una de sus características más curiosas es que sus flores se cierran por la noche y en los días nublados, abriéndose únicamente bajo la luz solar directa. Es una planta muy resistente a la sequía y el calor.",
     genero: "Gazania",
@@ -720,10 +668,7 @@ const flores = [
     nombre: "Gerbera",
     nombreCientifico: "Gerbera jamesonii",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Gerbera.jpg",
-    relacion1: "margaritas",
-    relacion2: "crisantemos",
-    relacion3: "gazania",
+    poster: "/img/Generales/Galeria/Gerbera.jpg",
     description:
       "La gerbera es una de las flores cortadas más vendidas en el mundo, famosa por sus enormes cabezas florales tipo margarita en una paleta cromática extraordinaria: rojo, naranja, amarillo, rosa, blanco, salmón y bicolores. Originaria de Sudáfrica y Asia tropical, fue descrita en el siglo XIX por el naturalista escocés Robert Jameson. Sus flores duraderas y su imagen alegre y vibrante la han convertido en protagonista de ramos, centros florales y jardines de todo el planeta.",
     genero: "Gerbera",
@@ -742,10 +687,7 @@ const flores = [
     nombre: "Iris",
     nombreCientifico: "Iris germanica",
     categoria: "Perennes",
-    poster: "/img/Generales/Galeria/Iris.jpg",
-    relacion1: "lavanda",
-    relacion2: "violetas",
-    relacion3: "claveles",
+    poster: "/img/Generales/Galeria/Iris.jpg",
     description:
       "El iris es una de las flores más elegantes y arquitectónicas del jardín, con pétalos caídos (sépalos) y pétalos erguidos que crean una silueta inconfundible. Existen más de 300 especies en colores que van del blanco puro al negro-violáceo, pasando por amarillo, naranja, azul, rosa y multicolor. El iris barbado (I. germanica) es el más cultivado. Su rizoma produce la raíz de violeta, materia prima usada en perfumería de lujo desde la Antigüedad.",
     genero: "Iris",
@@ -764,10 +706,7 @@ const flores = [
     nombre: "Lavanda",
     nombreCientifico: "Lavandula angustifolia",
     categoria: "Arbustos",
-    poster: "/img/Generales/Galeria/Lavanda.jpg",
-    relacion1: "rosas",
-    relacion2: "hortensia",
-    relacion3: "camelias",
+    poster: "/img/Generales/Galeria/Lavanda.jpg",
     description:
       "La lavanda es un subarbusto aromático mediterráneo cuyas espigas florales violáceo-azuladas y su inconfundible fragancia la han convertido en una de las plantas más amadas del mundo. Los campos de lavanda en Provenza (Francia) y Brihuega (España) son paisajes icónicos. Sus aceites esenciales están entre los más estudiados y utilizados en aromaterapia, cosmética y medicina natural. Existen más de 45 especies del género Lavandula.",
     genero: "Lavandula",
@@ -786,10 +725,7 @@ const flores = [
     nombre: "Verbena",
     nombreCientifico: "Verbena × hybrida",
     categoria: "Anuales",
-    poster: "/img/Generales/Galeria/Verbena.jpg",
-    relacion1: "petunia",
-    relacion2: "begonias",
-    relacion3: "pensamiento",
+    poster: "/img/Generales/Galeria/Verbena.jpg",
     description:
       "La verbena de jardín es una planta de floración exuberante y continua, con pequeñas flores agrupadas en ramilletes planos (corimbos) en una paleta amplísima de colores: rojo, rosa, violeta, blanco, coral y bicolores. Originaria de América del Sur, ha sido intensamente hibridada para crear variedades rastreras y colgantes perfectas para jardineras y taludes. Sus flores atraen mariposas y abejas, convirtiéndola también en planta polinizadora valiosa.",
     genero: "Verbena",
@@ -808,10 +744,7 @@ const flores = [
     nombre: "Jazmín",
     nombreCientifico: "Jasminum officinale",
     categoria: "Arbustos",
-    poster: "/img/Generales/Galeria/Jazmín.jpg",
-    relacion1: "lavanda",
-    relacion2: "rosas",
-    relacion3: "hortensia",
+    poster: "/img/Generales/Galeria/Jazmín.jpg",
     description:
       "El jazmín común es una enredadera trepadora o arbusto sarmentoso originario de Asia del Sur y Persia, famoso en todo el mundo por su fragancia dulce e intensa. Sus pequeñas flores blancas de cinco pétalos se agrupan en racimos y florecen desde finales de primavera hasta el otoño. Es una de las plantas aromáticas más cultivadas en jardines mediterráneos y del Mediterráneo. El aceite esencial que se extrae de sus flores es uno de los más valiosos y codiciados de la perfumería mundial.",
     genero: "Jasminum",
@@ -825,21 +758,285 @@ const flores = [
     cuidados:
       "Necesita sol pleno o semisombra y un soporte donde trepar (reja, pérgola, muro). Suelo fértil, bien drenado y ligeramente ácido. Riego moderado y constante, especialmente en verano; reducir en invierno. Podar tras la floración para mantener la forma y estimular nuevos brotes. Abonar en primavera y verano con abono rico en potasio para favorecer la floración. Resistente al frío moderado, pero proteger de heladas fuertes (-5 °C o menos).",
   },
+  // ── Nuevas flores (seguras) ───────────────────────────────────────
+  {
+    slug: "magnolia",
+    nombre: "Magnolia",
+    nombreCientifico: "Magnolia grandiflora",
+    categoria: "Arbustos",
+    poster: "/img/Generales/Galeria/Magnolia.jpg",
+    description:
+      "La magnolia es una de las flores más antiguas del mundo: el género Magnolia existía antes de que aparecieran las abejas, por lo que evolucionó para ser polinizada por escarabajos. Sus grandes flores con pétalos gruesos y cerosos, de color blanco marfil o rosado, son de una belleza imponente y exudan una fragancia dulce y cítrica. Magnolia grandiflora es la especie más conocida en Occidente, con flores que pueden alcanzar los 30 cm de diámetro. Sus hojas perennes de un verde oscuro brillante con reverso aterciopelado marrón son igualmente ornamentales.",
+    genero: "Magnolia",
+    familia: "Magnoliaceae",
+    origen: "América del Norte y Central, Asia Oriental (China, Japón)",
+    estacion: "Primavera, Verano",
+    simbolismo:
+      "La magnolia simboliza la nobleza, la perseverancia y la dignidad natural. En China es símbolo de pureza femenina y belleza sin artificio. En el sur de Estados Unidos es emblema de elegancia y orgullo regional (es la flor oficial de Mississippi y Louisiana). En el lenguaje victoriano de las flores representa el amor por la naturaleza y la grandeza tranquila.",
+    usos:
+      "Principalmente ornamental en jardines, parques y avenidas como árbol de sombra y espectáculo floral. La corteza de Magnolia officinalis (houpu) es un elemento clave de la medicina tradicional china para tratar la ansiedad, el insomnio y los trastornos digestivos. El magnolol y honokiol extraídos de su corteza tienen propiedades antiinflamatorias y neuroprotectoras estudiadas científicamente. Las flores y yemas encurtidas se usan en la cocina japonesa.",
+    cuidados:
+      "Prefiere suelos ácidos o neutros, ricos en materia orgánica y bien drenados. Sol pleno o semisombra ligera. Riego regular especialmente en los primeros años; una vez establecida es bastante resistente. No soporta los suelos calcáreos ni el encharcamiento. Evitar trasplantar plantas adultas ya que las raíces son muy sensibles. No podar innecesariamente; si es necesario, hacerlo justo después de la floración.",
+  },
+  {
+    slug: "buganvilla",
+    nombre: "Buganvilla",
+    nombreCientifico: "Bougainvillea spectabilis",
+    categoria: "Arbustos",
+    poster: "/img/Generales/Galeria/Buganvilla.jpg",
+    description:
+      "La buganvilla es una de las plantas trepadoras más espectaculares y coloridas del mundo. Originaria de América del Sur, fue descubierta en Brasil por el naturalista Philibert Commerson durante la expedición de Louis Antoine de Bougainville en el siglo XVIII. Lo que popularmente se consideran sus flores son en realidad brácteas (hojas modificadas) de colores brillantes en fucsia, rojo, naranja, amarillo, blanco y violeta, que rodean las verdaderas flores, diminutas y blancas. Es resistente al calor y la sequía, por lo que es omnipresente en paisajes mediterráneos y tropicales.",
+    genero: "Bougainvillea",
+    familia: "Nyctaginaceae",
+    origen: "América del Sur (Brasil, Perú, Argentina, Bolivia)",
+    estacion: "Primavera, Verano, Otoño",
+    simbolismo:
+      "La buganvilla simboliza la pasión, la vitalidad y la bienvenida. En muchos países mediterráneos y latinoamericanos su presencia en fachadas y muros es sinónimo de hospitalidad y alegría de vivir. En Brasil es símbolo de exuberancia tropical. En Grecia y España sus cascadas de color sobre paredes encaladas son imagen icónica del Mediterráneo.",
+    usos:
+      "Principalmente ornamental como trepadora en muros, pérgolas, vallas y jardines colgantes; es una de las plantas más vendidas en viveros de clima cálido. Las flores y brácteas tienen usos en medicina tradicional latinoamericana: se usan en infusiones para tratar la tos, la bronquitis y como antidiabético natural en México y Brasil. Las espinas hacen que se utilice también como barrera disuasoria natural.",
+    cuidados:
+      "Planta de sol pleno imprescindible; florea en abundancia solo con muchas horas de luz directa. Resistente a la sequía una vez establecida; el exceso de riego reduce la floración. Suelos bien drenados y pobres; el exceso de fertilizante nitrogenado favorece hojas y reduce brácteas. Aguanta las heladas suaves (hasta -3 °C); en climas fríos cultivar en maceta grande y proteger en invierno. Podar vigorosamente tras cada ciclo de floración para estimular nuevos brotes florales.",
+  },
+  {
+    slug: "cerezo-en-flor",
+    nombre: "Cerezo en Flor",
+    nombreCientifico: "Prunus serrulata",
+    categoria: "Arbustos",
+    poster: "/img/Generales/Galeria/Cerezo en Flor.jpg",
+    description:
+      "El cerezo en flor, conocido en japonés como sakura, es quizás la flor más celebrada y venerada de Japón. Sus flores de cinco pétalos, blancas o rosadas, aparecen en profusión en los árboles antes de que broten las hojas, creando nubes de color de una belleza efímera que dura apenas una o dos semanas. Existen más de 200 variedades cultivadas de sakura en Japón. El hanami (contemplación de las flores) es una tradición milenaria japonesa de reunión familiar y social bajo los cerezos en flor, considerada uno de los rituales culturales más importantes del país.",
+    genero: "Prunus",
+    familia: "Rosaceae",
+    origen: "China, Japón, Corea, Himalaya",
+    estacion: "Primavera",
+    simbolismo:
+      "El cerezo en flor es el símbolo nacional de Japón y uno de los más poderosos del pensamiento budista y sintoísta. Representa la impermanencia de la vida (mono no aware): la belleza intensificada por su brevedad. También simboliza la renovación, la esperanza y la nueva vida. En la cultura samurái se asociaba a la muerte honorable: caer como los pétalos de sakura, en la cima de la juventud.",
+    usos:
+      "Su uso principal es ornamental en parques, jardines y paseos (las avenidas de cerezos son destinos turísticos mundiales). Las flores saladas de algunas variedades (especialmente Prunus lannesiana) se usan en la cocina japonesa para aromatizar el té de sakura (sakura-yu) y para decorar pasteles de mochi. La madera de cerezo es muy valorada en ebanistería y luthería. Las hojas saladas envuelven el wagashi dulce «sakura mochi».",
+    cuidados:
+      "Requiere sol pleno o semisombra ligera y suelo bien drenado, fértil y con buen contenido en materia orgánica. Sensible al encharcamiento y a las podas excesivas (puertas de entrada para hongos). Riego moderado y constante en primavera y verano. Abonar en primavera con fertilizante equilibrado. Los cerezos ornamentales son más resistentes a enfermedades que los frutales. En zonas frías, plantar en lugar protegido de vientos fríos tardíos que puedan dañar los capullos.",
+  },
+  {
+    slug: "glicinia",
+    nombre: "Glicinia",
+    nombreCientifico: "Wisteria sinensis",
+    categoria: "Perennes",
+    poster: "/img/Generales/Galeria/Glicinia.jpg",
+    description:
+      "La glicinia es una de las trepadoras más majestuosas y espectaculares del jardín. Sus largas y densas racimos colgantes de flores en tonos violeta, lila, azul o blanco, que pueden alcanzar hasta 1 metro de longitud, desprenden una fragancia dulce e intoxicante. En primavera, cuando florece, la planta se cubre completamente de estos racimos antes de que aparezcan las hojas. Wisteria sinensis, originaria de China, puede vivir más de 100 años y convertirse en enormes estructuras que llegan a cubrir fachadas enteras de edificios.",
+    genero: "Wisteria",
+    familia: "Fabaceae",
+    origen: "China (principalmente), Japón, Corea del Norte",
+    estacion: "Primavera",
+    simbolismo:
+      "La glicinia simboliza la longevidad, la resistencia y el amor duradero. En Japón (fuji) es emblema del clan Fujiwara y de la aristocracia imperial; los jardines de glicinia como los de Ashikaga son considerados paraísos terrenales. En China representa la inmortalidad y la gracia. En Occidente se asocia a la nostalgia, los jardines románticos de la época victoriana y los amores que perduran a través del tiempo.",
+    usos:
+      "Fundamentalmente ornamental: trepadora de gran impacto en pérgolas, muros, celosías y fachadas. Las flores son comestibles y en Japón se preparan fritas en tempura o cristalizadas en azúcar. Las vainas y semillas son tóxicas y no deben consumirse. En medicina popular china, las flores secas se han usado en infusiones como vermífugo y antiinflamatorio. La madera es dura y se ha utilizado históricamente en carpintería.",
+    cuidados:
+      "Necesita sol pleno para una floración abundante. Suelo bien drenado, de fértil a moderado; la fertilización excesiva con nitrógeno produce mucho follaje y pocas flores. Riego regular pero sin encharcamiento. Requiere soporte robusto desde el principio (sus tallos pueden alcanzar pesos enormes con los años). Poda dos veces al año: en verano (recortar brotes largos) y en invierno (reducir a 2-3 yemas). La impaciencia florece despacio: puede tardar hasta 7-10 años en florecer si se planta desde semilla.",
+  },
+  {
+    slug: "mimosa",
+    nombre: "Mimosa",
+    nombreCientifico: "Acacia dealbata",
+    categoria: "Arbustos",
+    poster: "/img/Generales/Galeria/Mimosa.jpg",
+    description:
+      "La mimosa es un árbol o arbusto de crecimiento rápido conocido por sus espectaculares racimos de diminutas flores esféricas de color amarillo dorado intenso que aparecen a finales de invierno, siendo de las primeras plantas en florecer en el año. Sus hojas bipinnadas de color verde grisáceo plateado (de ahí el nombre «dealbata», blanqueada) son igualmente ornamentales. Originaria de Australia, se ha naturalizado ampliamente en las costas mediterráneas de Europa, donde es un árbol muy popular. El perfume de sus flores, dulce y cálido, es inconfundible y se intensifica en días soleados.",
+    genero: "Acacia",
+    familia: "Fabaceae",
+    origen: "Sureste de Australia (naturalizada en costa mediterránea europea)",
+    estacion: "Invierno, Primavera",
+    simbolismo:
+      "La mimosa es la flor símbolo del Día Internacional de la Mujer (8 de marzo) en Italia y varios países europeos, donde se regala a las mujeres como gesto de respeto y afecto. Simboliza la sensibilidad, la delicadeza y la fuerza femenina. En general representa la alegría, el optimismo y el final del invierno; ver florecer la mimosa anuncia la primavera.",
+    usos:
+      "Ornamental en jardines y como flor cortada de enorme importancia comercial (especialmente en San Remo, Italia, centro mundial de la floricultura de mimosa). La madera es utilizada en artesanía y tanería. El extracto de corteza de acacia (taninos) es un curtiente industrial. La madera y hojas se usan como forraje en Australia. En cosmética, el absoluto de flor de mimosa es un ingrediente de perfumería muy apreciado.",
+    cuidados:
+      "Sol pleno. Tolera suelos pobres, secos y arenosos; detesta los suelos arcillosos y encharcados. Resistente a la sequía una vez establecida. Crecimiento muy rápido (puede ganar 1-2 metros al año). Floración en invierno-primavera; podar ligeramente tras la floración para controlar el porte. Resistente al frío moderado (hasta -7 °C), pero heladas intensas pueden matarla. En zonas frías, cultivar en maceta grande.",
+  },
+  {
+    slug: "clematide",
+    nombre: "Clematide",
+    nombreCientifico: "Clematis vitalba",
+    categoria: "Perennes",
+    poster: "/img/Generales/Galeria/Clematide.jpg",
+    description:
+      "Las clemátides son trepadoras perennes con flores que van desde las pequeñas y estrelladlas hasta las grandes y llamativas, en una paleta de colores que incluye blanco, crema, amarillo, rosa, rojo, violeta, azul y bicolores. Con más de 300 especies en el género Clematis, son unas de las trepadoras más versátiles y queridas de la jardinería. Sus flores están formadas realmente por sépalos coloreados (no pétalos verdaderos) que pueden ser simples, dobles o semidobles. Tras la floración, los frutos con estilos plumosos crean igualmente una decoración invernal muy atractiva.",
+    genero: "Clematis",
+    familia: "Ranunculaceae",
+    origen: "Europa, Asia, América del Norte, Nueva Zelanda",
+    estacion: "Primavera, Verano",
+    simbolismo:
+      "La clemátide simboliza la creatividad artística, la ingeniosidad y el viaje mental. En el lenguaje victoriano de las flores representa la belleza mental y la búsqueda de lo excelso. Su tendencia a trepar y alcanzar alturas la asocia con la ambición y la superación. En algunas culturas es símbolo de la perseverancia: sube despacio pero con firmeza, y una vez establecida nada la detiene.",
+    usos:
+      "Principalmente ornamental como trepadora en jardines formales e informales, cubriendo muros, arcos, pérgolas, setos y tutores. Clematis vitalba (clemátide silvestre) ha tenido usos en medicina popular europea: los brotes jóvenes se han consumido cocidos en Italia (frittelle di vitalba). Sin embargo, toda la planta contiene protoanemonina, que es irritante. En fitoterapia homeopática se usa en dilución para tratar afecciones cutáneas.",
+    cuidados:
+      "Requiere la cabeza al sol (mínimo 6 horas) y las raíces en sombra y frescor (cubrir la base con una capa de mantillo o piedras). Suelo fértil, húmedo y bien drenado, ligeramente alcalino. Riego regular y constante; sufren con la sequía. El sistema de poda depende del grupo de floración de cada variedad (Grupo 1: no podar; Grupo 2: poda ligera; Grupo 3: poda fuerte en invierno). Proporcionar soporte fino (alambres, celosía) ya que se aferra con los pecíolos foliares.",
+  },
+  {
+    slug: "zinnia",
+    nombre: "Zinnia",
+    nombreCientifico: "Zinnia elegans",
+    categoria: "Anuales",
+    poster: "/img/Generales/Galeria/Zinnia.jpg",
+    description:
+      "Las zinnias son flores anuales de origen mexicano, conocidas por su extraordinaria resistencia al calor y su floración continua y abundante desde el verano hasta las heladas. Sus cabezas florales tipo margarita grande presentan una paleta de colores deslumbrante: rojo carmesí, naranja, amarillo, rosa, coral, blanco, verde lima y bicolores, en formas simples, semidobles y completamente dobles. Son flores de rápido crecimiento que pasan de semilla a floración en apenas 8-10 semanas. Son fundamentales en jardines de polinizadores por ser una de las plantas más visitadas por mariposas y abejas.",
+    genero: "Zinnia",
+    familia: "Asteraceae",
+    origen: "México y América Central (zonas áridas y semiáridas)",
+    estacion: "Verano, Otoño",
+    simbolismo:
+      "Las zinnias simbolizan la amistad duradera, la constancia y el recuerdo afectuoso de los amigos ausentes. Por eso en el lenguaje victoriano de las flores se enviaban zinnias para decir «pienso en ti». En México, sus colores vibrantes las hacen presentes en celebraciones del Día de los Muertos. También representan la resistencia y la alegría en condiciones difíciles, pues florecen con esplendor incluso bajo el sol más intenso.",
+    usos:
+      "Principalmente ornamentales en jardines de verano, macetas y flores cortadas (tienen gran duración en jarrón). Son plantas clave en jardines para polinizadores y mariposas. No tienen usos medicinales o alimentarios reconocidos, aunque los pétalos son comestibles sin riesgo. En horticultura se usan como plantas compañeras para atraer insectos beneficiosos y proteger cultivos de plagas.",
+    cuidados:
+      "Sol pleno imprescindible; en semisombra florecen escasamente. Suelo bien drenado y moderadamente fértil. Toleran el calor extremo y la sequía moderada. Riego al pie de la planta (evitar mojar el follaje para prevenir oídio). Siembra directa después de las heladas o trasplante con cepellón. Eliminar flores marchitas continuamente para prolongar la floración hasta las heladas. Son susceptibles al oídio al final del verano; escoger variedades resistentes.",
+  },
+  // ── Nuevas flores peligrosas ──────────────────────────────────────
+  {
+    slug: "belladona",
+    nombre: "Belladona",
+    nombreCientifico: "Atropa belladonna",
+    categoria: "Perennes",
+    poster: "/img/Generales/Galeria/Belladona.jpg",
+    peligrosa: true,
+    description:
+      "La belladona, cuyo nombre significa «bella mujer» en italiano, es una de las plantas más venenosas de Europa y Asia. Sus flores acampanadas en tonos violeta-marrón apagado y sus brillantes bayas negras azabache son engañosamente atractivas. Toda la planta contiene alcaloides tropánicos (atropina, escopolamina, hiosciamina) en concentraciones letales. Debe su nombre al hecho de que las mujeres del Renacimiento se ponían su jugo en los ojos para dilatar las pupilas, considerado signo de belleza en la época; ese efecto se debe a la atropina, que bloquea los receptores muscarínicos. Con tan solo 2-5 bayas se puede matar a un niño.",
+    genero: "Atropa",
+    familia: "Solanaceae",
+    origen: "Europa central y del sur, Asia Menor, norte de África, Irán",
+    estacion: "Verano",
+    simbolismo:
+      "La belladona es el arquetipo de la dualidad entre la belleza y la muerte. Está profundamente ligada a la brujería medieval europea: era ingrediente principal de los «ungüentos de vuelo» que se atribuían a las brujas por sus potentes efectos alucinógenos. Simboliza la seducción engañosa, el peligro oculto bajo una apariencia atractiva y el poder de la femineidad oscura. En la mitología, Atropa era una de las tres Parcas, la que cortaba el hilo de la vida.",
+    usos:
+      "La atropina extraída de la belladona es un medicamento esencial de la OMS: se usa como midriático en oftalmología, como antiespasmódico preoperatorio, como antídoto de los nervios organofosforados y en el tratamiento de la bradicardia cardíaca. La escopolamina se usa en parches contra el mareo y en anestesia. Históricamente fue el veneno más utilizado en asesinatos aristocráticos europeos. Su uso popular es extremadamente peligroso y ha causado numerosas muertes.",
+    cuidados:
+      "Crece espontáneamente en suelos calcáreos, bosques y terrenos alterados. Si aparece en el jardín, eliminar con guantes impermeables y ropa de protección; lavar bien manos y herramientas. Jamás plantar intencionalmente donde haya acceso de niños o animales. La toxina se absorbe por la piel. En caso de ingestión, llamar inmediatamente a emergencias.",
+  },
+  {
+    slug: "cicuta",
+    nombre: "Cicuta",
+    nombreCientifico: "Conium maculatum",
+    categoria: "Perennes",
+    poster: "/img/Generales/Galeria/Cicuta.jpg",
+    peligrosa: true,
+    description:
+      "La cicuta es una de las plantas más famosas de la historia por haber sido el veneno utilizado para ejecutar a Sócrates en el año 399 a.C. Pertenece a la familia del perejil y la zanahoria y se le parece engañosamente, lo que ha causado numerosas intoxicaciones mortales por confusión. Sus flores blancas en umbelas (como el perejil) y sus tallos huecos con manchas rojizas o púrpuras son sus rasgos identificativos. Contiene coniína y otros alcaloides piperidínicos que producen parálisis muscular ascendente: la muerte por cicuta sobreviene por parálisis respiratoria mientras la mente permanece lúcida.",
+    genero: "Conium",
+    familia: "Apiaceae",
+    origen: "Europa, Asia Occidental y Central, norte de África (naturalizada mundialmente)",
+    estacion: "Primavera, Verano",
+    simbolismo:
+      "La cicuta es el símbolo histórico de la justicia implacable y de la muerte filosófica. La muerte de Sócrates la convirtió en emblema del pensamiento libre frente al poder político. También representa la traición de las apariencias: su parecido a plantas comestibles la convierte en metáfora del peligro disfrazado de inocencia. En la tradición herbolaria medieval era símbolo de la frontera entre el mundo de los vivos y los muertos.",
+    usos:
+      "La coniína fue el primer alcaloide vegetal sintetizado en laboratorio (1886). En homeopatía clásica se usa en diluciones extremas para tratar vértigo y temblores. Históricamente, la medicina griega y medieval usó extractos muy diluidos como analgésico y sedante. En investigación farmacológica, sus alcaloides se estudian como relajantes musculares controlados. No existe ningún uso medicinal o alimentario popular seguro.",
+    cuidados:
+      "Planta ruderal que crece espontáneamente en márgenes de ríos, cunetas, terrenos baldíos y bordes de cultivos. Si se identifica en el jardín, eliminar con guantes resistentes y ropa de protección completa: la toxina se absorbe por la piel. No quemar los restos (los vapores son tóxicos). No plantar intencionalmente. Mantener a niños y animales totalmente alejados.",
+  },
+  {
+    slug: "eleboro",
+    nombre: "Eléboro",
+    nombreCientifico: "Helleborus niger",
+    categoria: "Perennes",
+    poster: "/img/Generales/Galeria/Eleboro.jpg",
+    peligrosa: true,
+    description:
+      "El eléboro negro, también conocido como rosa de Navidad o rosa de invierno, es una planta perenne de flores delicadas que florecen en pleno invierno, a veces incluso bajo la nieve. Sus flores de cinco sépalos blancos o rosados que rodean un centro de estambres amarillos crean una imagen de belleza invernal sin rival. Pertenece a la misma familia que el ranúnculo y el acónito (Ranunculaceae), y como ellos es completamente tóxico. Contiene glucósidos cardíacos (heleborina, heleborigenina), saponinas y ranunculina, que causan síntomas gastrointestinales severos, bradicardia y, en dosis altas, parada cardíaca.",
+    genero: "Helleborus",
+    familia: "Ranunculaceae",
+    origen: "Europa central y meridional (Alpes, Apeninos, región alpina)",
+    estacion: "Invierno, Primavera",
+    simbolismo:
+      "El eléboro tiene una rica mitología ligada a la locura y la curación de la locura: en la Grecia antigua, Melampus curó a las hijas del rey Preto de la locura con eléboro. Se creía que protegía contra los espíritus malignos y los hechizos. En el folclore medieval era la «flor de la esperanza» por florecer en el invierno más profundo. En el lenguaje de las flores representa el alivio de la angustia y la esperanza en tiempos oscuros.",
+    usos:
+      "Los glucósidos cardíacos del eléboro fueron usados en la medicina griega y romana como purgante radical para tratar la locura (una práctica peligrosa que mató a más de un paciente). Actualmente no tiene usos medicinales reconocidos por la medicina convencional, aunque sus glucósidos se investigan como antitumorales. Su único uso moderno es el ornamental: es una de las pocas plantas que florecen en invierno, muy valorada en jardinería paisajística.",
+    cuidados:
+      "Prefiere semisombra o sombra, suelos calcáreos, húmedos y bien drenados, ricos en materia orgánica. Resistente al frío intenso. Riego moderado; tolera la sequía estival en semisombra. No trasplantar una vez establecido (las raíces son muy sensibles). Manipular siempre con guantes: la savia irrita la piel y los ojos. Retirar las hojas viejas en otoño para evitar enfermedades fúngicas. Se autopropaga por semillas; dar tiempo, ya que tarda 2-3 años en florecer desde semilla.",
+  },
+  {
+    slug: "brugmansia",
+    nombre: "Brugmansia",
+    nombreCientifico: "Brugmansia arborea",
+    categoria: "Arbustos",
+    poster: "/img/Generales/Galeria/Brugmansia.jpg",
+    peligrosa: true,
+    description:
+      "La brugmansia, también llamada trompeta de ángel o floripondio, es un arbusto o pequeño árbol originario de los Andes sudamericanos cuyas enormes flores en forma de trompeta colgante pueden alcanzar los 50 cm de longitud. Florecen en blanco, amarillo, naranja, rosa y rojo, y despiden una fragancia intensa e hipnótica, especialmente por la noche. A diferencia de la Datura (estramonio), las flores de la brugmansia cuelgan hacia abajo. Es considerada extinta en estado silvestre. Toda la planta contiene alcaloides tropánicos (escopolamina, atropina, hiosciamina) que producen alucinaciones, delirio intenso, taquicardia y pueden causar la muerte.",
+    genero: "Brugmansia",
+    familia: "Solanaceae",
+    origen: "Andes de América del Sur (Colombia, Ecuador, Perú, Bolivia)",
+    estacion: "Verano, Otoño",
+    simbolismo:
+      "En las culturas andinas, la brugmansia (conocida como floripondio o borrachero) era y sigue siendo una planta sagrada chamánica. Los chamanes de pueblos como los Jívaro y los Shuar la usan en rituales de visión, de contacto con los ancestros y de diagnóstico espiritual. Simboliza el umbral entre el mundo ordinario y el espiritual, y el peligro inherente a ese cruce. Para el mundo occidental es símbolo de seducción peligrosa y de lo sublime aterrador.",
+    usos:
+      "La escopolamina derivada de la brugmansia es un fármaco de la OMS ampliamente usado en medicina: tratamiento del mareo por movimiento, antisecretor preoperatorio y en parches transdérmicos para el mareo. Sin embargo, su uso popular como droga («burundanga» o «escopolamina») es extremadamente peligroso: anula la voluntad y la memoria y se ha usado en crímenes. En los Andes tiene uso veterinario tradicional para calmar animales.",
+    cuidados:
+      "Planta de clima cálido que no tolera las heladas (muere por debajo de -2 °C). En climas fríos cultivar en maceta grande y llevar a interior en invierno. Sol pleno o semisombra. Suelo fértil, húmedo y bien drenado. Riego abundante en verano; reducir en invierno. Abonar cada 2 semanas en la estación de crecimiento con abono rico en potasio. Manipular exclusivamente con guantes: toda la planta es tóxica. Nunca plantar cerca de zonas de juego infantil ni de establos.",
+  },
+  {
+    slug: "ricino",
+    nombre: "Ricino",
+    nombreCientifico: "Ricinus communis",
+    categoria: "Arbustos",
+    poster: "/img/Generales/Galeria/Ricino.jpg",
+    peligrosa: true,
+    description:
+      "El ricino es una planta arbustiva de llamativo follaje palmeado, de hojas grandes en tonos verde brillante, rojizo o púrpura, con flores y frutos espinosos muy característicos. Sus semillas, llamadas «semillas de ricino», son la fuente de la ricina, considerada una de las toxinas naturales más letales conocidas: tan solo 1 miligramo de ricina pura es suficiente para matar a un adulto, y no existe antídoto. Las semillas son responsables de intoxicaciones graves, especialmente en niños que las confunden con golosinas. Al mismo tiempo, el aceite de ricino obtenido por presión en frío (sin ricina) es un producto de uso mundial.",
+    genero: "Ricinus",
+    familia: "Euphorbiaceae",
+    origen: "África oriental (Etiopía) e India; naturalizada en regiones tropicales y templadas cálidas",
+    estacion: "Verano, Otoño",
+    simbolismo:
+      "El ricino tiene una dualidad simbólica extrema: por un lado, su aceite ha sido símbolo de purificación, vida y fecundidad desde el antiguo Egipto, donde se usaba en lámparas de templo y rituales funerarios. Por otro, la ricina de sus semillas lo ha convertido en símbolo del terror biológico moderno (fue utilizada en el asesinato del escritor Georgi Markov en 1978 con el famoso «paraguas búlgaro»). Representa el doble filo de la naturaleza: lo que cura y lo que mata conviven en la misma planta.",
+    usos:
+      "El aceite de ricino (extraído por presión fría, sin ricina) tiene usos milenarios: purgante y laxante (aunque ya no recomendado), lubricante industrial de alta calidad, materia prima para la fabricación de plásticos biodegradables (nylon 11), barnices y biodiesel. En cosmética, es el aceite más espeso conocido, usado como emoliente y acondicionador de cejas y pestañas. La ricina de las semillas es objeto de investigación como agente antitumoral en inmunotoxinas dirigidas contra células cancerosas.",
+    cuidados:
+      "Planta de crecimiento extremadamente rápido (puede superar los 3 m en una temporada). Sol pleno. Tolera suelos pobres y secos. Riego moderado; resistente a la sequía. En climas templados se trata como anual. NUNCA plantar donde haya niños o animales: las semillas son letales. Si se cultiva como ornamental, eliminar las infrutescencias antes de que maduren las semillas para evitar riesgo de intoxicación. Usar guantes al manipular cualquier parte de la planta.",
+  },
+  {
+    slug: "rododendro",
+    nombre: "Rododendro",
+    nombreCientifico: "Rhododendron ponticum",
+    categoria: "Arbustos",
+    poster: "/img/Generales/Galeria/Rododendro.jpg",
+    peligrosa: true,
+    description:
+      "El rododendro es uno de los arbustos ornamentales más espectaculares del mundo, con enormes inflorescencias de flores acampanadas en tonos rosa, rojo, blanco, naranja, amarillo y violeta que cubren literalmente el arbusto en primavera. El género Rhododendron es uno de los más grandes del reino vegetal, con más de 1.000 especies. Las azaleas, tan populares en jardinería, son en realidad rododendros. Sin embargo, toda la planta contiene grayanotoxinas que afectan a los canales de sodio celulares, produciendo intoxicaciones graves en humanos y animales. Incluso la miel elaborada por abejas que liban sus flores («miel loca») puede causar intoxicaciones.",
+    genero: "Rhododendron",
+    familia: "Ericaceae",
+    origen: "Asia (Himalaya, China, Japón), Europa del Sur, América del Norte",
+    estacion: "Primavera",
+    simbolismo:
+      "El rododendro es la flor nacional de Nepal y Bután, y es sagrado en la cultura tibetana, donde adorna los altares budistas. En el lenguaje occidental de las flores simboliza la cautela y la advertencia de peligro («ten cuidado»). En la cultura popular del siglo XIX era símbolo de ambición peligrosa. También se asocia con la abundancia y la riqueza natural por la majestuosidad de sus floraciones.",
+    usos:
+      "Principalmente ornamental en jardines de estilo inglés, jardines ácidos, bosques paisajísticos y parques. Las grayanotoxinas del rododendro se investigan en neurología para estudiar los canales de sodio. La llamada «miel loca» (mad honey) del Rododendron ponticum y R. luteum del Mar Negro tiene usos en medicina tradicional turca y georgiana en dosis muy pequeñas para la hipertensión y el reumatismo. En dosis mayores esta miel causa intoxicaciones graves. Toda la planta es tóxica para caballos, vacas, cabras y perros.",
+    cuidados:
+      "Requiere suelos ácidos (pH 4.5–6), ricos en humus, bien drenados pero húmedos: son plantas acidófilas estrictas. Semisombra o sol filtrado; el sol intenso quema las hojas. Riego regular con agua sin cal (si el agua es calcárea, acidificar o usar agua de lluvia). Abonar con fertilizante específico para acidófilas (azaleas/rododendros) en primavera. No enterrar el cepellón demasiado hondo. Nunca dar hojas o flores a animales domésticos.",
+  },
 ];
 
 async function main() {
   console.log("Iniciando seed de flores…");
 
+  const slugsExistentes = new Set(
+    (await prisma.flor.findMany({ select: { slug: true } })).map((f) => f.slug)
+  );
+
+  let creadas = 0;
+  let omitidas = 0;
+
   for (const flor of flores) {
-    await prisma.flor.upsert({
-      where: { slug: flor.slug },
-      update: flor,
-      create: flor,
-    });
-    console.log(`  ✓ ${flor.nombre}`);
+    if (slugsExistentes.has(flor.slug)) {
+      console.log(`  — ${flor.nombre} (ya existe, omitida)`);
+      omitidas++;
+    } else {
+      await prisma.flor.create({ data: flor });
+      console.log(`  ✓ ${flor.nombre} (creada)`);
+      creadas++;
+    }
   }
 
-  console.log(`\nSeed completado: ${flores.length} flores actualizadas.`);
+  console.log(`\nSeed completado: ${creadas} flores creadas, ${omitidas} omitidas.`);
 }
 
 main()
